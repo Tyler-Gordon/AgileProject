@@ -1,0 +1,23 @@
+{
+  "name": "agile-project",
+  "version": "1.0.0",
+  "description": "Connor's repo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ConnorVin/Agile-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ConnorVin/Agile-Project/issues"
+  },
+  "homepage": "https://github.com/ConnorVin/Agile-Project#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
