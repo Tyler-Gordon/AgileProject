@@ -1,0 +1,7 @@
+#championContainer {
+    display: none;
+}
+
+#userInput::placeholder{
+    color:black;
+}

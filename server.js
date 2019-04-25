@@ -17,7 +17,7 @@ app.get('/champions', (request, response) => {
         champion = champion
         champions.push({
             name : champion.id,
-            icon : `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${champion.id}.png`,
+            icon : `http://ddragon.leagueoflegends.com/cdn/9.8.1/img/champion/${champion.id}.png`,
             image : `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`
         });
     });
