@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<html lang="en">
+<html lang="en" class='has-background-light'style='height:100vh'>
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+        <link rel="stylesheet" href="css/style.css">
         <script>
             function myFunction() {
-                var a, items, txtValue;
-                var input = document.getElementById('myInput');
-                var filter = input.value.toUpperCase();
-                var ul = document.getElementById("myUL");
+                var a, items, TextValue;
+                var userInput = document.getElementById('userInput');
+                var filter = userInput.value.toUpperCase();
+                var ul = document.getElementById("ChampionUL");
                 var li = ul.getElementsByTagName('li');
             
                 for (items = 0; items < li.length; items++) {
                     a = li[items].getElementsByTagName("a")[0];
-                    txtValue = a.textContent || a.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    TextValue = a.textContent || a.innerText;
+                    if (TextValue.toUpperCase().indexOf(filter) > -1) {
                         li[items].style.display = "";
                     } 
                     else {
                         li[items].style.display = "none";
                     }
                 }
+            }
+            function ShowChampionContainer(){
+                championContainer = document.getElementById('championContainer')
+                championContainer.style.display='inline'
+            }
+            function HideChampionContainer(){
+                championContainer = document.getElementById('championContainer')
+                championContainer.style.display='none'
             }
         </script>
     </head>
@@ -38,22 +47,11 @@
                 <h2 class='subtitle'>Subtitle</h2>
             </div>
         </div>
-        <div class='container has-text-dark'>
-            <input class='input is-medium' type="text" id="myInput" onkeyup="myFunction()" placeholder="Champion">
-            <div id="root"></div>
-
-            <!-- <ul class='list' id="myUL">
-                <li><a class='list-item' href="#">Adele</a></li>
-                <li><a class='list-item' href="#">Agnes</a></li>
-
-                <li><a class='list-item' href="#">Billy</a></li>
-                <li><a class='list-item' href="#">Bob</a></li>
-
-                <li><a class='list-item' href="#">Calvin</a></li>
-                <li><a class='list-item' href="#">Christina</a></li>
-                <li><a class='list-item' href="#">Cindy</a></li>
-            </ul> -->
-        </div>
-        
+        <div class='section has-text-dark'>
+            <input onfocus='ShowChampionContainer()' class='input is-medium' type="text" id="userInput" onkeyup="myFunction()" placeholder="Champion">
+            <div id='championContainer'>
+                <div class='container' id="root"></div>
+            </div>
+        </div>     
     </body>
 </html>

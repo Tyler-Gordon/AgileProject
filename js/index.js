@@ -12,10 +12,14 @@ function ChampionList(props) {
         liststyletype: 'none'
     }
 
+    function getChampionSelection(champion) {
+        console.log(champion);
+     }
+
     const listItems = champions.map((champion) =>
-        <li style={liStyle}>
-            <a class='list-item' href="#">
-                <img src='https://www.mobafire.com/images/avatars/aatrox-classic.png' height='50' width='50'></img>
+        <li onClick={()=>getChampionSelection(champion)} id='liItem' style={liStyle}>
+            <a onClick={HideChampionContainer} className={'list-item'} href='#'>
+                <img src='https://www.mobafire.com/images/avatars/aatrox-classic.png' height='64' width='64'></img>
                 <div>
                     {champion}
                 </div>
@@ -24,9 +28,10 @@ function ChampionList(props) {
     );
     
     return (
-      <ul style={ulStyle}class='list' id="myUL">{listItems}</ul>
+      <ul style={ulStyle} className={'list has-background-dark'} id="ChampionUL">{listItems}</ul>
     );
 }
+
 
 const champions = ['Aatrox','Teemo','Caitlyn'];
 ReactDOM.render(
