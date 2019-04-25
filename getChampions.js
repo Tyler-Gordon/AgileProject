@@ -1,8 +1,7 @@
 const http = require('http');
-var url = "http://ddragon.leagueoflegends.com/cdn/9.8.1/data/en_US/champion.json";
+var championsURL = "http://ddragon.leagueoflegends.com/cdn/9.8.1/data/en_US/champion.json";
 
-// Returns a list of champion objects that contains basic info
-exports.getChampions = (callback) => {
+function getAPI(url, callback) {
     const req = http.request(url, (res) => {
         var data = '';
 
@@ -14,7 +13,7 @@ exports.getChampions = (callback) => {
         // When there's no more data being sent, then begin manipulating it
         res.on('end', () => {
             data = JSON.parse(data);
-            callback(Object.values(data.data));
+            callback(data);
         });
     });
     
@@ -24,4 +23,12 @@ exports.getChampions = (callback) => {
     
     req.end();
 }
+
+// Returns a list of champion objects that contains basic info
+exports.Basic = (callback) => {
+    getAPI(championsURL, (data) => {
+        callback(Object.values(data.data));
+    });
+}
+
 
