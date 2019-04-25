@@ -2,6 +2,10 @@
     display: none;
 }
 
+#userInput {
+    width:20%;
+}
+
 #userInput::placeholder{
     color:black;
 }

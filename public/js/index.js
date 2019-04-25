@@ -4,10 +4,10 @@ function ChampionList(props) {
     
     const liStyle = {
         float: 'left',
-        margin: '15px',
-        width: "100px",
+        margin: '0px',
+        width: "110px",
         borderRadius: '0px',
-        height: "100%"
+        height: "100%",
     }
     
     const ulStyle={
@@ -22,8 +22,8 @@ function ChampionList(props) {
     }
 
     const listItems = champions.map((champion) =>
-        <li onClick={()=>getChampionSelection(champion.name)} id='liItem' style={liStyle} className={'card'}>
-            <a onClick={HideChampionContainer} className={'list-item'} href='#'>
+        <li onClick={()=>getChampionSelection(champion.name)} id='liItem' style={liStyle}>
+            <a style={{backgroundColor:'black',borderRadius: '0px'}} onClick={HideChampionContainer} className={'list-item'} href='#'>
                 <img src={champion.icon} height='100' width='100'></img>
                 <div style={{fontSize: '100%', height:'50px'}}>
                     {champion.name}
