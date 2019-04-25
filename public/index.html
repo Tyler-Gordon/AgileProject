@@ -36,11 +36,13 @@
         </script>
     </head>
 
-    <body>
+    <body style='height:100vh; background: url("https://image.redbull.com/rbcom/010/2017-01-03/1331837749223_2/0100/0/1/the-fields-of-justice-have-a-complicated-history.JPG");'>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
         <script src='js/index.js' type="text/babel" crossorigin='anonymous'></script>
+        
         <div class='hero is-small is-info is-bold'>
             <div class='hero-body'>
                 <h1 class='title'>League of Legends Damage Calculator</h1>
@@ -49,7 +51,7 @@
         </div>
         <div class='section has-text-dark'>
             <input onfocus='ShowChampionContainer()' class='input is-medium' type="text" id="userInput" onkeyup="myFunction()" placeholder="Champion">
-            <div id='championContainer'>
+            <div class='column' id='championContainer'>
                 <div class='container' id="root"></div>
             </div>
         </div>     

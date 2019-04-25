@@ -5,3 +5,13 @@
 #userInput::placeholder{
     color:black;
 }
+
+#liItem {
+    float: 'left';
+    margin-top: '10px';
+    width: "100px";
+}
+
+#championUL {
+    display:'block'; 
+}
