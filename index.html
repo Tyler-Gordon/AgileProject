@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<html lang="en" class='has-background-light'style='height:100vh'>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script>
+            function myFunction() {
+                var a, items, TextValue;
+                var userInput = document.getElementById('userInput');
+                var filter = userInput.value.toUpperCase();
+                var ul = document.getElementById("ChampionUL");
+                var li = ul.getElementsByTagName('li');
+            
+                for (items = 0; items < li.length; items++) {
+                    a = li[items].getElementsByTagName("a")[0];
+                    TextValue = a.textContent || a.innerText;
+                    if (TextValue.toUpperCase().indexOf(filter) > -1) {
+                        li[items].style.display = "";
+                    } 
+                    else {
+                        li[items].style.display = "none";
+                    }
+                }
+            }
+            function ShowChampionContainer(){
+                championContainer = document.getElementById('championContainer')
+                championContainer.style.display='inline'
+            }
+            function HideChampionContainer(){
+                championContainer = document.getElementById('championContainer')
+                championContainer.style.display='none'
+            }
+        </script>
+    </head>
+
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+        <script src='js/index.js' type="text/babel" crossorigin='anonymous'></script>
+        <div class='hero is-small is-info is-bold'>
+            <div class='hero-body'>
+                <h1 class='title'>Title</h1>
+                <h2 class='subtitle'>Subtitle</h2>
+            </div>
+        </div>
+        <div class='section has-text-dark'>
+            <input onfocus='ShowChampionContainer()' class='input is-medium' type="text" id="userInput" onkeyup="myFunction()" placeholder="Champion">
+            <div id='championContainer'>
+                <div class='container' id="root"></div>
+            </div>
+        </div>     
+    </body>
+</html>
