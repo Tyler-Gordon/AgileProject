@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+        <script>
+            function myFunction() {
+                var a, items, txtValue;
+                var input = document.getElementById('myInput');
+                var filter = input.value.toUpperCase();
+                var ul = document.getElementById("myUL");
+                var li = ul.getElementsByTagName('li');
+            
+                for (items = 0; items < li.length; items++) {
+                    a = li[items].getElementsByTagName("a")[0];
+                    txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[items].style.display = "";
+                    } 
+                    else {
+                        li[items].style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+        <script src='js/index.js' type="text/babel" crossorigin='anonymous'></script>
+        <div class='hero is-small is-info is-bold'>
+            <div class='hero-body'>
+                <h1 class='title'>Title</h1>
+                <h2 class='subtitle'>Subtitle</h2>
+            </div>
+        </div>
+        <div class='container has-text-dark'>
+            <input class='input is-medium' type="text" id="myInput" onkeyup="myFunction()" placeholder="Champion">
+            <div id="root"></div>
+
+            <!-- <ul class='list' id="myUL">
+                <li><a class='list-item' href="#">Adele</a></li>
+                <li><a class='list-item' href="#">Agnes</a></li>
+
+                <li><a class='list-item' href="#">Billy</a></li>
+                <li><a class='list-item' href="#">Bob</a></li>
+
+                <li><a class='list-item' href="#">Calvin</a></li>
+                <li><a class='list-item' href="#">Christina</a></li>
+                <li><a class='list-item' href="#">Cindy</a></li>
+            </ul> -->
+        </div>
+        
+    </body>
+</html>
