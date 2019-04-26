@@ -2,13 +2,55 @@
     display: none;
 }
 
-#userInput {
-    width:20%;
+#imgbody {
+    mask-image: linear-gradient(to right, rgba(255,255,255,1), rgba(255, 255, 255, 0));
 }
 
-#userInput::placeholder{
-    color:black;
+#root {
+    overflow: auto;
 }
+
+.ChampionName {
+    color: #ffcb3d;
+    font-size: 100px;
+    float:right;
+}
+
+.ChampionInputColor::placeholder {
+    color: #ffcb3d;
+}
+
+.ChampionInput {
+    width: 40vw;
+    background-color :rgba(0, 0, 0, 0);
+    color: #ffcb3d;
+    border: 0px;
+    outline: 0px;
+    padding: 10px;
+    border-radius: 0px;
+    border-bottom:1px solid #ffcb3d;
+    font-size: 50px;
+}
+
+.ChampionInput:focus {
+    outline: 0px;
+    border: 0px;
+}
+
+.ChampionInputLabel{
+    color: #ffcb3d;
+    font-size: 50px;
+
+}
+.centerall {
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    }
+
 
 #liItem {
     float: 'left';

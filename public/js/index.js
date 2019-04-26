@@ -1,4 +1,3 @@
-
 function ChampionList(props) {
     const champions = props.champions;
     
@@ -17,12 +16,13 @@ function ChampionList(props) {
 
     function getChampionSelection(champion) {
         console.log(champion)
-        document.getElementById('userInput').placeholder = champion
-        console.log(document.getElementById('userInput').placeholder)
+        document.getElementById('imgbody').src = champion.image
+        document.getElementById('ChampionName').innerHTML = champion.name
+        document.getElementById('userInput').value = champion.name
     }
 
     const listItems = champions.map((champion) =>
-        <li onClick={()=>getChampionSelection(champion.name)} id='liItem' style={liStyle}>
+        <li onClick={()=>getChampionSelection(champion)} id='liItem' style={liStyle}>
             <a style={{backgroundColor:'black',borderRadius: '0px'}} onClick={HideChampionContainer} className={'list-item'} href='#'>
                 <img src={champion.icon} height='100' width='100'></img>
                 <div style={{fontSize: '100%', height:'50px'}}>
