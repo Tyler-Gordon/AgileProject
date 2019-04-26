@@ -1,5 +1,8 @@
 const http = require('http');
 var championsURL = "http://ddragon.leagueoflegends.com/cdn/9.8.1/data/en_US/champion.json";
+var itemsURL = "http://ddragon.leagueoflegends.com/cdn/9.8.1/data/en_US/item.json";
+//  passiveUrl http://ddragon.leagueoflegends.com/cdn/9.8.1/img/passive/${champion}_Passive.png
+//  spellsUrl http://ddragon.leagueoflegends.com/cdn/9.8.1/img/spell/${champion}_{Q,W,E,R}.png
 
 function getAPI(url, callback) {
     const req = http.request(url, (res) => {
@@ -25,9 +28,22 @@ function getAPI(url, callback) {
 }
 
 // Returns a list of champion objects that contains basic info
-exports.Basic = (callback) => {
+exports.Champions = (callback) => {
     getAPI(championsURL, (data) => {
         callback(Object.values(data.data));
+    });
+}
+
+exports.Items = (callback) => {
+    getAPI(itemsURL, (data) => {
+        callback(Object.entries(data.data));
+    });
+}
+
+exports.SpecificChampion = (id, callback) => {
+    let url = `http://ddragon.leagueoflegends.com/cdn/9.8.1/data/en_US/champion/${id}.json`
+    getAPI(url, (data) => {
+        callback(data.data[`${id}`]);
     });
 }
 
