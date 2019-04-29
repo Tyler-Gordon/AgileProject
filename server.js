@@ -77,6 +77,9 @@ app.get('/choose', (request, response) => {
     });
 });
 
+app.get('/calcuate', (req, res) => {
+    res.send('hello')
+})
 
 app.listen(port, () => {
     getData.Champions((data) => {
