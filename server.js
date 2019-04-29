@@ -2,7 +2,7 @@
 const express = require('express');
 
 // Project modules
-const getData = require('./getData');
+const getData = require('./private/getData');
 
 // Project variables
 var app = express();
@@ -42,8 +42,11 @@ app.get('/items', (request, response) => {
 });
 
 app.get('/choose', (request, response) => {
-    championID = request.query.id;
-    getData.SpecificChampion(championID, (data) => {
+    let championID = request.query.id;
+    getData.ChampionStats(championID, (data) => {
+        var spellUrl = `http://ddragon.leagueoflegends.com/cdn/9.8.1/img/spell/`
+        var passiveUrl = `http://ddragon.leagueoflegends.com/cdn/9.8.1/img/passive/${data.passive.image.full}`
+
         var championData = {
                 hp : data.stats.hp,
                 hpperlevel : data.stats.hpperlevel,
@@ -62,8 +65,14 @@ app.get('/choose', (request, response) => {
                 attackdamage : data.stats.attackdamage,
                 attackdamageperlevel : data.stats.attackdamageperlevel,
                 attackspeed : data.stats.attackspeed,
-                attackspeedperlevel : data.stats.attackspeedperlevel
+                attackspeedperlevel : data.stats.attackspeedperlevel,
+                passiveicon : passiveUrl,
+                qicon : spellUrl + data.spells[0].image.full,
+                wicon : spellUrl + data.spells[1].image.full,
+                eicon : spellUrl + data.spells[2].image.full,
+                ricon : spellUrl + data.spells[3].image.full
             }
+
         response.send(championData);
     });
 });
