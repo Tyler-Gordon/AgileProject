@@ -1,63 +1,38 @@
-#championContainer {
-    display: none;
-}
-
-#imgbody {
-    mask-image: linear-gradient(to right, rgba(255,255,255,1), rgba(255, 255, 255, 0));
-}
-
 #root {
     overflow: auto;
 }
 
-.ChampionName {
-    color: #ffcb3d;
-    font-size: 100px;
-    float:right;
+#ChampionList {
+    display: block;
 }
 
-.ChampionInputColor::placeholder {
-    color: #ffcb3d;
-}
-
-.ChampionInput {
-    width: 40vw;
-    background-color :rgba(0, 0, 0, 0);
-    color: #ffcb3d;
-    border: 0px;
-    outline: 0px;
-    padding: 10px;
+#ChampionListItem {
+    cursor: pointer;
+    background-color:black;
     border-radius: 0px;
-    border-bottom:1px solid #ffcb3d;
-    font-size: 50px;
+    float: left;
+    margin: 0px;
+    width: 110px;
+    height: 100px;
+    height: 100%;
+    text-align: center;
+}
+#ChampionListItem:hover{
+    background-color:blue;
 }
 
-.ChampionInput:focus {
-    outline: 0px;
-    border: 0px;
+#ChampionName {
+    font-size: 100%;
+    height:50px;
+    color: gold;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.ChampionInputLabel{
-    color: #ffcb3d;
-    font-size: 50px;
-
-}
-.centerall {
+#AppCentering{
     height: 100vh;
     padding: 0;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: center;
-    }
-
-
-#liItem {
-    float: 'left';
-    margin-top: '10px';
-    width: "100px";
-}
-
-#championUL {
-    display:'block'; 
+    align-items: center;   
 }
