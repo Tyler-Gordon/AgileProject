@@ -7,12 +7,13 @@ class App extends React.Component{
     state = {
         champions : this.props.champions,
         choosing : true,
-        selectedChampion: null
+        selectedChampionID: null
     };
 
     onClick(champion){
         this.setState({
-            selectedChampion : champion
+            selectedChampion : champion,
+            choosing : false
         })
     }
 
@@ -28,7 +29,23 @@ class App extends React.Component{
         }
         else{
             return(
-                0 //where the calc react stuff goes
+                
+                fetch(`/choose?id=${this.state.selectedChampionID}`)
+                .then(
+                    function(response) {
+                        if (response.status !== 200) {
+                            console.log('Looks like there was a problem. Status Code: ' + response.status);
+                            return;
+                        }
+                        response.json().then(function(data) {
+                            // calc app
+                            <Calculator championData={data} />
+                        });
+                    }
+                )
+                .catch((err)=>{
+                    console.log('Fetch error')
+                })
             )
         }
     }
