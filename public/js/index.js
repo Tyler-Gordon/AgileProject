@@ -16,10 +16,12 @@ function search() {
         }
     }
 }
+
 function ShowChampionContainer(){
     championContainer = document.getElementById('championContainer')
     championContainer.style.display='inline'
 }
+
 function HideChampionContainer(){
     championContainer = document.getElementById('championContainer')
     championContainer.style.display='none'

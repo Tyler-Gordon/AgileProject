@@ -4,7 +4,7 @@
   "description": "Connor's repo",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --timeout 10000",
     "start": "node server.js"
   },
   "repository": {
@@ -19,5 +19,10 @@
   "homepage": "https://github.com/ConnorVin/Agile-Project#readme",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.1.4"
   }
 }
