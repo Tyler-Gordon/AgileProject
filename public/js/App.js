@@ -7,45 +7,56 @@ class App extends React.Component{
     state = {
         champions : this.props.champions,
         choosing : true,
-        selectedChampionID: null
+        selectedChampion: null,
+        championData : null
     };
 
+    onMouseOver(champion){
+        //document.getElementById('HeroBanner').style.background= `url('${champion.image}')`
+        //document.getElementById('HeroBanner').style.backgroundSize = 'cover'
+    }
+
     onClick(champion){
-        this.setState({
-            selectedChampion : champion,
-            choosing : false
-        })
+        fetch(`/choose?id=${champion.id}`)
+            .then(res => res.json())
+            .then(res => {
+                this.setState({
+                    selectedChampion : champion,
+                    choosing : false,
+                    championData : res
+                })
+            })
+            .catch((err)=>{
+                return <div>{err}</div>
+            })
     }
 
     render () {
         if (this.state.choosing){
             return(  
-                <div>
-                    <input  className='ChampionInput' type="text" id="userInput" onKeyUp={()=>{search()}}></input>
-                    <h1>{this.state.selectedChampion}</h1>
-                    <ChampionList id='AppCentering' onClick={this.onClick.bind(this)} champions={this.state.champions}/>
-                </div>
+                <section className={"hero is-full"} id='HeroBanner'>
+                    <div className={"hero-body"}>
+                        <span className={"section"}>
+                            <h1 className={"title container is-size-1 has-text-dark has-text-center level"}>
+                                LolPad
+                                <img src='../images/logo2.png' width='100px' height='100px'></img>
+
+                            </h1>
+                        </span>
+                        <div>
+                            <ChampionList id='AppCentering' onMouseOver={this.onMouseOver.bind(this)} 
+                                                            onClick={this.onClick.bind(this)} 
+                                                            champions={this.state.champions}/>
+                        </div>
+                    </div>
+                </section>
             )
         }
         else{
             return(
-                
-                fetch(`/choose?id=${this.state.selectedChampionID}`)
-                .then(
-                    function(response) {
-                        if (response.status !== 200) {
-                            console.log('Looks like there was a problem. Status Code: ' + response.status);
-                            return;
-                        }
-                        response.json().then(function(data) {
-                            // calc app
-                            <Calculator championData={data} />
-                        });
-                    }
-                )
-                .catch((err)=>{
-                    console.log('Fetch error')
-                })
+                <div>
+                    <Calculator championData={this.state.championData} selectedChampion={this.state.selectedChampion} /> 
+                </div> 
             )
         }
     }

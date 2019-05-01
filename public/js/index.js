@@ -18,12 +18,14 @@ function search() {
 }
 
 function ShowChampionContainer(){
-    championContainer = document.getElementById('championContainer')
+    console.log('showing')
+    var championContainer = document.getElementById('ChampionList')
     championContainer.style.display='inline'
 }
 
 function HideChampionContainer(){
-    championContainer = document.getElementById('championContainer')
+    console.log('hiding')
+    var championContainer = document.getElementById('ChampionList')
     championContainer.style.display='none'
 }
 
@@ -40,7 +42,7 @@ fetch('/champions')
             response.json().then(function(data) {
                 ReactDOM.render(
                     (
-                        <div id='ok'>
+                        <div>
                             <App champions={data} />
                         </div>
                     ),
