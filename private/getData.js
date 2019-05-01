@@ -1,6 +1,5 @@
 const http = require('http');
-var championsURL = "http://ddragon.leagueoflegends.com/cdn/9.8.1/data/en_US/champion.json";
-var itemsURL = "http://ddragon.leagueoflegends.com/cdn/9.8.1/data/en_US/item.json";
+var versionURL = 'http://ddragon.leagueoflegends.com/api/versions.json';
 
 function getAPI(url, callback) {
     const req = http.request(url, (res) => {
@@ -25,25 +24,47 @@ function getAPI(url, callback) {
     req.end();
 }
 
+// Get's the latest version of the ddragon league of legends.
+const getVersion = (callback) => {
+    getAPI(versionURL, (data) => {
+        callback(data[0]);
+    });
+}
+
 // Returns a list of champion objects that contains basic info
-exports.Champions = (callback) => {
-    getAPI(championsURL, (data) => {
-        callback(Object.values(data.data));
+const Champions = (callback) => {
+    getVersion((version) => {
+        let championsURL = `http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`;
+        getAPI(championsURL, (data) => {
+            callback(Object.values(data.data));
+        });
     });
 }
 
 // Returns a list of item objects
-exports.Items = (callback) => {
-    getAPI(itemsURL, (data) => {
-        callback(Object.entries(data.data));
+const Items = (callback) => {
+    getVersion((version) => {
+        let itemsURL = `http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/item.json`;
+        getAPI(itemsURL, (data) => {
+            callback(Object.entries(data.data));
+        });
     });
 }
 
-exports.ChampionStats = (id, callback) => {
-    let url = `http://ddragon.leagueoflegends.com/cdn/9.8.1/data/en_US/champion/${id}.json`
-    getAPI(url, (data) => {
-        callback(data.data[`${id}`]);
+const ChampionStats = (id, callback) => {
+    getVersion((version) => {
+        let championStatsURL = `http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion/${id}.json`
+        getAPI(championStatsURL, (data) => {
+            callback(data.data[`${id}`]);
+        });
     });
+}
+
+module.exports = {
+    getVersion,
+    Champions,
+    Items,
+    ChampionStats
 }
 
 
