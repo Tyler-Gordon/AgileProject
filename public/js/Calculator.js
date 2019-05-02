@@ -39,15 +39,16 @@ class Calculator extends React.Component {
                     <form>
                         <input type="number" name='Level' min="1" max="18"></input>
                     </form>
-                    <div>
-                    <img src={this.state.selectedChampion.icon} onClick={()=>{ShowChampionContainer()}}></img>
 
-                    </div>
                     <div>
-                    <ChampionList id='AppCentering' onMouseOver={this.onMouseOver.bind(this)} 
-                                                            onClick={this.onClick.bind(this)} 
-                                                        champions={this.state.champions}/>
+                        <img id='CalcChampionIcon' src={this.state.selectedChampion.icon} onClick={()=>{ShowCalcChampionContainer()}} onBlur={()=>{HideChampionContainer()}}></img>
                     </div>
+
+                    <div id='CalcSearch'>
+                        <input className='ChampionInput input' type="text" id="userInput" onKeyUp={()=>{search()}}></input>
+                        <ChampionList id='AppCentering' onMouseOver={this.onMouseOver.bind(this)} onClick={this.onClick.bind(this)} champions={this.state.champions}/>
+                    </div>
+
                     <div>
                         <ul>
                             <li>Health: {this.state.championData.hp}</li>

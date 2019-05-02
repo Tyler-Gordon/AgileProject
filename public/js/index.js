@@ -29,6 +29,23 @@ function HideChampionContainer(){
     championContainer.style.display='none'
 }
 
+function ShowCalcChampionContainer(){
+    console.log('showing')
+    var SearchContainer = document.getElementById('CalcSearch')
+    var championContainer = document.getElementById('ChampionList')
+    championContainer.style.display='inline'
+    SearchContainer.style.display='inline'
+}
+
+function HideCalcChampionContainer(){
+    console.log('hiding')
+    var championContainer = document.getElementById('CalcSearch')
+    var championContainer = document.getElementById('ChampionList')
+    championContainer.style.display='none'
+    SearchContainer.style.display='inline'
+
+}
+
 fetch('/champions')
     .then(
         function(response) {

@@ -7,7 +7,7 @@ class Champion extends React.Component {
     render () {
         return (
             <li id='ChampionListItem' onMouseOver={()=>{this.props.onMouseOver(this.state.champion)}} 
-                                                        onClick={()=>{this.props.onClick(this.state.champion);HideChampionContainer()}} 
+                                                        onClick={()=>{this.props.onClick(this.state.champion); HideChampionContainer(); HideCalcChampionContainer()}} 
                                                         className='list-item'>
                 <a>
                     <br></br>

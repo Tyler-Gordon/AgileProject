@@ -46,3 +46,33 @@
     justify-content: center;
     align-items: center;   
 }
+
+#CalcChampionIcon{
+    cursor: pointer;
+}
+
+#CalcSearch {
+    display: none;
+}
+
+#testdiv{
+    background-image: url("../images/ahri.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    text-align: center;
+    padding-top: 368px;
+    color:  white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+#userinput{
+    color: black;
+    text-align: center;
+    width: 10vw;
+}
+
+#title{
+    font-size: 45px;
+    font-family: 'Times New Roman', Times, serif;
+}
