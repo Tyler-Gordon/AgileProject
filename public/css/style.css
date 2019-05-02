@@ -3,9 +3,12 @@
     height: 100vh;
 }
 
-/* html {
-    overflow-y: hidden;
-} */
+html {
+    background-image: url("../images/ahri.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-color: #3a6a70;
+}
 
 #HeroBanner {
     height: 100vh;
@@ -56,23 +59,38 @@
 }
 
 #testdiv{
-    background-image: url("../images/ahri.png");
-    background-repeat: no-repeat;
-    background-size: auto;
     text-align: center;
-    padding-top: 368px;
+    /* padding-top: 300px; */
     color:  white;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 20px;
 }
 
-#userinput{
+#userInput{
+    position: relative;
     color: black;
     text-align: center;
-    width: 10vw;
+    width: 500px;
+}
+
+#userInput::placeholder {
+    color: black;
 }
 
 #title{
-    font-size: 45px;
-    font-family: 'Times New Roman', Times, serif;
+    margin: auto;
+    /* background: rgba(0,0,0,0.4); */
+    width: 500px;
+    font-size: 10rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+#subtitle {
+    font-size: 3rem;
+    
+
+
+
+    font-family: 'Lato', sans-serif;
+
 }
