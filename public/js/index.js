@@ -18,13 +18,32 @@ function search() {
 }
 
 function ShowChampionContainer(){
-    championContainer = document.getElementById('championContainer')
+    console.log('showing')
+    var championContainer = document.getElementById('ChampionList')
     championContainer.style.display='inline'
 }
 
 function HideChampionContainer(){
-    championContainer = document.getElementById('championContainer')
+    console.log('hiding')
+    var championContainer = document.getElementById('ChampionList')
     championContainer.style.display='none'
+}
+
+function ShowCalcChampionContainer(){
+    console.log('showing')
+    var SearchContainer = document.getElementById('CalcSearch')
+    var championContainer = document.getElementById('ChampionList')
+    championContainer.style.display='inline'
+    SearchContainer.style.display='inline'
+}
+
+function HideCalcChampionContainer(){
+    console.log('hiding')
+    var championContainer = document.getElementById('CalcSearch')
+    var championContainer = document.getElementById('ChampionList')
+    championContainer.style.display='none'
+    SearchContainer.style.display='inline'
+
 }
 
 fetch('/champions')
@@ -40,7 +59,7 @@ fetch('/champions')
             response.json().then(function(data) {
                 ReactDOM.render(
                     (
-                        <div id='ok'>
+                        <div>
                             <App champions={data} />
                         </div>
                     ),
