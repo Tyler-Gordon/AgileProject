@@ -23,7 +23,7 @@ html {
 
 #ChampionListItem {
     cursor: pointer;
-    background-color:white;
+    background-color:black;
     border-radius: 0px;
     float: left;
     /* margin-top: 1px; */
