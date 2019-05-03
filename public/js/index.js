@@ -17,19 +17,19 @@ function search() {
     }
 }
 
+// function ShowChampionContainer(){
+//     console.log('showing')
+//     var championContainer = document.getElementById('ChampionList')
+//     championContainer.style.display='inline'
+// }
+
+// function HideChampionContainer(){
+//     console.log('hiding')
+//     var championContainer = document.getElementById('ChampionList')
+//     championContainer.style.display='none'
+// }
+
 function ShowChampionContainer(){
-    console.log('showing')
-    var championContainer = document.getElementById('ChampionList')
-    championContainer.style.display='inline'
-}
-
-function HideChampionContainer(){
-    console.log('hiding')
-    var championContainer = document.getElementById('ChampionList')
-    championContainer.style.display='none'
-}
-
-function ShowCalcChampionContainer(){
     console.log('showing')
     var SearchContainer = document.getElementById('CalcSearch')
     var championContainer = document.getElementById('ChampionList')
@@ -37,12 +37,13 @@ function ShowCalcChampionContainer(){
     SearchContainer.style.display='inline'
 }
 
-function HideCalcChampionContainer(){
+function HideChampionContainer(){
     console.log('hiding')
-    var championContainer = document.getElementById('CalcSearch')
+    var SearchContainer = document.getElementById('CalcSearch')
     var championContainer = document.getElementById('ChampionList')
+    
     championContainer.style.display='none'
-    SearchContainer.style.display='inline'
+    SearchContainer.style.display='none'
 
 }
 

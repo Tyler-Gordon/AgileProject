@@ -44,17 +44,14 @@ class App extends React.Component{
                     <h3>game play better. We want to provide easy operation so you can get your results as</h3>
                     <h3>fast as you can.</h3> */}
                     <br></br>
-                    <br></br>
 
                     <h3 id='subtitle'>
                         Intuitive Damage Calculator
                     </h3>
                     <br></br>
-                    <br></br>
 
                     <input placeholder='Select a champion...' className='input is-large' type="text" id="userInput" onFocus={()=>{ShowChampionContainer()}} onKeyUp={()=>{search()}}></input>
                     <div>
-                        <br></br>
                         <ChampionList id='AppCentering' onMouseOver={this.onMouseOver.bind(this)} onClick={this.onClick.bind(this)} champions={this.state.champions}/>
                     </div>
                 </div>
@@ -62,6 +59,7 @@ class App extends React.Component{
             )
         }
         else{
+            // document.getElementsByTagName('html').style.backgroundImage = ''
             return(
                 <div>
                     <Calculator champions={this.state.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} /> 
