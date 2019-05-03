@@ -1,31 +1,45 @@
 #root {
-    overflow: auto;
+    max-height: 100vh;
+    height: 100vh;
+}
+
+html {
+    background-image: url("http://www.lol-wallpapers.com/wp-content/uploads/2016/12/Summoners-Rift-Landscape.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-color: black;
+    /* background-color: #3a6a70; */
+}
+
+#HeroBanner {
+    height: 100vh;
 }
 
 #ChampionList {
-    display: block;
+    display: none;
+    position: relative;
+    top: 20px;
 }
 
 #ChampionListItem {
     cursor: pointer;
-    background-color:black;
+    background-color:white;
     border-radius: 0px;
     float: left;
-    margin: 0px;
-    width: 110px;
-    height: 100px;
+    /* margin-top: 1px; */
+    width: 10%;
     height: 100%;
     text-align: center;
 }
 #ChampionListItem:hover{
-    background-color:blue;
+    background-color: midnightblue;
 }
 
 #ChampionName {
     font-size: 100%;
     height:50px;
-    color: gold;
-    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #AppCentering{
@@ -35,4 +49,66 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;   
+}
+
+#CalcChampionIcon{
+    cursor: pointer;
+}
+
+#CalcSearch {
+    display: none;
+}
+
+#testdiv{
+    text-align: center;
+    /* padding-top: 300px; */
+    color:  white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+
+#userInput{
+    position: relative;
+    color: black;
+    text-align: center;
+    width: 500px;
+}
+
+#userInput::placeholder {
+    color: black;
+}
+
+#title{
+    margin: auto;
+    /* background: rgba(0,0,0,0.4); */
+    width: 500px;
+    font-size: 10rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+#subtitle {
+    font-size: 3rem;
+    font-family: 'Lato', sans-serif;
+}
+
+#CalcContainer{
+    height: 100vh;
+    background-color: black;
+}
+
+#CalcChampIconContainer {
+    background-color:darkslategrey;
+}
+
+#CalcPlayerLevel {
+    position: relative;
+    top: 50px;
+}
+
+#CalcStatBlock{
+    color: white;
+}
+
+#CalcPlayerSpellContainer{
+    height: 100px;
 }
