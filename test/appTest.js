@@ -25,7 +25,7 @@ chai.should();
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a('array');
-                    res.body.length.should.be.eql(320);
+                    res.body.length.should.be.eql(319);
                     done()
             });
          });
@@ -38,6 +38,17 @@ chai.should();
                     let data = JSON.parse(res.text)
                     res.should.have.status(200);
                     data.should.be.a('object');
+                    done()
+            });
+         });
+
+         it("should be redirected to /", (done) => {
+            chai.request('http://localhost:3000')
+                .get('/choose')
+                .query({id: 'null'})
+                .end((err, res) => {
+                    res.should.redirectTo('http://localhost:3000/');
+                    res.should.have.status(200);
                     done()
             });
          });
