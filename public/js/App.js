@@ -40,7 +40,7 @@ class App extends React.Component{
                         <h1 id='Title'>Lolpad</h1>
                         <h1 id='Subtitle'>Intuitive Damage Calculator</h1>
                         <div class='col-md-12 col-sm-2'>
-                            <input placeholder='Select a champion...' className='input is-large' type="text" id="userInput" onInput={()=>{search()}}></input>
+                            <input placeholder='Select a champion...' type="text" id="userInput" onInput={()=>{search()}}></input>
                         </div>
 
                         <div className='col-10 container container' id='ChampionListContainer' >

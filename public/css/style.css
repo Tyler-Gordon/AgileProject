@@ -64,33 +64,19 @@ body {
     }
 }
 
+#PlayerLevel {
+    width: 15%;
+}
 
-#CalcChampionIcon{
+#ChampionName {
+    font-size: 3rem;
+    width: 20%;
+}
+
+#ChampionSkilss {
+    height: 50vh;
+}
+
+#Item{
     cursor: pointer;
-}
-
-#CalcSearch {
-    display: none;
-}
-
-#CalcContainer{
-    height: 100vh;
-    background-color: black;
-}
-
-#CalcChampIconContainer {
-    background-color:darkslategrey;
-}
-
-#CalcPlayerLevel {
-    position: relative;
-    top: 50px;
-}
-
-#CalcStatBlock{
-    color: white;
-}
-
-#CalcPlayerSpellContainer{
-    height: 100px;
 }
