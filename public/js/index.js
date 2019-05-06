@@ -15,19 +15,8 @@ function search() {
             li[items].style.display = "none";
         }
     }
+    ShowChampionContainer()
 }
-
-// function ShowChampionContainer(){
-//     console.log('showing')
-//     var championContainer = document.getElementById('ChampionList')
-//     championContainer.style.display='inline'
-// }
-
-// function HideChampionContainer(){
-//     console.log('hiding')
-//     var championContainer = document.getElementById('ChampionList')
-//     championContainer.style.display='none'
-// }
 
 function ShowChampionContainer(){
     console.log('showing')
