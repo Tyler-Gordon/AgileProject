@@ -42,7 +42,7 @@ class Calculator extends React.Component {
                         <h1 id='ChampionName'>{this.state.selectedChampion.name}</h1>
                     </div>
                     <div className='col-md-3'>
-                        <input class='form-control' id='PlayerLevel' type='number' name="quantity" min="1" max="18"></input>
+                        <input className='form-control' id='PlayerLevel' type='number' name="quantity" min="1" max="18"></input>
                         <img src={this.state.selectedChampion.icon}></img>
                     </div>
 

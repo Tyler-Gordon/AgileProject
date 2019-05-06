@@ -9,7 +9,7 @@ class Champion extends React.Component {
             <li id='ChampionListItem' onMouseOver={()=>{this.props.onMouseOver(this.state.champion)}} onClick={()=>{this.props.onClick(this.state.champion); HideChampionContainer()}} className='list-group-item'>
                 <a>
                     <img src={this.state.champion.icon} width='50px' height='50px'></img>
-                    <p>{this.state.champion.name}</p>
+                    <h5>{this.state.champion.name}</h5>
                 </a>
             </li>
         )

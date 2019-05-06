@@ -13,6 +13,7 @@ body {
     width: 100%;
     background-color: white;
 }
+
 #ChampionListItem {
     cursor: pointer;
     border-radius: 0px;
@@ -22,6 +23,10 @@ body {
     margin-top: 1px;
     background-color: white;
 }
+#ChampionName{
+    font-size: 1rem;
+}
+
 #ChampionListItem:hover{
     background-color: turquoise;
 }
