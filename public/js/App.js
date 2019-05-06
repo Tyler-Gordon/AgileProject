@@ -14,7 +14,7 @@ class App extends React.Component{
     onMouseOver(champion){
         //document.getElementById('HeroBanner').style.background= `url('${champion.image}')`
         //document.getElementById('HeroBanner').style.backgroundSize = 'cover'
-        console.log(ReactDOM.findDOMNode('ChampionList'))
+        return(0);
     }
 
     onClick(champion){
@@ -39,7 +39,7 @@ class App extends React.Component{
                     <div className='col-md-8 col-sm-12'>
                         <h1 id='Title'>Lolpad</h1>
                         <h1 id='Subtitle'>Intuitive Damage Calculator</h1>
-                        <div class='col-md-12 col-sm-2'>
+                        <div className='col-md-12 col-sm-2'>
                             <input placeholder='Select a champion...' type="text" id="userInput" onInput={()=>{search()}}></input>
                         </div>
 

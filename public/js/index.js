@@ -19,21 +19,13 @@ function search() {
 }
 
 function ShowChampionContainer(){
-    console.log('showing')
-    var SearchContainer = document.getElementById('CalcSearch')
     var championContainer = document.getElementById('ChampionList')
     championContainer.style.display='inline'
-    SearchContainer.style.display='inline'
 }
 
 function HideChampionContainer(){
-    console.log('hiding')
-    var SearchContainer = document.getElementById('CalcSearch')
     var championContainer = document.getElementById('ChampionList')
-    
     championContainer.style.display='none'
-    SearchContainer.style.display='none'
-
 }
 
 fetch('/champions')
