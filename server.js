@@ -3,12 +3,15 @@ const express = require('express');
 
 // Project modules
 const getData = require('./private/getData');
+const calculate = require('./private/calculate');
 
 // Project variables
 var app = express();
 const port = process.env.PORT || 3000;
 var champions;
 var items;
+var championSkillData;
+var version;
 
 app.use(express.static('public'));
 
@@ -22,7 +25,7 @@ app.get('/champions', (request, response) => {
         championSelectionData.push({
             id : champion.id,
             name : champion.name,
-            icon : `http://ddragon.leagueoflegends.com/cdn/9.8.1/img/champion/${champion.image.full}`,
+            icon : `http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champion.image.full}`,
             image : `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`
         });
     });
@@ -35,7 +38,7 @@ app.get('/items', (request, response) => {
         itemSelectionData.push({
             id : item[0],
             name : item[1].name,
-            icon : `http://ddragon.leagueoflegends.com/cdn/9.8.1/img/item/${item[0]}.png`
+            icon : `http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item[0]}.png`
         });
     });
     response.send(itemSelectionData);
@@ -44,8 +47,8 @@ app.get('/items', (request, response) => {
 app.get('/choose', (request, response) => {
     let championID = request.query.id;
     getData.ChampionStats(championID, (data) => {
-        var spellUrl = `http://ddragon.leagueoflegends.com/cdn/9.8.1/img/spell/`
-        var passiveUrl = `http://ddragon.leagueoflegends.com/cdn/9.8.1/img/passive/${data.passive.image.full}`
+        var spellUrl = `http://ddragon.leagueoflegends.com/cdn/${version}/img/spell/`
+        var passiveUrl = `http://ddragon.leagueoflegends.com/cdn/${version}/img/passive/${data.passive.image.full}`
 
         var championData = {
                 hp : data.stats.hp,
@@ -64,9 +67,10 @@ app.get('/choose', (request, response) => {
                 mpregenperlevel : data.stats.mpregenperlevel,
                 attackdamage : data.stats.attackdamage,
                 attackdamageperlevel : data.stats.attackdamageperlevel,
+                spelldamage : 0,
                 attackspeed : data.stats.attackspeed,
                 attackspeedperlevel : data.stats.attackspeedperlevel,
-                passiveicon : passiveUrl,
+                autoattackicon : passiveUrl,
                 qicon : spellUrl + data.spells[0].image.full,
                 wicon : spellUrl + data.spells[1].image.full,
                 eicon : spellUrl + data.spells[2].image.full,
@@ -77,8 +81,15 @@ app.get('/choose', (request, response) => {
     });
 });
 
+<<<<<<< HEAD
 app.get('/calcuate', (req, res) => {
     res.send('hello')
+=======
+app.get('/calculate', express.json(), (request, response) => {
+    let champSkills = championSkillData[`${request.body.player.id}`];
+    var championDamage = calculate.getDamage(champSkills, request.body);
+    response.send(championDamage);
+>>>>>>> upstream/master
 })
 
 app.listen(port, () => {
@@ -88,4 +99,8 @@ app.listen(port, () => {
     getData.Items((data) => {
         items = data;
     });
+    getData.getVersion((data) => {
+        version = data;
+    });
+    championSkillData = require('./private/championSkillData');
 });

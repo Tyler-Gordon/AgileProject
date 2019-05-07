@@ -310,7 +310,7 @@
             }
         ]
     },
-    "Aurelion Sol" : {
+    "AurelionSol" : {
         "q" : [
             {
                 "base" : [70, 110, 150, 190, 230],
