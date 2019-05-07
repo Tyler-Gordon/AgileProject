@@ -1,3 +1,10 @@
-# This is the repo for the CIT 5 week project term.
+# Lolpad
+##### CIT 5 Week Project Term
+This is the repository for the Lolpad project
 
-Test for Zach
+
+|   Front End   |   Back End    |
+|:-------------:|:-------------:|
+| Leader: Tyler |Leader : Connor|
+|     Ramon     |     Zach      |
+|    Andrew     |   Polatava    |
