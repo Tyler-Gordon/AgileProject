@@ -34,30 +34,30 @@ class App extends React.Component{
 
     render () {
         if (this.state.choosing){
-            return(  
-                <div id='testdiv' className='container'>
-                    <div className='columns'>
-                        <div className='column is-8'>
-                            <h1 id='Title'>Lolpad</h1>
-                            <h1 id='Subtitle'>Intuitive Damage Calculator</h1>
-                            <input className='input' placeholder='Select a champion...' type="text" id="userInput" onInput={()=>{search()}}></input>
-                            <div id='ChampionListContainer' >
-                                <ChampionList className='container' onMouseOver={this.onMouseOver.bind(this)} onClick={this.onClick.bind(this)} champions={this.state.champions}/>
+            return(
+                <section id='testdiv' className='section'> 
+                    <div className='container'>
+                        <div className='columns'>
+                            <div className='column is-8'>
+                                <h1 id='Title'>Lolpad</h1>
+                                <h1 id='Subtitle'>Intuitive Damage Calculator</h1>
+                                <input className='input' placeholder='Select a champion...' type="text" id="userInput" onInput={()=>{search()}}></input>
+                                <div id='ChampionListContainer' >
+                                    <ChampionList className='container' onMouseOver={this.onMouseOver.bind(this)} onClick={this.onClick.bind(this)} champions={this.state.champions}/>
+                                </div>
+                            </div>
+
+                            <div className='column is-4'>
+                                <img id='TeemoImage' src='../images/teemo.gif'></img>
                             </div>
                         </div>
-
-                        <div className='column is-4'>
-                            <img id='TeemoImage' src='../images/teemo.gif'></img>
-                        </div>
                     </div>
-                </div>
+                </section>
             )
         }
         else{
             return(
-                <div>
-                    <Calculator champions={this.state.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} /> 
-                </div> 
+                <Calculator champions={this.state.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} /> 
             )
         }
     }

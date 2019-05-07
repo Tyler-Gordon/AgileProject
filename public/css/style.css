@@ -1,9 +1,9 @@
-body {
+/*body {
     background-image: url("../images/Rectangle.svg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     overflow: hidden;
-}
+}*/
 #ChampionList {
     display: block;
     overflow-y: auto;
