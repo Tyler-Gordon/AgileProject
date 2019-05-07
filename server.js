@@ -13,12 +13,15 @@ var items;
 var championSkillData;
 var version;
 
+// Middleware
 app.use(express.static('public'));
 
+// Endpoints
 app.get('/', (request, response) => {
     response.sendFile(__dirname + './public/index.html');
 });
 
+// Called to populate the 
 app.get('/champions', (request, response) => {
     let championSelectionData = [];
 
@@ -120,6 +123,10 @@ app.get('/calculate', express.json(), (request, response) => {
     var championDamage = calculate.getDamage(champSkills, request.body);
     response.send(championDamage);
 })
+
+app.post('/github', express.json(), (request, response) => {
+    console.log(request.headers);
+});
 
 app.listen(port, () => {
     getData.Champions((data) => {
