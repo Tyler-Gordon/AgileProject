@@ -5,5 +5,5 @@ exports.verifySecret = (reqBody, reqHeader) => {
     .update(reqBody)
     .digest('hex');
 
-    return crypto.timingSafeEqual(signature, reqHeader['HTTP_X_HUB_SIGNATURE']);
+    return crypto.timingSafeEqual(signature, reqHeader['x-hub-signature']);
 }

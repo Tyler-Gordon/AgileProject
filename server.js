@@ -4,6 +4,7 @@ const express = require('express');
 // Project modules
 const getData = require('./private/getData');
 const calculate = require('./private/calculate');
+const verifySecret = require('./private/verifySignature').verifySecret;
 
 // Project variables
 var app = express();
@@ -125,7 +126,9 @@ app.get('/calculate', express.json(), (request, response) => {
 })
 
 app.post('/github', express.json(), (request, response) => {
-    console.log(request.headers);
+    if(verifySecret(request.body, request.headers)){
+        response.send(200);
+    }
 });
 
 app.listen(port, () => {
