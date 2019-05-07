@@ -49,7 +49,7 @@ class App extends React.Component{
                     </div>
 
                     <div className='col-4 '>
-                        <div className='row h-75 align-items-center'>
+                        <div className='row h-100 align-items-center'>
                             <img id='TeemoImage' src='../images/teemo.gif'></img>
                         </div>
                     </div>

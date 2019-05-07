@@ -1,6 +1,6 @@
 body {
-    background-image: url("../images/Untitled.png");
-    background-size: cover;
+    background-image: url("../images/Rectangle.svg");
+    background-size: 100vw 100vh;
     background-repeat: no-repeat;
 }
 #ChampionList {
