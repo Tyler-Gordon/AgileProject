@@ -1,39 +1,38 @@
 class Calculator extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
     }
 
     state = {
-        champions : this.props.champions,
-        isEnemy : false,
+        champions: this.props.champions,
+        isEnemy: false,
         selectedChampion: this.props.selectedChampion,
-        championData : this.props.championData
+        championData: this.props.championData
     }
 
-    
-    onMouseOver(champion){
+
+    onMouseOver(champion) {
         //document.getElementById('HeroBanner').style.background= `url('${champion.image}')`
         //document.getElementById('HeroBanner').style.backgroundSize = 'cover'
     }
 
-    onClick(champion){
+    onClick(champion) {
         fetch(`/choose?id=${champion.id}`)
             .then(res => res.json())
             .then(res => {
                 this.setState({
-                    selectedChampion : champion,
-                    choosing : false,
-                    championData : res
+                    selectedChampion: champion,
+                    choosing: false,
+                    championData: res
                 })
             })
-            .catch((err)=>{
-                return <div>{err}</div>
+            .catch((err) => {
+                return <div> {err} </div>
             })
     }
 
-    render () {
+    render() {
         return (
-            console.log(this.state.selectedChampion),
             <div className='col'>
             <br></br>
                 <div className='row align-items-center'>
