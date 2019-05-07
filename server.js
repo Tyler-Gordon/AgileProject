@@ -128,6 +128,8 @@ app.get('/calculate', express.json(), (request, response) => {
 app.post('/github', express.json(), (request, response) => {
     if(verifySecret(JSON.stringify(request.body), request.headers)){
         response.send(200);
+    } else {
+        response.send(401);
     }
 });
 
