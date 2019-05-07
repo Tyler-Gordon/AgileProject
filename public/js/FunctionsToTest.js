@@ -1,16 +1,16 @@
-function ShowChampionContainer(){
+function ShowChampionContainer() {
     // var championContainer = document.getElementById('ChampionList')
     // championContainer.style.display='inline'
-    return('Shown')
+    return ('Shown')
 }
 
-function HideChampionContainer(){
+function HideChampionContainer() {
     // var championContainer = document.getElementById('ChampionList')
     // championContainer.style.display='none'
-    return('Hidden')
+    return ('Hidden')
 }
 
-module.exports={
+module.exports = {
     ShowChampionContainer,
     HideChampionContainer
 }

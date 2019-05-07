@@ -10,43 +10,46 @@ function search() {
         TextValue = a.textContent || a.innerText;
         if (TextValue.toUpperCase().indexOf(filter) > -1) {
             li[items].style.display = "";
-        } 
-        else {
+        } else {
             li[items].style.display = "none";
         }
     }
     ShowChampionContainer()
 }
 
-function ShowChampionContainer(){
+function ShowChampionContainer() {
     var championContainer = document.getElementById('ChampionList')
-    championContainer.style.display='inline'
-    return('Shown')
+    championContainer.style.display = 'inline'
+    return ('Shown')
 }
 
-function HideChampionContainer(){
+function HideChampionContainer() {
     var championContainer = document.getElementById('ChampionList')
-    championContainer.style.display='none'
-    return('Hidden')
+    championContainer.style.display = 'none'
+    return ('Hidden')
 }
 
 fetch('/champions')
     .then(
-        function(response) {
+        function (response) {
             if (response.status !== 200) {
                 console.log('Looks like there was a problem. Status Code: ' +
-                response.status);
+                    response.status);
                 return;
             }
             // Examine the text in the response
-            response.json().then(function(data) {
+            response.json().then(function (data) {
                 ReactDOM.render(
+<<<<<<< HEAD
                     <App champions={data} />,
+=======
+                    (<div><App champions = {data}/> </div >),
+>>>>>>> upstream/master
                     document.getElementById('root')
-                  );
+                );
             });
         }
     )
-    .catch((err)=>{
+    .catch((err) => {
         console.log('Fetch error')
     })
