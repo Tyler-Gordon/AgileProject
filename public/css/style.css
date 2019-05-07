@@ -3,12 +3,7 @@
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     overflow: hidden;
-<<<<<<< HEAD
 }*/
-=======
-}
-
->>>>>>> upstream/master
 #ChampionList {
     display: block;
     overflow-y: auto;

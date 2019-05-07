@@ -11,13 +11,7 @@ class ChampionList extends React.Component {
                       onClick={this.props.onClick.bind(this)} champion={champion}/>
         );
         return(
-<<<<<<< HEAD
             <ul id='ChampionList' className='list'>{ChampionsList}</ul>
-=======
-            <ul id='ChampionList' className='list-group'>
-                {ChampionsList}
-            </ul>
->>>>>>> upstream/master
         )
     }
 };

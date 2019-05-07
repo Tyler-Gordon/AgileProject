@@ -4,7 +4,6 @@ class Calculator extends React.Component {
     }
 
     state = {
-<<<<<<< HEAD
         champions : this.props.champions,
         isEnemy : false,
         selectedChampion : this.props.selectedChampion,
@@ -14,16 +13,6 @@ class Calculator extends React.Component {
     }
     
     onMouseOver(champion){
-=======
-        champions: this.props.champions,
-        isEnemy: false,
-        selectedChampion: this.props.selectedChampion,
-        championData: this.props.championData
-    }
-
-
-    onMouseOver(champion) {
->>>>>>> upstream/master
         //document.getElementById('HeroBanner').style.background= `url('${champion.image}')`
         //document.getElementById('HeroBanner').style.backgroundSize = 'cover'
     }
@@ -33,15 +22,9 @@ class Calculator extends React.Component {
             .then(res => res.json())
             .then(res => {
                 this.setState({
-<<<<<<< HEAD
                     enemyChampion : champion,
                     isEnemy : true,
                     enemyData : res
-=======
-                    selectedChampion: champion,
-                    choosing: false,
-                    championData: res
->>>>>>> upstream/master
                 })
             })
             .catch((err) => {
@@ -51,7 +34,6 @@ class Calculator extends React.Component {
 
     render() {
         return (
-<<<<<<< HEAD
             console.log(this.state.selectedChampion),
             <section className="section">
                 <PlayerChampion champions={this.state.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} />
@@ -63,31 +45,6 @@ class Calculator extends React.Component {
                             <ChampionAbility icon={this.state.championData.eicon} stats='Test data'/>
                             <ChampionAbility icon={this.state.championData.ricon} stats='Test data'/>
                             <ChampionAbility icon={this.state.championData.passiveicon} stats='Test data'/>
-=======
-            <div className='col'>
-            <br></br>
-                <div className='row align-items-center'>
-
-                    <div className='col-md-2 text-center'>
-                        <h1 id='ChampionName'>{this.state.selectedChampion.name}</h1>
-                    </div>
-                    <div className='col-md-3'>
-                        <input className='form-control' id='PlayerLevel' type='number' name="quantity" min="1" max="18"></input>
-                        <img src={this.state.selectedChampion.icon}></img>
-                    </div>
-
-                    <div className='col-md-3'>
-                        <div className='row'>
-                            <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                            <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                            <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                        </div>
-                        <br></br>
-                        <div className='row'>
-                            <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                            <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                            <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
->>>>>>> upstream/master
                         </div>
                     </div>
                 </section>
@@ -97,7 +54,7 @@ class Calculator extends React.Component {
                         <div className="column is-half is-offset-6">
                             <input className='input' placeholder='Select an enemy...' type="text" id="userInput" onInput={()=>{search()}}></input>
                             <div id='ChampionListContainer'>
-                                <ChampionList className='container' onMouseOver={this.onMouseOver.bind(this)} onClick={this.onClick.bind(this)} champions={this.state.champions}/>
+                                <ChampionList onMouseOver={this.onMouseOver.bind(this)} onClick={this.onClick.bind(this)} champions={this.state.champions}/>
                             </div>
                         </div>
                     </div>
