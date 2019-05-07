@@ -1,38 +1,88 @@
-#root {
-    overflow: auto;
+body {
+    background-image: url("../images/Rectangle.svg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
-
 #ChampionList {
     display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 50vh;
+    position: relative;
+    float: left;
+    width: 100%;
+    background-color: white;
 }
 
 #ChampionListItem {
     cursor: pointer;
-    background-color:black;
     border-radius: 0px;
-    float: left;
-    margin: 0px;
-    width: 110px;
+    width: 20%;
     height: 100px;
-    height: 100%;
-    text-align: center;
+    float: left;
+    margin-top: 1px;
+    background-color: white;
 }
+#ChampionName{
+    font-size: 1rem;
+}
+
 #ChampionListItem:hover{
-    background-color:blue;
+    background-color: turquoise;
+}
+
+#Title{
+    font-size: 7rem;
+}
+#Subtitle{
+    font-size: 2rem;
+}
+
+#testdiv{
+    text-align: center;
+    font-family: 'Oswald', sans-serif,serif;
+}
+
+#userInput{
+    text-align: center;
+    width: 50%;
+    font-size: 2rem;
+    height: 50px;
+}
+
+/* For mobile phones: */
+@media (min-width: 320px) and (max-width: 480px) {
+    body{
+        background-size: contain;
+    }
+    #TeemoImage{
+        display: none;
+    }
+    #Title{
+        font-size: 3rem;
+    }
+    #Subtitle{
+        font-size: 1rem;
+    }
+    #ChampionListContainer {
+        max-height: 10%;
+    }
+}
+
+#PlayerLevel {
+    width: 15%;
 }
 
 #ChampionName {
-    font-size: 100%;
-    height:50px;
-    color: gold;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    width: 20%;
 }
 
-#AppCentering{
-    height: 100vh;
-    padding: 0;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;   
+#ChampionSkilss {
+    height: 50vh;
+}
+
+#Item{
+    cursor: pointer;
 }

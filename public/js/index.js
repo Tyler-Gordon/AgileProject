@@ -15,16 +15,19 @@ function search() {
             li[items].style.display = "none";
         }
     }
+    ShowChampionContainer()
 }
 
 function ShowChampionContainer(){
-    championContainer = document.getElementById('championContainer')
+    var championContainer = document.getElementById('ChampionList')
     championContainer.style.display='inline'
+    return('Shown')
 }
 
 function HideChampionContainer(){
-    championContainer = document.getElementById('championContainer')
+    var championContainer = document.getElementById('ChampionList')
     championContainer.style.display='none'
+    return('Hidden')
 }
 
 fetch('/champions')
@@ -35,12 +38,11 @@ fetch('/champions')
                 response.status);
                 return;
             }
-    
             // Examine the text in the response
             response.json().then(function(data) {
                 ReactDOM.render(
                     (
-                        <div id='ok'>
+                        <div>
                             <App champions={data} />
                         </div>
                     ),
