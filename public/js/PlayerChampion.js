@@ -12,7 +12,6 @@ class PlayerChampion extends React.Component {
 
     render () {
         return (
-            console.log(this.state.selectedChampion),
             <section className='section'>
                 <div className='container'>
                     <div className='columns'>
@@ -23,16 +22,8 @@ class PlayerChampion extends React.Component {
                             <input className='input' id='PlayerLevel' type='number' name="quantity" min="1" max="18"></input>
                             <img src={this.state.selectedChampion.icon}></img>
                         </div>
-
-                        <div className='level'>
-                                <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                                <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                                <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                                <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                                <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                                <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                        </div>
-                        <div id='ChampionStats' className='column'>
+                        <BoughtItems />
+                        <div id='ChampionStats' className='column has-text-right'>
                             <h5>Health: {this.state.championData.hp}</h5>
                             <h5>Mana: {this.state.championData.mp}</h5>
                             <h5>Armour: {this.state.championData.armor}</h5>

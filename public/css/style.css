@@ -34,16 +34,12 @@
 }
 
 #Title {
-    font-size: 7rem;
+    font-size: 10rem;
+    font-family: 'Oswald', sans-serif, serif;
 }
 
 #Subtitle {
     font-size: 2rem;
-}
-
-#testdiv {
-    text-align: center;
-    font-family: 'Oswald', sans-serif, serif;
 }
 
 #userInput {

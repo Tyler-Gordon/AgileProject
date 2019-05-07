@@ -35,7 +35,7 @@ class App extends React.Component {
     render () {
         if (this.state.choosing){
             return(
-                <section id='testdiv' className='section'> 
+                <section className='section has-text-centered'> 
                     <div className='container'>
                         <div className='columns'>
                             <div className='column is-8'>

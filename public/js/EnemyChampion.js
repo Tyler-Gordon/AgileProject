@@ -12,7 +12,6 @@ class EnemyChampion extends React.Component {
 
     render () {
         return (
-            console.log(this.state.selectedChampion),
             <section className='section'>
                 <div className='container'>
                     <div className='columns'>
@@ -22,14 +21,7 @@ class EnemyChampion extends React.Component {
                             <h5>Armour: {this.state.championData.armor}</h5>
                             <h5>Magic Resist: {this.state.championData.spellblock}</h5>
                         </div>
-                        <div className='level'>
-                                <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                                <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                                <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                                <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                                <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                                <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                        </div>
+                        <BoughtItems />
                         <div className='column'>
                             <input className='input' id='PlayerLevel' type='number' name="quantity" min="1" max="18"></input>
                             <img src={this.state.selectedChampion.icon}></img>

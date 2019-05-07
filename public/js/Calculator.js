@@ -34,7 +34,6 @@ class Calculator extends React.Component {
 
     render() {
         return (
-            console.log(this.state.selectedChampion),
             <section className="section">
                 <PlayerChampion champions={this.state.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} />
                 <section className="section">
