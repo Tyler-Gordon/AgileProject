@@ -77,4 +77,3 @@ exports.getDamage = (source, data) => {
     return damages
 
 }
-
