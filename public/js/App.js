@@ -46,7 +46,17 @@ class App extends React.Component{
                             </div>
                         </div>
 
+<<<<<<< HEAD
                         <div className='column is-4'>
+=======
+                        <div className='col-10 container container' id='ChampionListContainer' >
+                            <ChampionList className='container' onMouseOver={this.onMouseOver.bind(this)} onClick={this.onClick.bind(this)} champions={this.state.champions}/>
+                        </div>
+                    </div>
+
+                    <div className='col-4 '>
+                        <div className='row h-100 align-items-center'>
+>>>>>>> upstream/master
                             <img id='TeemoImage' src='../images/teemo.gif'></img>
                         </div>
                     </div>
