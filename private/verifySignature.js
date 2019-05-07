@@ -8,6 +8,9 @@ exports.verifySecret = (reqBody, reqHeader) => {
 
     let incomingHMAC = reqHeader['x-hub-signature'];
 
+    console.log(signature);
+    console.log(incomingHMAC)
+
     let a = Buffer.alloc(Buffer.byteLength(signature), signature);
     let b = Buffer.alloc(Buffer.byteLength(incomingHMAC), incomingHMAC);
 
