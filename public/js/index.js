@@ -41,11 +41,7 @@ fetch('/champions')
             // Examine the text in the response
             response.json().then(function(data) {
                 ReactDOM.render(
-                    (
-                        <div>
-                            <App champions={data} />
-                        </div>
-                    ),
+                    <App champions={data} />,
                     document.getElementById('root')
                   );
             });
