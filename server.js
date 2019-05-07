@@ -118,15 +118,10 @@ app.get('/choose', (request, response) => {
     }
 });
 
-<<<<<<< HEAD
-app.get('/calcuate', (req, res) => {
-    res.send('hello')
-=======
 app.get('/calculate', express.json(), (request, response) => {
     let champSkills = championSkillData[`${request.body.player.id}`];
     var championDamage = calculate.getDamage(champSkills, request.body);
     response.send(championDamage);
->>>>>>> upstream/master
 })
 
 app.post('/github', express.json(), (request, response) => {
