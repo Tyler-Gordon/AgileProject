@@ -1,4 +1,4 @@
-class Item extends React.Component {
+class PlayerItem extends React.Component {
     constructor(props){
         super(props)
     }

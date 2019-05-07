@@ -21,11 +21,13 @@ function search() {
 function ShowChampionContainer(){
     var championContainer = document.getElementById('ChampionList')
     championContainer.style.display='inline'
+    return('Shown')
 }
 
 function HideChampionContainer(){
     var championContainer = document.getElementById('ChampionList')
     championContainer.style.display='none'
+    return('Hidden')
 }
 
 fetch('/champions')
@@ -36,7 +38,6 @@ fetch('/champions')
                 response.status);
                 return;
             }
-    
             // Examine the text in the response
             response.json().then(function(data) {
                 ReactDOM.render(

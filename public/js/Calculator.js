@@ -48,15 +48,15 @@ class Calculator extends React.Component {
 
                     <div className='col-md-3'>
                         <div className='row'>
-                            <Item icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                            <Item icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                            <Item icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
+                            <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
+                            <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
+                            <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
                         </div>
                         <br></br>
                         <div className='row'>
-                            <Item icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                            <Item icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
-                            <Item icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
+                            <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
+                            <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
+                            <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats'/>
                         </div>
                     </div>
                     <div id='ChampionStats' className='col-md-4'>
