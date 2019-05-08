@@ -41,6 +41,7 @@ class App extends React.Component {
                             <div className='column is-8'>
                                 <h1 id='Title'>Lolpad</h1>
                                 <h1 id='Subtitle'>Intuitive Damage Calculator</h1>
+                                
                                 <input className='input' placeholder='Select a champion...' type="text" id="userInput" onInput={()=>{search()}}></input>
                                 <div id='ChampionListContainer'>
                                     <ChampionList onMouseOver={this.onMouseOver.bind(this)} onClick={this.onClick.bind(this)} champions={this.state.champions}/>

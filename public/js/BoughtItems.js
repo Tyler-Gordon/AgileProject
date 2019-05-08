@@ -4,12 +4,12 @@ class BoughtItems extends React.Component {
     }
 
     state = {
-        hasItem1: false,
-        hasItem2: false,
-        hasItem3: false,
-        hasItem4: false,
-        hasItem5: false,
-        hasItem6: false
+        hasItem1 : false,
+        hasItem2 : false,
+        hasItem3 : false,
+        hasItem4 : false,
+        hasItem5 : false,
+        hasItem6 : false
     }
 
     render() {
