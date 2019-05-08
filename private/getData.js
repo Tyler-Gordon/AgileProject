@@ -9,18 +9,18 @@ function getAPI(url, callback) {
         res.on('data', chunk => {
             data += chunk;
         });
-    
+
         // When there's no more data being sent, then begin manipulating it
         res.on('end', () => {
             data = JSON.parse(data);
             callback(data);
         });
     });
-    
+
     req.on('error', err => {
         console.log(err);
     });
-    
+
     req.end();
 }
 
@@ -66,5 +66,3 @@ module.exports = {
     Items,
     ChampionStats
 }
-
-
