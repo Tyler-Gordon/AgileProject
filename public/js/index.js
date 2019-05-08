@@ -1,20 +1,15 @@
-function search() {
-    var a, items, TextValue;
-    var userInput = document.getElementById('userInput');
-    var filter = userInput.value.toUpperCase();
-    var ul = document.getElementById("ChampionList");
-    var li = ul.getElementsByTagName('li');
+function search(List,InputBox){
+    var userInput = document.getElementById(InputBox).value.toUpperCase();
+    var ul = document.getElementById(List);
+    var liCollection = ul.getElementsByTagName('li');
+    var liArray = [].slice.call(liCollection);
 
-    for (items = 0; items < li.length; items++) {
-        a = li[items].getElementsByTagName("a")[0];
-        TextValue = a.textContent || a.innerText;
-        if (TextValue.toUpperCase().indexOf(filter) > -1) {
-            li[items].style.display = "";
-        } else {
-            li[items].style.display = "none";
-        }
-    }
-    ShowChampionContainer()
+    liArray.forEach(li => {
+        li.getElementsByTagName('a')[0].textContent.toUpperCase().includes(userInput) 
+        ? li.style.display= '' 
+        : li.style.display = 'none'
+    });
+    ShowChampionContainer();
 }
 
 function ShowChampionContainer() {
