@@ -28,7 +28,7 @@ class App extends React.Component {
     render () {
         if (this.state.choosing){
             return(
-                <section className='section has-text-centered'> 
+                <section className='has-text-centered'> 
                     <div className='container'>
                         <div className='columns'>
                             <div className='column is-8'>

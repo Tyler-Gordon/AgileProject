@@ -3,13 +3,14 @@ body {
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     overflow: hidden;
+    height :100vh;
 }
 
 #ChampionList {
     display: block;
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 50vh;
+    max-height:40vh;
     position: relative;
     float: left;
     width: 100%;
