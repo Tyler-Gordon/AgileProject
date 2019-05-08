@@ -10,7 +10,7 @@ class PlayerItem extends React.Component {
 
     render() {
         return (
-            <div id='Item' className='col d-inline-flex justify-content-center'>
+            <div id='Item' className='level-item'>
                 <img src={this.state.icon} height='70px' width='70px'></img>
             </div>
         )

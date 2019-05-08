@@ -1,10 +1,9 @@
-body {
+/*body {
     background-image: url("../images/Rectangle.svg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     overflow: hidden;
-}
-
+}*/
 #ChampionList {
     display: block;
     overflow-y: auto;
@@ -35,16 +34,12 @@ body {
 }
 
 #Title {
-    font-size: 7rem;
+    font-size: 10rem;
+    font-family: 'Oswald', sans-serif, serif;
 }
 
 #Subtitle {
     font-size: 2rem;
-}
-
-#testdiv {
-    text-align: center;
-    font-family: 'Oswald', sans-serif, serif;
 }
 
 #userInput {
