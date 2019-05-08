@@ -15,12 +15,12 @@ class BoughtItems extends React.Component {
     render() {
         return (
             <div className='level'>
-                {this.state.hasItem1 ? null : <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats' />}
-                {this.state.hasItem2 ? null : <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats' />}
-                {this.state.hasItem3 ? null : <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats' />}
-                {this.state.hasItem4 ? null : <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats' />}
-                {this.state.hasItem5 ? null : <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats' />}
-                {this.state.hasItem6 ? null : <PlayerItem icon={'../Images/EmptyItem.png'} stats='Empty Stats' />}
+                {this.state.hasItem1 ? null : <PlayerItem icon={'../Images/emptyItem.png'} stats='Empty Stats' />}
+                {this.state.hasItem2 ? null : <PlayerItem icon={'../Images/emptyItem.png'} stats='Empty Stats' />}
+                {this.state.hasItem3 ? null : <PlayerItem icon={'../Images/emptyItem.png'} stats='Empty Stats' />}
+                {this.state.hasItem4 ? null : <PlayerItem icon={'../Images/emptyItem.png'} stats='Empty Stats' />}
+                {this.state.hasItem5 ? null : <PlayerItem icon={'../Images/emptyItem.png'} stats='Empty Stats' />}
+                {this.state.hasItem6 ? null : <PlayerItem icon={'../Images/emptyItem.png'} stats='Empty Stats' />}
             </div>
         )
     }

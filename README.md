@@ -7,4 +7,4 @@ This is the repository for the Lolpad project
 |:-------------:|:-------------:|
 | Leader: Tyler |Leader : Connor|
 |     Ramon     |     Zach      |
-|    Andrew     |   Polatava    |
+|    Andrew     |   Poltava    |

@@ -4,14 +4,13 @@ class PlayerItem extends React.Component {
     }
 
     state = {
-        icon: this.props.icon,
         stats: this.props.stats
     }
 
     render() {
         return (
             <div id='Item' className='level-item'>
-                <img src={this.state.icon} height='70px' width='70px'></img>
+                <img src={this.props.icon} height='70px' width='70px'></img>
             </div>
         )
     }

@@ -4,7 +4,6 @@ class PlayerChampion extends React.Component {
     }
 
     state = {
-        champions : this.props.champions,
         isEnemy : false,
         selectedChampion: this.props.selectedChampion,
         championData : this.props.championData

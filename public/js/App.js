@@ -5,17 +5,10 @@ class App extends React.Component {
     };
 
     state = {
-        champions: this.props.champions,
         choosing: true,
         selectedChampion: null,
         championData: null
     };
-
-    onMouseOver(champion) {
-        //document.getElementById('HeroBanner').style.background= `url('${champion.image}')`
-        //document.getElementById('HeroBanner').style.backgroundSize = 'cover'
-        return (0);
-    }
 
     onClick(champion) {
         fetch(`/choose?id=${champion.id}`)
@@ -35,16 +28,15 @@ class App extends React.Component {
     render () {
         if (this.state.choosing){
             return(
-                <section className='section has-text-centered'> 
+                <section className='has-text-centered'> 
                     <div className='container'>
                         <div className='columns'>
                             <div className='column is-8'>
                                 <h1 id='Title'>Lolpad</h1>
                                 <h1 id='Subtitle'>Intuitive Damage Calculator</h1>
-                                
-                                <input className='input' placeholder='Select a champion...' type="text" id="userInput" onInput={()=>{search()}}></input>
+                                <input className='input' placeholder='Select a champion...' type="text" id="userInput" onInput={()=>{search('ChampionList','userInput')}}></input>
                                 <div id='ChampionListContainer'>
-                                    <ChampionList onMouseOver={this.onMouseOver.bind(this)} onClick={this.onClick.bind(this)} champions={this.state.champions}/>
+                                    <ChampionList onClick={this.onClick.bind(this)} champions={this.props.champions}/>
                                 </div>
                             </div>
 
@@ -58,7 +50,7 @@ class App extends React.Component {
         }
         else{
             return(
-                <Calculator champions={this.state.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} /> 
+                <Calculator champions={this.props.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} /> 
             )
         }
     }
