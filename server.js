@@ -55,7 +55,7 @@ app.get('/items', (request, response) => {
     for (let i = 0; i < items.length; i++) {
         const item = items[i];
 
-        if (item[1].requiredAlly) {
+        if (item[1].requiredChampion) {
             continue;
         }
         
