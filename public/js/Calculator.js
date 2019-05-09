@@ -23,13 +23,13 @@ class Calculator extends React.Component {
             })
             .catch((err) => {
                 return <div> {err} </div>
-            })
+            });
     }
 
     render() {
         return (
             <section className="section">
-                <PlayerChampion champions={this.props.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} />
+                <PlayerChampion champions={this.props.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} items={this.props.itemData} />
                 <section className="section">
                     <div className="container">
                         <div id='ChampionSkills' className='level'>

@@ -4,6 +4,7 @@ class PlayerChampion extends React.Component {
     }
 
     state = {
+        items : {},
         isEnemy : false,
         selectedChampion: this.props.selectedChampion,
         championData : this.props.championData
@@ -11,6 +12,7 @@ class PlayerChampion extends React.Component {
 
     render () {
         return (
+            console.log(this.props.items),
             <section className='section'>
                 <div className='container'>
                     <div className='columns'>
@@ -22,6 +24,8 @@ class PlayerChampion extends React.Component {
                             <img src={this.state.selectedChampion.icon}></img>
                         </div>
                         <BoughtItems />
+                        <ItemList items={this.props.items} />
+                        
                         <div id='ChampionStats' className='column has-text-right'>
                             <h5>Health: {this.state.championData.hp}</h5>
                             <h5>Mana: {this.state.championData.mp}</h5>
