@@ -1,15 +1,14 @@
 class Champion extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
     }
-
-    state = {champion:this.props.champion}
-    render () {
+    
+    render() {
         return (
-            <li id='ChampionListItem' onMouseOver={()=>{this.props.onMouseOver(this.state.champion)}} onClick={()=>{this.props.onClick(this.state.champion); HideChampionContainer()}} className='list-group-item'>
+            <li id='ChampionListItem' onMouseOver={()=>{this.props.onMouseOver(this.props.champion)}} onClick={()=>{this.props.onClick(this.props.champion); HideChampionContainer()}} className='list-item'>
                 <a>
-                    <img src={this.state.champion.icon} width='50px' height='50px'></img>
-                    <h5>{this.state.champion.name}</h5>
+                    <img src={this.props.champion.icon} width='50px' height='50px'></img>
+                    <h5>{this.props.champion.name}</h5>
                 </a>
             </li>
         )

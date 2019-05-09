@@ -28,17 +28,21 @@ app.get('/champions', (request, response) => {
 
     champions.forEach(champion => {
         championSelectionData.push({
-            id : champion.id,
-            name : champion.name,
-            icon : `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champion.image.full}`,
-            image : `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`,
-            tags : champion.tags
+            id: champion.id,
+            name: champion.name,
+            icon: `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champion.image.full}`,
+            image: `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`,
+            tags: champion.tags
         });
 
         // Sort the list of champions based on their name rather than ID
-        championSelectionData.sort((a, b) =>{
-            if(a.name < b.name) { return -1; }
-            if(a.name > b.name) { return 1; }
+        championSelectionData.sort((a, b) => {
+            if (a.name < b.name) {
+                return -1;
+            }
+            if (a.name > b.name) {
+                return 1;
+            }
             return 0;
         });
 
@@ -66,51 +70,51 @@ app.get('/choose', (request, response) => {
     // We want to make sure the ID sent is consistent with the server data
     let championID = champions.filter(champion => champion.id === request.query.id);
 
-    if(championID.length > 0) {
+    if (championID.length > 0) {
         getData.ChampionStats(championID[0].id, (data) => {
-            
+
             var spellUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/`
             var passiveUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/img/passive/${data.passive.image.full}`
 
             var championData = {
-                    hp : data.stats.hp,
-                    hpperlevel : data.stats.hpperlevel,
-                    mptype : data.partype,
-                    mp : data.stats.mp,
-                    mpperlevel : data.stats.mpperlevel,
-                    movespeed : data.stats.movespeed,
-                    armor : data.stats.armor,
-                    armorperlevel : data.stats.armorperlevel,
-                    spellblock : data.stats.spellblock,
-                    spellblockperlevel : data.stats.spellblockperlevel,
-                    attackrange : data.stats.attackrange,
-                    hpregen : data.stats.hpregen,
-                    hpregenperlevel : data.stats.hpregenperlevel,
-                    mpregenperlevel : data.stats.mpregenperlevel,
-                    attackdamage : data.stats.attackdamage,
-                    attackdamageperlevel : data.stats.attackdamageperlevel,
-                    spelldamage : 0,
-                    attackspeed : data.stats.attackspeed,
-                    attackspeedperlevel : data.stats.attackspeedperlevel,
-                    flatarmorpenetration : 0,
-                    percentarmorpenetration : 0,
-                    flatspellpenetration : 0,
-                    percentspellpenetration : 0,
-                    critchance : 0,
-                    passiveicon : passiveUrl,
-                    qicon : spellUrl + data.spells[0].image.full,
-                    qmaxrank : data.spells[0].maxrank,
-                    qdescription : data.spells[0].description,
-                    wicon : spellUrl + data.spells[1].image.full,
-                    wmaxrank : data.spells[1].maxrank,
-                    wdescription : data.spells[1].description,
-                    eicon : spellUrl + data.spells[2].image.full,
-                    emaxrank : data.spells[2].maxrank,
-                    edescription : data.spells[2].description,
-                    ricon : spellUrl + data.spells[3].image.full,
-                    rmaxrank : data.spells[3].maxrank,
-                    rdescription : data.spells[3].description
-                }
+                hp: data.stats.hp,
+                hpperlevel: data.stats.hpperlevel,
+                mptype: data.partype,
+                mp: data.stats.mp,
+                mpperlevel: data.stats.mpperlevel,
+                movespeed: data.stats.movespeed,
+                armor: data.stats.armor,
+                armorperlevel: data.stats.armorperlevel,
+                spellblock: data.stats.spellblock,
+                spellblockperlevel: data.stats.spellblockperlevel,
+                attackrange: data.stats.attackrange,
+                hpregen: data.stats.hpregen,
+                hpregenperlevel: data.stats.hpregenperlevel,
+                mpregenperlevel: data.stats.mpregenperlevel,
+                attackdamage: data.stats.attackdamage,
+                attackdamageperlevel: data.stats.attackdamageperlevel,
+                spelldamage: 0,
+                attackspeed: data.stats.attackspeed,
+                attackspeedperlevel: data.stats.attackspeedperlevel,
+                flatarmorpenetration: 0,
+                percentarmorpenetration: 0,
+                flatspellpenetration: 0,
+                percentspellpenetration: 0,
+                critchance: 0,
+                passiveicon: passiveUrl,
+                qicon: spellUrl + data.spells[0].image.full,
+                qmaxrank: data.spells[0].maxrank,
+                qdescription: data.spells[0].description,
+                wicon: spellUrl + data.spells[1].image.full,
+                wmaxrank: data.spells[1].maxrank,
+                wdescription: data.spells[1].description,
+                eicon: spellUrl + data.spells[2].image.full,
+                emaxrank: data.spells[2].maxrank,
+                edescription: data.spells[2].description,
+                ricon: spellUrl + data.spells[3].image.full,
+                rmaxrank: data.spells[3].maxrank,
+                rdescription: data.spells[3].description
+            }
 
             response.send(championData);
         });

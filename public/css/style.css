@@ -1,14 +1,16 @@
 body {
-    background-image: url("../images/Rectangle.svg");
+    background-image: url("../images/background.svg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     overflow: hidden;
+    height :100vh;
 }
+
 #ChampionList {
     display: block;
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 50vh;
+    max-height:40vh;
     position: relative;
     float: left;
     width: 100%;
@@ -24,27 +26,27 @@ body {
     margin-top: 1px;
     background-color: white;
 }
-#ChampionName{
+
+#ChampionName {
     font-size: 1rem;
 }
 
-#ChampionListItem:hover{
+#ChampionListItem:hover {
     background-color: turquoise;
 }
 
-#Title{
-    font-size: 7rem;
+#Title {
+    color: whitesmoke;
+    font-size: 10rem;
+    font-family: 'Oswald', sans-serif, serif;
+    mix-blend-mode: difference;
 }
-#Subtitle{
+
+#Subtitle {
     font-size: 2rem;
 }
 
-#testdiv{
-    text-align: center;
-    font-family: 'Oswald', sans-serif,serif;
-}
-
-#userInput{
+#userInput {
     text-align: center;
     width: 50%;
     font-size: 2rem;
@@ -53,18 +55,22 @@ body {
 
 /* For mobile phones: */
 @media (min-width: 320px) and (max-width: 480px) {
-    body{
+    body {
         background-size: contain;
     }
-    #TeemoImage{
+
+    #TeemoImage {
         display: none;
     }
-    #Title{
+
+    #Title {
         font-size: 3rem;
     }
-    #Subtitle{
+
+    #Subtitle {
         font-size: 1rem;
     }
+
     #ChampionListContainer {
         max-height: 10%;
     }
@@ -83,6 +89,6 @@ body {
     height: 50vh;
 }
 
-#Item{
+#Item {
     cursor: pointer;
 }
