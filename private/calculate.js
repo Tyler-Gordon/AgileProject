@@ -23,8 +23,7 @@ function getReducedDamage(damage, damageReducer){
     return reducedDamage = (100/(100 + damageReducer)) * damage
 }
 
-exports.getDamage = (source, data) => {
-
+getDamage = (source, data) => {
     const playerad = data.player.attackdamage
     const playerap = data.player.spelldamage
 
@@ -76,4 +75,12 @@ exports.getDamage = (source, data) => {
 
     return damages
 
+}
+
+module.exports={
+    getAbilityDamage,
+    getDamageReducer,
+    getReducedDamage,
+    getResistanceSubtracted,
+    getDamage
 }
