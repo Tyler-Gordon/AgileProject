@@ -54,10 +54,12 @@ app.get('/items', (request, response) => {
             name : item[1].name,
             icon : `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item[0]}.png`,
             stats : item[1].stats,
-            effect : item[1].effect
+            effect : item[1].effect,
+            maps : item[1].maps 
         });
     });
-    response.send(itemSelectionData);
+    let summonersRiftItems = itemSelectionData.filter(item => item.maps["10"] === true);
+    response.send(summonersRiftItems);
 });
 
 app.get('/choose', (request, response) => {
@@ -127,9 +129,11 @@ app.get('/calculate', express.json(), (request, response) => {
 
 app.post('/github', express.json(), (request, response) => {
     if(verifySecret(JSON.stringify(request.body), request.headers)){
-        response.send(200);
+        response.status(200).send('Successful push request.');
+
+        
     } else {
-        response.send(401);
+        response.sendStatus(401);
     }
 });
 

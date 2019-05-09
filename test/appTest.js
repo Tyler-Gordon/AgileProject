@@ -77,7 +77,7 @@ chai.should();
 
         describe('GetDamage', function() {
             totalDamage = {
-                aDamage : [100],
+                aaDamage : [100],
                 qDamage : [100],
                 wDamage : [100],
                 eDamage : [100],
@@ -95,8 +95,8 @@ chai.should();
             it('R Damage', function() {
                 assert.equal(totalDamage.qDamage[0],Calculate.getDamage('Test','Test').rDamage[0]);
             });
-            it('A Damage', function() {
-                assert.equal(totalDamage.qDamage[0],Calculate.getDamage('Test','Test').aDamage[0]);
+            it('Auto attack Damage', function() {
+                assert.equal(totalDamage.qDamage[0],Calculate.getDamage('Test','Test').aaDamage[0]);
             });
         });
       });

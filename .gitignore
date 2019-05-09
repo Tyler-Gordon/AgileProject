@@ -1,3 +1,3 @@
 node_modules/
 .vscode
-./private/addData.py
+private/addData.py
