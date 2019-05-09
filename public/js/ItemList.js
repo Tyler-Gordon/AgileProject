@@ -5,7 +5,7 @@ class ItemList extends React.Component {
     
     render() {
         const ItemList = this.props.items.map((item) =>
-            <Item key={item.id} item={item}/>
+            <Item key={item.id} onClick={this.props.onClick.bind(this)} item={item} />
         );
         return(
             <ul id='ItemList' className='list'>{ItemList}</ul>
