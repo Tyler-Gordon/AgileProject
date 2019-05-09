@@ -52,17 +52,23 @@ app.get('/champions', (request, response) => {
 
 app.get('/items', (request, response) => {
     let itemSelectionData = [];
-    items.forEach(item => {
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+
+        if (item[1].requiredAlly) {
+            continue;
+        }
+        
         itemSelectionData.push({
             id : item[0],
             name : item[1].name,
             icon : `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item[0]}.png`,
             stats : item[1].stats,
             effect : item[1].effect,
-            maps : item[1].maps 
+            maps : item[1].maps
         });
-    });
-    let summonersRiftItems = itemSelectionData.filter(item => item.maps["10"] === true);
+    }
+    let summonersRiftItems = itemSelectionData.filter(item => item.maps["10"] === true && Object.entries(item.stats).length !== 0);
     response.send(summonersRiftItems);
 });
 
