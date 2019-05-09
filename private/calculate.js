@@ -1,4 +1,4 @@
-// how much damage an ability does without and resistances
+// how much damage an ability does without any resistances
 function getAbilityDamage(ability, ad, ap, abilityLevel){
     let baseDamage = ability.base[abilityLevel-1]
     let apMod = ability.modifier.ap[abilityLevel-1] * ap
