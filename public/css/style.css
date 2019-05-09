@@ -6,7 +6,7 @@ body {
     height :100vh;
 }
 
-#ChampionList {
+#ChampionList, #ItemList {
     display: block;
     overflow-y: auto;
     overflow-x: hidden;
@@ -17,7 +17,7 @@ body {
     background-color: white;
 }
 
-#ChampionListItem {
+#ChampionListItem, #ItemListItem {
     cursor: pointer;
     border-radius: 0px;
     width: 20%;
@@ -31,7 +31,7 @@ body {
     font-size: 1rem;
 }
 
-#ChampionListItem:hover {
+#ChampionListItem:hover, #ItemListItem:hover {
     background-color: turquoise;
 }
 

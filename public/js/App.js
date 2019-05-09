@@ -7,7 +7,8 @@ class App extends React.Component {
     state = {
         choosing: true,
         selectedChampion: null,
-        championData: null
+        championData: null,
+        itemData : null
     };
 
     onClick(champion) {
@@ -22,6 +23,16 @@ class App extends React.Component {
             })
             .catch((err) => {
                 return <div > {err} </div>
+            });
+        fetch('/items')
+            .then(res => res.json())
+            .then(res => {
+                this.setState({
+                    itemData : res
+                })
+            })
+            .catch((err) => {
+                return <div> {err} </div>
             })
     }
     
@@ -50,7 +61,7 @@ class App extends React.Component {
         }
         else{
             return(
-                <Calculator champions={this.props.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} /> 
+                <Calculator champions={this.props.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} itemData={this.state.itemData} /> 
             )
         }
     }
