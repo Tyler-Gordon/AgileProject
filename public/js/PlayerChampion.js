@@ -23,9 +23,8 @@ class PlayerChampion extends React.Component {
                             <input className='input' id='PlayerLevel' type='number' name="quantity" min="1" max="18"></input>
                             <img src={this.state.selectedChampion.icon}></img>
                         </div>
-                        <BoughtItems />
-                        <ItemList items={this.props.items} />
-                        
+                        <BoughtItems items={this.props.items} />
+
                         <div id='ChampionStats' className='column has-text-right'>
                             <h5>Health: {this.state.championData.hp}</h5>
                             <h5>Mana: {this.state.championData.mp}</h5>

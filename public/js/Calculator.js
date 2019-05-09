@@ -45,7 +45,7 @@ class Calculator extends React.Component {
                 <section className="section">
                     <div className="container has-text-centered">
                         <div className="column is-half is-offset-6">
-                            <input className='input' placeholder='Select an enemy...' type="text" id="userInput" onInput={()=>{search()}}></input>
+                        <input className='input' placeholder='Select an enemy...' type="text" id="userInput" onInput={()=>{search('ChampionList','userInput')}}></input>
                             <div id='ChampionListContainer'>
                                 <ChampionList onClick={this.onClick.bind(this)} champions={this.props.champions}/>
                             </div>
