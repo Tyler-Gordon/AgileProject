@@ -1,7 +1,4 @@
 class Item extends React.Component {
-    constructor(props) {
-        super(props)
-    }
     render() {
         return (
             <li id='ItemListItem' onClick={()=>{this.props.chooseItem(this.props.item,this.props.number),this.props.handleItemChosen()}} className='list-item'>

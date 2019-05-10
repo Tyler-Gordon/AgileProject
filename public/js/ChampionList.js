@@ -1,8 +1,4 @@
 class ChampionList extends React.Component {
-    constructor(props){
-        super(props)
-    }
-    
     render(){
         const ChampionsList = this.props.champions.map((champion) =>
             <Champion key={champion.id} onClick={this.props.onClick.bind(this)} champion={champion}/>
