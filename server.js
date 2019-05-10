@@ -68,7 +68,7 @@ app.get('/items', (request, response) => {
             maps : item[1].maps
         });
     }
-    let summonersRiftItems = itemSelectionData.filter(item => item.maps["10"] === true && Object.entries(item.stats).length !== 0);
+    let summonersRiftItems = itemSelectionData.filter(item => item.maps["11"] === true && Object.entries(item.stats).length !== 0);
     response.send(summonersRiftItems);
 });
 
