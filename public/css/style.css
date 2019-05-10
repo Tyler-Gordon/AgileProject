@@ -2,7 +2,6 @@ body {
     background-image: url("../images/background.svg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
-    overflow: hidden;
     height :100vh;
 }
 
@@ -74,6 +73,10 @@ body {
     #ChampionListContainer {
         max-height: 10%;
     }
+}
+
+#AbilityStats{
+    color: red;
 }
 
 #PlayerLevel {
