@@ -64,9 +64,9 @@ class Calculator extends React.Component {
                 "rlevel" : this.state.championData.rlevel
                 },
             "enemy" : {
-                "hp" : this.state.enemyData.hp,
-                "armor" : this.state.enemyData.armor,
-                "spellblock" : this.state.enemyData.spellblock
+                "hp" : this.state.enemyData.hp = 0,
+                "armor" : this.state.enemyData.armor = 0,
+                "spellblock" : this.state.enemyData.spellblock = 0
             }
         }
         console.log(body)
@@ -79,18 +79,19 @@ class Calculator extends React.Component {
         })
             .then(res => res.json())
             .then(res => {
-                console.log('getting new data')
+                console.log(res)
+            
                 this.setState({
                     aadamage : res.aa[0].damage,
                     aatype : res.aa[0].type,
-                    qdamage : res.aa[0].damage,
-                    qtype : res.aa[0].type,
-                    wdamage : res.aa[0].damage,
-                    wtype : res.aa[0].type,
-                    edamage : res.aa[0].damage,
-                    etype : res.aa[0].type,
-                    rdamage : res.aa[0].damage,
-                    rtype : res.aa[0].type
+                    qdamage : res.q[0].damage,
+                    qtype : res.q[0].type,
+                    wdamage : res.w[0].damage,
+                    wtype : res.w[0].type,
+                    edamage : res.e[0].damage,
+                    etype : res.e[0].type,
+                    rdamage : res.r[0].damage,
+                    rtype : res.r[0].type
                 })
                 console.log(this.state.aadamage)
             })
