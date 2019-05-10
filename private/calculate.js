@@ -1,9 +1,11 @@
 // how much damage an ability does without and resistances
 function getAbilityDamage(ability, ad, ap, abilityLevel){
+    //console.log(ability,ap,ad,abilityLevel)
     let baseDamage = ability.base[abilityLevel-1]
     let apMod = ability.modifier.ap[abilityLevel-1] * ap
     let adMod = ability.modifier.ad[abilityLevel-1] * ad
     let abilityDamage = baseDamage + apMod + adMod
+    console.log(abilityDamage)
     return abilityDamage
 }
 
@@ -29,7 +31,7 @@ getDamage = (source, data) => {
 
     const playeradFlatPen = data.player.flatarmorpenetration
     const playeradPercentPen = data.player.percentarmorpenetration
-    const playerapFlatPen = data.player.flaspellpenetration
+    const playerapFlatPen = data.player.flatspellpenetration
     const playerapPercentPen = data.player.percentspellpenetration
 
 
@@ -39,7 +41,7 @@ getDamage = (source, data) => {
     let aaSubtracted =  getResistanceSubtracted(playeradPercentPen, playeradFlatPen, enemyArmor)
     let aaDamageReducer = getDamageReducer(enemyArmor, aaSubtracted)
     let aaDamage = getReducedDamage(playerad, aaDamageReducer)
-
+    //console.log(playerad,playerap,playeradFlatPen,playeradPercentPen,playerapFlatPen,playerapPercentPen,enemyArmor,enemySpellBlock,aaDamage,aaDamageReducer,aaSubtracted)
     var damages = {
         "aa" : [{"damage" : aaDamage, "type" : 'Physical'}],
         "q" : [],
@@ -57,6 +59,7 @@ getDamage = (source, data) => {
                 const resistanceSubtracted = getResistanceSubtracted(playeradPercentPen, playeradFlatPen, enemyArmor)
                 const damagereducer = getDamageReducer(enemyArmor, resistanceSubtracted)
                 let totalDamage = getReducedDamage(damage, damagereducer);
+                //console.log(totalDamage)
                 damages[`${ability[0]}`].push({"damage" : totalDamage, "type" : 'Physical'})
     
             }else if (abilityType == "Magic"){
@@ -64,6 +67,8 @@ getDamage = (source, data) => {
                 const resistanceSubtracted = getResistanceSubtracted(playerapPercentPen, playerapFlatPen, enemySpellBlock)
                 const damagereducer = getDamageReducer(enemySpellBlock, resistanceSubtracted)
                 let totalDamage = getReducedDamage(damage, damagereducer);
+                //console.log(totalDamage)
+
                 damages[`${ability[0]}`].push({"damage" : totalDamage, "type" : 'Magic'})
             }else{
                 const totalDamage = getAbilityDamage(cast, playerad, playerap, data.player[`${ability[0]}level`])
@@ -72,7 +77,7 @@ getDamage = (source, data) => {
     
         });
     })
-
+    //console.log(damages)
     return damages
 
 }

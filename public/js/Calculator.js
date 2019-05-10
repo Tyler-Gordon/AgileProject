@@ -58,10 +58,10 @@ class Calculator extends React.Component {
                 "percentarmorpenetration" : this.state.championData.percentarmorpenetration,
                 "flatspellpenetration" : this.state.championData.flatspellpenetration,
                 "percentspellpenetration" : this.state.championData.percentspellpenetration,
-                "qlevel" : this.state.championData.qlevel,
-                "wlevel" : this.state.championData.wlevel, 
-                "elevel" : this.state.championData.elevel,
-                "rlevel" : this.state.championData.rlevel
+                "qlevel" : 1,
+                "wlevel" : 1, 
+                "elevel" : 1,
+                "rlevel" : 1
                 },
             "enemy" : {
                 "hp" : this.state.enemyData.hp = 0,
@@ -93,7 +93,6 @@ class Calculator extends React.Component {
                     rdamage : res.r[0].damage,
                     rtype : res.r[0].type
                 })
-                console.log(this.state.aadamage)
             })
             .catch((err) => {
                 console.log(err)
