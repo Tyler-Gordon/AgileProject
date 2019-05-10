@@ -7,6 +7,7 @@ class ItemList extends React.Component {
             <div className="modal is-active is-clipped">
                 <div className="modal-background"></div>
                 <div className="modal-content">
+                <input className='input' placeholder='Select an item...' type="text" id="userInput" onInput={()=>{search('ItemList','userInput')}}></input>
                     <ul id='ItemList' className='list'>{ItemList}</ul>
                 </div>
                 <button className="modal-close is-large" aria-label="close"></button>

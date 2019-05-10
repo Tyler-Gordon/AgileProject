@@ -43,32 +43,64 @@ class Calculator extends React.Component {
     }
 
     calculate(){
-        var body = {
-            "player" : {
-                "id" : this.state.selectedChampion.id,
-                "hp" : this.state.championData.hp,
-                "mp" : this.state.championData.mp,
-                "movespeed" : this.state.championData.movespeed,
-                "armor" : this.state.championData.armor,
-                "spellblock" : this.state.championData.spellblock,
-                "attackdamage" : this.state.championData.attackdamage,
-                "spelldamage" : this.state.championData.spelldamage,
-                "attackspeed" : this.state.championData.attackspeed,
-                "flatarmorpenetration" : this.state.championData.flatarmorpenetration,
-                "percentarmorpenetration" : this.state.championData.percentarmorpenetration,
-                "flatspellpenetration" : this.state.championData.flatspellpenetration,
-                "percentspellpenetration" : this.state.championData.percentspellpenetration,
-                "qlevel" : 1,
-                "wlevel" : 1, 
-                "elevel" : 1,
-                "rlevel" : 1
-                },
-            "enemy" : {
-                "hp" : this.state.enemyData.hp = 0,
-                "armor" : this.state.enemyData.armor = 0,
-                "spellblock" : this.state.enemyData.spellblock = 0
+        var body;
+        if (this.state.enemyData.hp != null){
+            body = {
+                "player" : {
+                    "id" : this.state.selectedChampion.id,
+                    "hp" : this.state.championData.hp,
+                    "mp" : this.state.championData.mp,
+                    "movespeed" : this.state.championData.movespeed,
+                    "armor" : this.state.championData.armor,
+                    "spellblock" : this.state.championData.spellblock,
+                    "attackdamage" : this.state.championData.attackdamage,
+                    "spelldamage" : this.state.championData.spelldamage,
+                    "attackspeed" : this.state.championData.attackspeed,
+                    "flatarmorpenetration" : this.state.championData.flatarmorpenetration,
+                    "percentarmorpenetration" : this.state.championData.percentarmorpenetration,
+                    "flatspellpenetration" : this.state.championData.flatspellpenetration,
+                    "percentspellpenetration" : this.state.championData.percentspellpenetration,
+                    "qlevel" : 1,
+                    "wlevel" : 1, 
+                    "elevel" : 1,
+                    "rlevel" : 1
+                    },
+                "enemy" : {
+                    "hp" : this.state.enemyData.hp,
+                    "armor" : this.state.enemyData.armor,
+                    "spellblock" : this.state.enemyData.spellblock
+                }
             }
         }
+        else{
+            body = {
+                "player" : {
+                    "id" : this.state.selectedChampion.id,
+                    "hp" : this.state.championData.hp,
+                    "mp" : this.state.championData.mp,
+                    "movespeed" : this.state.championData.movespeed,
+                    "armor" : this.state.championData.armor,
+                    "spellblock" : this.state.championData.spellblock,
+                    "attackdamage" : this.state.championData.attackdamage,
+                    "spelldamage" : this.state.championData.spelldamage,
+                    "attackspeed" : this.state.championData.attackspeed,
+                    "flatarmorpenetration" : this.state.championData.flatarmorpenetration,
+                    "percentarmorpenetration" : this.state.championData.percentarmorpenetration,
+                    "flatspellpenetration" : this.state.championData.flatspellpenetration,
+                    "percentspellpenetration" : this.state.championData.percentspellpenetration,
+                    "qlevel" : 1,
+                    "wlevel" : 1, 
+                    "elevel" : 1,
+                    "rlevel" : 1
+                    },
+                "enemy" : {
+                    "hp" : 0,
+                    "armor" : 0,
+                    "spellblock" : 0
+                }
+            }
+        }
+
         console.log(body)
         fetch(`/calculate`,{
             method: 'POST',
@@ -77,26 +109,24 @@ class Calculator extends React.Component {
                 "Content-Type": "application/json"
             }
         })
-            .then(res => res.json())
-            .then(res => {
-                console.log(res)
-            
-                this.setState({
-                    aadamage : res.aa[0].damage,
-                    aatype : res.aa[0].type,
-                    qdamage : res.q[0].damage,
-                    qtype : res.q[0].type,
-                    wdamage : res.w[0].damage,
-                    wtype : res.w[0].type,
-                    edamage : res.e[0].damage,
-                    etype : res.e[0].type,
-                    rdamage : res.r[0].damage,
-                    rtype : res.r[0].type
-                })
+        .then(res => res.json())
+        .then(res => {
+            this.setState({
+                aadamage : res.aa[0].damage,
+                aatype : res.aa[0].type,
+                qdamage : res.q[0].damage,
+                qtype : res.q[0].type,
+                wdamage : res.w[0].damage,
+                wtype : res.w[0].type,
+                edamage : res.e[0].damage,
+                etype : res.e[0].type,
+                rdamage : res.r[0].damage,
+                rtype : res.r[0].type
             })
-            .catch((err) => {
-                console.log(err)
-            });
+        })
+        .catch((err) => {
+            console.log(err)
+        });
     }
 
     render() {
