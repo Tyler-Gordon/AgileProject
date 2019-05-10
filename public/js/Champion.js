@@ -1,8 +1,4 @@
 class Champion extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-    
     render() {
         return (
             <li id='ChampionListItem' onClick={()=>{this.props.onClick(this.props.champion); HideChampionContainer()}} className='list-item'>

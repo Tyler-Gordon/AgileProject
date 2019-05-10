@@ -8,7 +8,7 @@ class BoughtItems extends React.Component {
             id:"1",
             name:"Empty",
             icon:'../Images/emptyItem.png',
-            stats: null
+            stats: 'Empty'
         },
         item2: {
             id:"2",
@@ -55,12 +55,12 @@ class BoughtItems extends React.Component {
     render() {
         return (
             <div className='level'>
-                {this.state.hasItem1 ? null : <PlayerItem icon={this.state.item1.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item1.stats} number={'item1'}/>}
-                {this.state.hasItem2 ? null : <PlayerItem icon={this.state.item2.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item2.stats} number={'item2'}/>}
-                {this.state.hasItem3 ? null : <PlayerItem icon={this.state.item3.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item3.stats} number={'item3'}/>}
-                {this.state.hasItem4 ? null : <PlayerItem icon={this.state.item4.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item4.stats} number={'item4'}/>}
-                {this.state.hasItem5 ? null : <PlayerItem icon={this.state.item5.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item5.stats} number={'item5'}/>}
-                {this.state.hasItem6 ? null : <PlayerItem icon={this.state.item6.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item6.stats} number={'item6'}/>}
+                <PlayerItem icon={this.state.item1.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item1.stats} number={'item1'} />
+                <PlayerItem icon={this.state.item2.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item2.stats} number={'item2'} />
+                <PlayerItem icon={this.state.item3.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item3.stats} number={'item3'} />
+                <PlayerItem icon={this.state.item4.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item4.stats} number={'item4'} />
+                <PlayerItem icon={this.state.item5.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item5.stats} number={'item5'} />
+                <PlayerItem icon={this.state.item6.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item6.stats} number={'item6'} />
             </div>
         )
     }
