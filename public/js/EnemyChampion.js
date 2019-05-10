@@ -20,7 +20,7 @@ class EnemyChampion extends React.Component {
                             <h5>Armour: {this.state.championData.armor}</h5>
                             <h5>Magic Resist: {this.state.championData.spellblock}</h5>
                         </div>
-                        <BoughtItems />
+                        <BoughtItems items={this.props.items}  />
                         <div className='column'>
                             <input className='input' id='PlayerLevel' type='number' name="quantity" min="1" max="18"></input>
                             <img src={this.state.selectedChampion.icon}></img>
