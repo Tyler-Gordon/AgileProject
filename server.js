@@ -1,11 +1,11 @@
 // Node and npm modules
 const express = require('express');
+const child_process = require('child_process');
 
 // Project modules
 const getData = require('./private/getData');
 const calculate = require('./private/calculate');
 const verifySecret = require('./private/verifySignature').verifySecret;
-// const championSkillData = require('./private/championSkillData');
 
 // Project variables
 var app = express();
@@ -141,7 +141,12 @@ app.post('/calculate', express.json(), (request, response) => {
 app.post('/github', express.json(), (request, response) => {
     if(verifySecret(JSON.stringify(request.body), request.headers)){
         response.status(200).send('Successful push request.');
-
+        
+        // child_process.exec('./getnewserver.sh', (err, stdout, stderr) => {
+        //     if (err || stdout !== 'Successful build!'){
+        //         console.log(err | stdout);
+        //     }
+        // });
         
     } else {
         response.sendStatus(401);
