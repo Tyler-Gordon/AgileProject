@@ -91,10 +91,6 @@ body {
     cursor: pointer;
 }
 
-#AbilityStatsContainer {
-    justify-content: center;
-}
-
 #ChampionStats {
     margin-left: 55px;
 }

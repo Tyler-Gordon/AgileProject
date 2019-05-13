@@ -12,9 +12,9 @@ class EnemyChampion extends React.Component {
         return (
             <section className='section' id='EnemyChampion'>
                 <div className='container'>
-                    <div className='columns'>
+                    <div className='columns is-vcentered'>
 
-                        <div id='EnemyStats' className='column card'>
+                        <div id='EnemyStats' className='column has-text-white'>
                             <h5>Health: {this.state.championData.hp}</h5>
                             <h5>Mana: {this.state.championData.mp}</h5>
                             <h5>Armour: {this.state.championData.armor}</h5>

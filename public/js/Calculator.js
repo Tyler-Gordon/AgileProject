@@ -4,7 +4,6 @@ class Calculator extends React.Component {
     }
 
     state = {
-        isEnemy : false,
         enemyChosen: false,
         selectedChampion : this.props.selectedChampion,
         championData : this.props.championData,
@@ -37,7 +36,6 @@ class Calculator extends React.Component {
             .then(res => {
                 this.setState({
                     enemyChampion : champion,
-                    isEnemy : true,
                     enemyData : res,
                     enemyChosen : true
                 })
@@ -151,27 +149,23 @@ class Calculator extends React.Component {
                         </div>
                     </div>
                 </section>
-                {/* <section className="section">
-                    <div className="container has-text-centered">
-                        {this.state.isEnemy ? <button className={'button'} onClick={()=>{this.calculate()}}>Calculate</button> : null }
-                    </div>
-                </section>
-                {this.state.isEnemy ? <EnemyChampion champions={this.props.champions} championData={this.state.enemyData} selectedChampion={this.state.enemyChampion} items={this.props.itemData}  /> : null} */}
                 <section className="section">
                     <div className="container has-text-centered">
-                    { this.state.enemyChosen ? null : this.renderEnemyInput() }                        
-                        <div className="column is-half is-offset-6">
-                            <div id='ChampionListContainer'>    
-                                <ChampionList onClick={this.onClick.bind(this)} champions={this.props.champions}/>
+                        <div className="columns is-centered">                   
+                            <div className="column is-half is-centered">
+                                { this.state.enemyChosen ? null : this.renderEnemyInput() }
+                                <div id='ChampionListContainer'>    
+                                    <ChampionList onClick={this.onClick.bind(this)} champions={this.props.champions}/>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                {this.state.isEnemy ? <EnemyChampion champions={this.props.champions} championData={this.state.enemyData} selectedChampion={this.state.enemyChampion} items={this.props.itemData}  /> : null}
+                {this.state.enemyChosen ? <EnemyChampion champions={this.props.champions} championData={this.state.enemyData} selectedChampion={this.state.enemyChampion} items={this.props.itemData}  /> : null}
 
                 <section className="section">
                     <div className="container has-text-centered">
-                        {this.state.isEnemy ? <button id='CalculateButton' className={'button is-large is-link'} onClick={()=>{this.calculate()}}>Calculate</button> : null }
+                        {this.state.enemyChosen ? <button id='CalculateButton' className={'button is-large is-link'} onClick={()=>{this.calculate()}}>Calculate</button> : null }
                     </div>
                 </section>
             </section>

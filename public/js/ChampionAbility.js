@@ -9,11 +9,9 @@ class ChampionAbility extends React.Component {
     }
     render() {
         return (
-            <div className={'card'}>
-                <div className='level-item'>
-                    <div className={'card-image'}>
+            <div className='card'>
+                <div className='card-image'>
                         <img src={this.props.icon} height='64px' width='64px'></img>
-                    </div>
                 </div>
                 <div id='AbilityStatsContainer'>
                     <h3 id='AbilityStats' >{this.props.damage}</h3>
