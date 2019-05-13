@@ -8,7 +8,6 @@ let championSkillData = require('../private/championSkillData.json')
 let app = require('../server')
 // Configure chai
 chai.use(chaiHttp);
-
 chai.should();
     describe('Function Testing', function() {
         describe('ShowChampionContainer', function() {
