@@ -12,7 +12,7 @@ class PlayerChampion extends React.Component {
         return (
             <section id='PlayerChampion' className='section'>
                 <div className='container'>
-                    <div className='columns'>
+                    <div className='columns is-vcentered'>
 
                         <div className='column is-one-fifths'>
                             <h1 id='ChampionName'>{this.state.selectedChampion.name}</h1>
@@ -29,7 +29,7 @@ class PlayerChampion extends React.Component {
                             <BoughtItems items={this.props.items} />
                         </div>
 
-                        <div id='ChampionStats' className='column card'>
+                        <div id='ChampionStats' className='column has-text-white'>
                             <h5>Health: {this.state.championData.hp}</h5>
                             <h5>Mana: {this.state.championData.mp}</h5>
                             <h5>Armour: {this.state.championData.armor}</h5>

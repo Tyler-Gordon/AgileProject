@@ -9,7 +9,6 @@ function search(List,InputBox){
         ? li.style.display= '' 
         : li.style.display = 'none'
     });
-    ShowChampionContainer();
 }
 
 function ShowChampionContainer() {
