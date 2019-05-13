@@ -26,11 +26,6 @@ body {
     background-color: white;
 }
 
-#ChampionName {
-    font-size: 1rem;
-    color: red;
-}
-
 #ChampionListItem:hover, #ItemListItem:hover {
     background-color: turquoise;
 }
@@ -77,18 +72,37 @@ body {
 }
 
 #AbilityStats{
-    color: red;
+    color: black;
+    text-align: center;
 }
 
 #PlayerLevel {
-    width: 40%;
+    width: 70%;
 }
 
 #ChampionName {
     font-size: 3rem;
-    width: 20%;
+    color: white;
+    width: 100%;
+    text-align: center;
 }
 
 #Item {
     cursor: pointer;
+}
+
+#AbilityStatsContainer {
+    justify-content: center;
+}
+
+#ChampionStats {
+    margin-left: 55px;
+}
+
+#EnemyStats {
+    margin-right: 55px;
+}
+
+#PlayerChampion, #EnemyChampion {
+    background: rgba(0, 0, 0, 0.5)
 }

@@ -5,26 +5,30 @@ class Calculator extends React.Component {
 
     state = {
         isEnemy : false,
+        enemyChosen: false,
         selectedChampion : this.props.selectedChampion,
         championData : this.props.championData,
         enemyChampion : null,
         enemyData : null,
-
+    
         aadamage: null,
         aatype: null,
 
         qdamage: null,
         qtype: null,
-
+        qlevel: 1,
+        
         wdamage: null,
         wtype: null,
+        wlevel: 1,
 
         edamage: null,
         etype: null,
+        elevel: 1,
 
         rdamage: null,
         rtype: null,
-        
+        rlevel: 1,
     }
 
     onClick(champion) {
@@ -34,11 +38,12 @@ class Calculator extends React.Component {
                 this.setState({
                     enemyChampion : champion,
                     isEnemy : true,
-                    enemyData : res
+                    enemyData : res,
+                    enemyChosen : true
                 })
             })
             .catch((err) => {
-                return <div> {err} </div>
+                return(<div> {err} </div>)
             });
     }
 
@@ -60,10 +65,10 @@ class Calculator extends React.Component {
                     "percentarmorpenetration" : this.state.championData.percentarmorpenetration,
                     "flatspellpenetration" : this.state.championData.flatspellpenetration,
                     "percentspellpenetration" : this.state.championData.percentspellpenetration,
-                    "qlevel" : 1,
-                    "wlevel" : 1, 
-                    "elevel" : 1,
-                    "rlevel" : 1
+                    "qlevel" : this.state.qlevel,
+                    "wlevel" : this.state.wlevel, 
+                    "elevel" : this.state.elevel,
+                    "rlevel" : this.state.rlevel
                     },
                 "enemy" : {
                     "hp" : this.state.enemyData.hp,
@@ -88,10 +93,10 @@ class Calculator extends React.Component {
                     "percentarmorpenetration" : this.state.championData.percentarmorpenetration,
                     "flatspellpenetration" : this.state.championData.flatspellpenetration,
                     "percentspellpenetration" : this.state.championData.percentspellpenetration,
-                    "qlevel" : 1,
-                    "wlevel" : 1, 
-                    "elevel" : 1,
-                    "rlevel" : 1
+                    "qlevel" : this.state.qlevel,
+                    "wlevel" : this.state.wlevel, 
+                    "elevel" : this.state.elevel,
+                    "rlevel" : this.state.rlevel
                     },
                 "enemy" : {
                     "hp" : 0,
@@ -112,15 +117,15 @@ class Calculator extends React.Component {
         .then(res => res.json())
         .then(res => {
             this.setState({
-                aadamage : res.aa[0].damage,
+                aadamage : res.aa[0].damage.toFixed(1),
                 aatype : res.aa[0].type,
-                qdamage : res.q[0].damage,
+                qdamage : res.q[0].damage.toFixed(1),
                 qtype : res.q[0].type,
-                wdamage : res.w[0].damage,
+                wdamage : res.w[0].damage.toFixed(1),
                 wtype : res.w[0].type,
-                edamage : res.e[0].damage,
+                edamage : res.e[0].damage.toFixed(1),
                 etype : res.e[0].type,
-                rdamage : res.r[0].damage,
+                rdamage : res.r[0].damage.toFixed(1),
                 rtype : res.r[0].type
             })
         })
@@ -128,7 +133,9 @@ class Calculator extends React.Component {
             console.log(err)
         });
     }
-
+    renderEnemyInput(){
+        return(<input className='input' placeholder='Select an enemy...' type="text" id="userInput" onInput={()=>{search('ChampionList','userInput')}}></input>)
+    }
     render() {
         return (
             <section className="section">
@@ -136,28 +143,35 @@ class Calculator extends React.Component {
                 <section className="section">
                     <div className="container">
                         <div id='ChampionSkills' className='level'>
-                            <ChampionAbility icon={this.state.championData.qicon} damage={this.state.qdamage} type={this.state.qtype}/>
-                            <ChampionAbility icon={this.state.championData.wicon} damage={this.state.wdamage} type={this.state.wtype}/>
-                            <ChampionAbility icon={this.state.championData.eicon} damage={this.state.edamage} type={this.state.etype}/>
-                            <ChampionAbility icon={this.state.championData.ricon} damage={this.state.rdamage} type={this.state.rtype}/>
+                            <ChampionAbility icon={this.state.championData.qicon} damage={this.state.qdamage} type={this.state.qtype} level={this.state.qlevel}/>
+                            <ChampionAbility icon={this.state.championData.wicon} damage={this.state.wdamage} type={this.state.wtype} level={this.state.wlevel}/>
+                            <ChampionAbility icon={this.state.championData.eicon} damage={this.state.edamage} type={this.state.etype} level={this.state.elevel}/>
+                            <ChampionAbility icon={this.state.championData.ricon} damage={this.state.rdamage} type={this.state.rtype} level={this.state.rlevel}/>
                             <ChampionAbility icon={this.state.championData.passiveicon} damage={this.state.aadamage} type={this.state.aatype}/>
                         </div>
                     </div>
                 </section>
-                <section className="section">
+                {/* <section className="section">
                     <div className="container has-text-centered">
                         {this.state.isEnemy ? <button className={'button'} onClick={()=>{this.calculate()}}>Calculate</button> : null }
                     </div>
                 </section>
-                {this.state.isEnemy ? <EnemyChampion champions={this.props.champions} championData={this.state.enemyData} selectedChampion={this.state.enemyChampion} items={this.props.itemData}  /> : null}
+                {this.state.isEnemy ? <EnemyChampion champions={this.props.champions} championData={this.state.enemyData} selectedChampion={this.state.enemyChampion} items={this.props.itemData}  /> : null} */}
                 <section className="section">
                     <div className="container has-text-centered">
+                    { this.state.enemyChosen ? null : this.renderEnemyInput() }                        
                         <div className="column is-half is-offset-6">
-                        <input className='input' placeholder='Select an enemy...' type="text" id="userInput" onInput={()=>{search('ChampionList','userInput')}}></input>
-                            <div id='ChampionListContainer'>
+                            <div id='ChampionListContainer'>    
                                 <ChampionList onClick={this.onClick.bind(this)} champions={this.props.champions}/>
                             </div>
                         </div>
+                    </div>
+                </section>
+                {this.state.isEnemy ? <EnemyChampion champions={this.props.champions} championData={this.state.enemyData} selectedChampion={this.state.enemyChampion} items={this.props.itemData}  /> : null}
+
+                <section className="section">
+                    <div className="container has-text-centered">
+                        {this.state.isEnemy ? <button id='CalculateButton' className={'button is-large is-link'} onClick={()=>{this.calculate()}}>Calculate</button> : null }
                     </div>
                 </section>
             </section>

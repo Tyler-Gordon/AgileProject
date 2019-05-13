@@ -5,7 +5,6 @@ function getAbilityDamage(ability, ad, ap, abilityLevel){
     let apMod = ability.modifier.ap[abilityLevel-1] * ap
     let adMod = ability.modifier.ad[abilityLevel-1] * ad
     let abilityDamage = baseDamage + apMod + adMod
-    console.log(abilityDamage)
     return abilityDamage
 }
 
@@ -70,7 +69,7 @@ getDamage = (source, data) => {
                 //console.log(totalDamage)
 
                 damages[`${ability[0]}`].push({"damage" : totalDamage, "type" : 'Magic'})
-            }else{
+            }else{  
                 const totalDamage = getAbilityDamage(cast, playerad, playerap, data.player[`${ability[0]}level`])
                 damages[`${ability[0]}`].push({"damage" : totalDamage, "type" : 'True'})
             }
