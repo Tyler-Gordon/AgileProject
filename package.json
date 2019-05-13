@@ -4,7 +4,7 @@
   "description": "Connor's repo",
   "main": "server.js",
   "scripts": {
-    "test": "mocha || true",
+    "test": "mocha --exit",
     "start": "node server.js"
   },
   "repository": {
