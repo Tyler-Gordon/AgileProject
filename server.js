@@ -142,11 +142,11 @@ app.post('/github', express.json(), (request, response) => {
     if(verifySecret(JSON.stringify(request.body), request.headers)){
         response.status(200).send('Successful push request.');
         
-        child_process.exec('sudo ./getnewserver.sh', (err, stdout, stderr) => {
-            if (err || stdout !== 'Successful build!'){
-                console.log(err | stdout);
-            }
-        });
+        // child_process.exec('./getnewserver.sh', (err, stdout, stderr) => {
+        //     if (err || stdout !== 'Successful build!'){
+        //         console.log(err | stdout);
+        //     }
+        // });
         
     } else {
         response.sendStatus(401);
