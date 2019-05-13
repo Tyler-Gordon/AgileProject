@@ -6,7 +6,7 @@ let FunctionsToTest = require('../public/js/FunctionsToTest')
 let Calculate = require('../private/calculate')
 let championSkillData = require('../private/championSkillData.json')
 let app = require('../server')
-// Configure
+
 chai.use(chaiHttp);
 chai.should();
     describe('Function Testing', function() {
