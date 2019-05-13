@@ -66,7 +66,7 @@ exports.getDamage = (source, data) => {
                 const damagereducer = getDamageReducer(enemySpellBlock, resistanceSubtracted)
                 let totalDamage = getReducedDamage(damage, damagereducer);
                 damages[`${ability[0]}`].push({"damage" : totalDamage, "type" : 'Magic'})
-            }else{
+            }else if (abilityType == "True"){
                 const totalDamage = getAbilityDamage(cast, playerad, playerap, data.player[`${ability[0]}level`])
                 damages[`${ability[0]}`].push({"damage" : totalDamage, "type" : 'True'})
             }
