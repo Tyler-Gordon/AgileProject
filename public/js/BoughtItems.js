@@ -7,37 +7,37 @@ class BoughtItems extends React.Component {
         item1: {
             id:"1",
             name:"Empty",
-            icon:'../Images/emptyItem.png',
+            icon:'../images/emptyItem.png',
             stats: 'Empty'
         },
         item2: {
             id:"2",
             name:"Empty",
-            icon:'../Images/emptyItem.png',
+            icon:'../images/emptyItem.png',
             stats: 'Empty'
         },
         item3: {
             id:"3",
             name:"Empty",
-            icon:'../Images/emptyItem.png',
+            icon:'../images/emptyItem.png',
             stats: 'Empty'
         },
         item4: {
             id:"4",
             name:"Empty",
-            icon:'../Images/emptyItem.png',
+            icon:'../images/emptyItem.png',
             stats: 'Empty'
         },
         item5: {
             id:"5",
             name:"Empty",
-            icon:'../Images/emptyItem.png',
+            icon:'../images/emptyItem.png',
             stats: 'Empty'
         },
         item6: {
             id:"6",
             name:"Empty",
-            icon:'../Images/emptyItem.png',
+            icon:'../images/emptyItem.png',
             stats: 'Empty'
         }
     }
