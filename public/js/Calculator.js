@@ -151,12 +151,6 @@ class Calculator extends React.Component {
                         </div>
                     </div>
                 </section>
-                {/* <section className="section">
-                    <div className="container has-text-centered">
-                        {this.state.isEnemy ? <button className={'button'} onClick={()=>{this.calculate()}}>Calculate</button> : null }
-                    </div>
-                </section>
-                {this.state.isEnemy ? <EnemyChampion champions={this.props.champions} championData={this.state.enemyData} selectedChampion={this.state.enemyChampion} items={this.props.itemData}  /> : null} */}
                 <section className="section">
                     <div className="container has-text-centered">
                     { this.state.enemyChosen ? null : this.renderEnemyInput() }                        
