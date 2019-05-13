@@ -5,64 +5,11 @@ var assert = require('assert');
 let FunctionsToTest = require('../public/js/FunctionsToTest')
 let Calculate = require('../private/calculate')
 let championSkillData = require('../private/championSkillData.json')
-//let app = require('../server')
+let app = require('../server')
 // Configure chai
 chai.use(chaiHttp);
 
 chai.should();
-    describe("GET End points", () => {
-        describe('GET Champions', function() {
-            it("should get all champions", (done) => {
-                chai.request('http://localhost:3000')
-                    .get('/champions')
-                    .end((err, res) => {
-                        res.should.have.status(200);
-                        res.body.should.be.a('array');
-                        res.body.length.should.be.eql(143);
-                        done()
-                });
-            });
-        });
-        describe('GET items', function() {
-            it("should get all items", (done) => {
-                chai.request('http://localhost:3000')
-                    .get('/items')
-                    .end((err, res) => {
-                        res.should.have.status(200);
-                        res.body.should.be.a('array');
-                        res.body.length.should.be.eql(166);
-                        done()
-                });
-            });
-        });
-
-        describe('GET champion data', function() {
-            it("should get champion data", (done) => {
-                chai.request('http://localhost:3000')
-                    .get('/choose')
-                    .query({id: 'Aatrox'})
-                    .end((err, res) => {
-                        let data = JSON.parse(res.text)
-                        res.should.have.status(200);
-                        data.should.be.a('object');
-                        done()
-                });
-            });
-        });
-        describe('GET Redirect', function() {
-            it("should be redirected to /", (done) => {
-            chai.request('http://localhost:3000')
-                .get('/choose')
-                .query({id: 'null'})
-                .end((err, res) => {
-                    res.should.redirectTo('http://localhost:3000/');
-                    res.should.have.status(200);
-                    done()
-                });
-            });
-        });
-    });
-
     describe('Function Testing', function() {
         describe('ShowChampionContainer', function() {
             it('Should return Shown', function() {

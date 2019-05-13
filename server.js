@@ -5,6 +5,7 @@ const express = require('express');
 const getData = require('./private/getData');
 const calculate = require('./private/calculate');
 const verifySecret = require('./private/verifySignature').verifySecret;
+// const championSkillData = require('./private/championSkillData');
 
 // Project variables
 var app = express();
@@ -159,3 +160,5 @@ app.listen(port, () => {
     });
     championSkillData = require('./private/championSkillData');
 });
+
+module.exports = app
