@@ -131,9 +131,11 @@ class Calculator extends React.Component {
             console.log(err)
         });
     }
+
     renderEnemyInput(){
         return(<input className='input' placeholder='Select an enemy...' type="text" id="userInput" onInput={()=>{search('ChampionList','userInput')}}></input>)
     }
+
     render() {
         return (
             <section className="section">
