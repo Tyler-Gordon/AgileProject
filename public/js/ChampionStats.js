@@ -48,7 +48,7 @@ class ChampionStats extends React.Component {
         }
         return (
             <div id='ChampionStats' className='column has-text-white'>
-                <h5>Health: {currentStats.hp.toFixed(2)}</h5>
+                <h5>Health: {currentStats.hp.toFixed(2)}</h5> 
                 <h5>Mana: {currentStats.mp.toFixed(2)}</h5>
                 <h5>Armour: {currentStats.armor.toFixed(2)}</h5>
                 <h5>Magic Resist: {currentStats.spellblock.toFixed(2)}</h5>
