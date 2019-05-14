@@ -69,15 +69,9 @@ getDamage = (source, data) => {
                 //console.log(totalDamage)
 
                 damages[`${ability[0]}`].push({"damage" : totalDamage, "type" : 'Magic'})
-<<<<<<< HEAD
-            }else if (abilityType == "True"){
-=======
             }else{  
->>>>>>> upstream/master
                 const totalDamage = getAbilityDamage(cast, playerad, playerap, data.player[`${ability[0]}level`])
                 damages[`${ability[0]}`].push({"damage" : totalDamage, "type" : 'True'})
-            }else{
-                damages[`${ability[0]}`].push({"damage" : '0', "type" : 'No Damage'})
             }
     
         });
@@ -85,8 +79,6 @@ getDamage = (source, data) => {
     //console.log(damages)
     return damages
 
-<<<<<<< HEAD
-=======
 }
 
 module.exports={
@@ -95,5 +87,4 @@ module.exports={
     getReducedDamage,
     getResistanceSubtracted,
     getDamage
->>>>>>> upstream/master
 }
