@@ -2,11 +2,10 @@ body {
     background-image: url("../images/background.svg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
-    overflow: hidden;
     height :100vh;
 }
 
-#ChampionList {
+#ChampionList, #ItemList {
     display: block;
     overflow-y: auto;
     overflow-x: hidden;
@@ -17,7 +16,7 @@ body {
     background-color: white;
 }
 
-#ChampionListItem {
+#ChampionListItem, #ItemListItem {
     cursor: pointer;
     border-radius: 0px;
     width: 20%;
@@ -27,11 +26,7 @@ body {
     background-color: white;
 }
 
-#ChampionName {
-    font-size: 1rem;
-}
-
-#ChampionListItem:hover {
+#ChampionListItem:hover, #ItemListItem:hover {
     background-color: turquoise;
 }
 
@@ -76,19 +71,34 @@ body {
     }
 }
 
+#AbilityStats{
+    color: black;
+    text-align: center;
+}
+
 #PlayerLevel {
-    width: 15%;
+    width: 70%;
 }
 
 #ChampionName {
     font-size: 3rem;
-    width: 20%;
-}
-
-#ChampionSkilss {
-    height: 50vh;
+    color: white;
+    width: 100%;
+    text-align: center;
 }
 
 #Item {
     cursor: pointer;
+}
+
+#ChampionStats {
+    margin-left: 55px;
+}
+
+#EnemyStats {
+    margin-right: 55px;
+}
+
+#PlayerChampion, #EnemyChampion {
+    background: rgba(0, 0, 0, 0.5)
 }

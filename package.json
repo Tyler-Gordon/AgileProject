@@ -4,7 +4,7 @@
   "description": "Connor's repo",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --timeout 10000",
+    "test": "mocha --exit",
     "start": "node server.js"
   },
   "repository": {
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/ConnorVin/Agile-Project#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "jshint": "^2.10.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",

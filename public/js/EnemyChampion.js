@@ -1,32 +1,39 @@
 class EnemyChampion extends React.Component {
     constructor(props){
         super(props)
+
+        this.handleChange = this.handleChange.bind(this);
     }
 
     state = {
-        isEnemy : false,
-        selectedChampion: this.props.selectedChampion,
-        championData : this.props.championData
+        level : 1
+    }
+
+    handleChange(event) {
+        this.setState({
+            level : event.target.value
+        });
     }
 
     render () {
         return (
-            <section className='section'>
+            <section className='section' id='EnemyChampion'>
                 <div className='container'>
-                    <div className='columns'>
-                        <div id='ChampionStats' className='column'>
-                            <h5>Health: {this.state.championData.hp}</h5>
-                            <h5>Mana: {this.state.championData.mp}</h5>
-                            <h5>Armour: {this.state.championData.armor}</h5>
-                            <h5>Magic Resist: {this.state.championData.spellblock}</h5>
+                    <div className='columns is-vcentered'>
+
+                        <ChampionStats championData={this.props.championData} level={this.state.level} />
+
+                        <BoughtItems items={this.props.items}  />
+
+                        <div className='column is-one-fifths'>
+                            <div>
+                                <img src={this.props.selectedChampion.icon} width={'70%'} height={'70%'}></img>
+                            </div>
+                            <input className='input' id='PlayerLevel' type='number' name="quantity" value={this.state.level} min="1" max="18" onChange={this.handleChange} />
                         </div>
-                        <BoughtItems />
-                        <div className='column'>
-                            <input className='input' id='PlayerLevel' type='number' name="quantity" min="1" max="18"></input>
-                            <img src={this.state.selectedChampion.icon}></img>
-                        </div>
-                        <div className='column'>
-                            <h1 id='ChampionName'>{this.state.selectedChampion.name}</h1>
+
+                        <div className='column is-one-fifths'>
+                            <h1 id='ChampionName'>{this.props.selectedChampion.name}</h1>
                         </div>
                     </div>
                 </div>

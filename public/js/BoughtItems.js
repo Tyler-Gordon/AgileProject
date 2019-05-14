@@ -3,24 +3,65 @@ class BoughtItems extends React.Component {
         super(props)
     }
 
-    state = {
-        hasItem1: false,
-        hasItem2: false,
-        hasItem3: false,
-        hasItem4: false,
-        hasItem5: false,
-        hasItem6: false
+    state = {	
+        item1: {
+            id:"1",
+            name:"Empty",
+            icon:'../images/emptyItem.png',
+            stats: 'Empty'
+        },
+        item2: {
+            id:"2",
+            name:"Empty",
+            icon:'../images/emptyItem.png',
+            stats: 'Empty'
+        },
+        item3: {
+            id:"3",
+            name:"Empty",
+            icon:'../images/emptyItem.png',
+            stats: 'Empty'
+        },
+        item4: {
+            id:"4",
+            name:"Empty",
+            icon:'../images/emptyItem.png',
+            stats: 'Empty'
+        },
+        item5: {
+            id:"5",
+            name:"Empty",
+            icon:'../images/emptyItem.png',
+            stats: 'Empty'
+        },
+        item6: {
+            id:"6",
+            name:"Empty",
+            icon:'../images/emptyItem.png',
+            stats: 'Empty'
+        }
+    }
+
+    chooseItem(item, number){
+        console.log(item.stats)
+        this.setState({ 
+            [number] : {
+                name : item.name,
+                icon : item.icon,
+                stats : item.stats
+            }
+         });
     }
 
     render() {
         return (
             <div className='level'>
-                {this.state.hasItem1 ? null : <PlayerItem icon={'../Images/emptyItem.png'} stats='Empty Stats' />}
-                {this.state.hasItem2 ? null : <PlayerItem icon={'../Images/emptyItem.png'} stats='Empty Stats' />}
-                {this.state.hasItem3 ? null : <PlayerItem icon={'../Images/emptyItem.png'} stats='Empty Stats' />}
-                {this.state.hasItem4 ? null : <PlayerItem icon={'../Images/emptyItem.png'} stats='Empty Stats' />}
-                {this.state.hasItem5 ? null : <PlayerItem icon={'../Images/emptyItem.png'} stats='Empty Stats' />}
-                {this.state.hasItem6 ? null : <PlayerItem icon={'../Images/emptyItem.png'} stats='Empty Stats' />}
+                <PlayerItem icon={this.state.item1.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item1.stats} number='item1' />
+                <PlayerItem icon={this.state.item2.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item2.stats} number='item2' />
+                <PlayerItem icon={this.state.item3.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item3.stats} number='item3' />
+                <PlayerItem icon={this.state.item4.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item4.stats} number='item4' />
+                <PlayerItem icon={this.state.item5.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item5.stats} number='item5' />
+                <PlayerItem icon={this.state.item6.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item6.stats} number='item6' />
             </div>
         )
     }

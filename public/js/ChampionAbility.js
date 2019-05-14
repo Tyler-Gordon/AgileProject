@@ -1,17 +1,22 @@
 class ChampionAbility extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
     }
 
     state = {
-        stats: this.props.stats
+        damage: this.props.damage,
+        type: this.props.type
     }
-
     render() {
         return (
-            <div className='level-item'>
-                <img src={this.props.icon} height='64px' width='64px'></img>
-                <h3>{this.state.stats}</h3>
+            <div className='card'>
+                <div className='card-image'>
+                        <img src={this.props.icon} height='64px' width='64px'></img>
+                </div>
+                <div id='AbilityStatsContainer'>
+                    <h3 id='AbilityStats' >{this.props.damage}</h3>
+                    <h3 id='AbilityStats' >{this.props.type}</h3>
+                </div>
             </div>
         )
     }

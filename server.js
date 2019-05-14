@@ -1,9 +1,11 @@
 // Node and npm modules
 const express = require('express');
+const child_process = require('child_process');
 
 // Project modules
 const getData = require('./private/getData');
 const calculate = require('./private/calculate');
+const verifySecret = require('./private/verifySignature').verifySecret;
 
 // Project variables
 var app = express();
@@ -51,16 +53,24 @@ app.get('/champions', (request, response) => {
 
 app.get('/items', (request, response) => {
     let itemSelectionData = [];
-    items.forEach(item => {
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+
+        if (item[1].requiredChampion) {
+            continue;
+        }
+        
         itemSelectionData.push({
-            id: item[0],
-            name: item[1].name,
-            icon: `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item[0]}.png`,
-            stats: item[1].stats,
-            effect: item[1].effect
+            id : item[0],
+            name : item[1].name,
+            icon : `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item[0]}.png`,
+            stats : item[1].stats,
+            effect : item[1].effect,
+            maps : item[1].maps
         });
-    });
-    response.send(itemSelectionData);
+    }
+    let summonersRiftItems = itemSelectionData.filter(item => item.maps["11"] === true && Object.entries(item.stats).length !== 0);
+    response.send(summonersRiftItems);
 });
 
 app.get('/choose', (request, response) => {
@@ -122,14 +132,25 @@ app.get('/choose', (request, response) => {
     }
 });
 
-app.get('/calculate', express.json(), (request, response) => {
+app.post('/calculate', express.json(), (request, response) => {
     let champSkills = championSkillData[`${request.body.player.id}`];
     var championDamage = calculate.getDamage(champSkills, request.body);
     response.send(championDamage);
 })
 
 app.post('/github', express.json(), (request, response) => {
-    console.log(request.headers);
+    if(verifySecret(JSON.stringify(request.body), request.headers)){
+        response.status(200).send('Successful push request.');
+        
+        // child_process.exec('./getnewserver.sh', (err, stdout, stderr) => {
+        //     if (err || stdout !== 'Successful build!'){
+        //         console.log(err | stdout);
+        //     }
+        // });
+        
+    } else {
+        response.sendStatus(401);
+    }
 });
 
 app.listen(port, () => {
@@ -144,3 +165,5 @@ app.listen(port, () => {
     });
     championSkillData = require('./private/championSkillData');
 });
+
+module.exports = app

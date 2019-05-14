@@ -1,5 +1,6 @@
 // how much damage an ability does without any resistances
 function getAbilityDamage(ability, ad, ap, abilityLevel){
+    //console.log(ability,ap,ad,abilityLevel)
     let baseDamage = ability.base[abilityLevel-1]
     let apMod = ability.modifier.ap[abilityLevel-1] * ap
     let adMod = ability.modifier.ad[abilityLevel-1] * ad
@@ -23,14 +24,13 @@ function getReducedDamage(damage, damageReducer){
     return reducedDamage = (100/(100 + damageReducer)) * damage
 }
 
-exports.getDamage = (source, data) => {
-
+getDamage = (source, data) => {
     const playerad = data.player.attackdamage
     const playerap = data.player.spelldamage
 
     const playeradFlatPen = data.player.flatarmorpenetration
     const playeradPercentPen = data.player.percentarmorpenetration
-    const playerapFlatPen = data.player.flaspellpenetration
+    const playerapFlatPen = data.player.flatspellpenetration
     const playerapPercentPen = data.player.percentspellpenetration
 
 
@@ -40,7 +40,7 @@ exports.getDamage = (source, data) => {
     let aaSubtracted =  getResistanceSubtracted(playeradPercentPen, playeradFlatPen, enemyArmor)
     let aaDamageReducer = getDamageReducer(enemyArmor, aaSubtracted)
     let aaDamage = getReducedDamage(playerad, aaDamageReducer)
-
+    //console.log(playerad,playerap,playeradFlatPen,playeradPercentPen,playerapFlatPen,playerapPercentPen,enemyArmor,enemySpellBlock,aaDamage,aaDamageReducer,aaSubtracted)
     var damages = {
         "aa" : [{"damage" : aaDamage, "type" : 'Physical'}],
         "q" : [],
@@ -58,6 +58,7 @@ exports.getDamage = (source, data) => {
                 const resistanceSubtracted = getResistanceSubtracted(playeradPercentPen, playeradFlatPen, enemyArmor)
                 const damagereducer = getDamageReducer(enemyArmor, resistanceSubtracted)
                 let totalDamage = getReducedDamage(damage, damagereducer);
+                //console.log(totalDamage)
                 damages[`${ability[0]}`].push({"damage" : totalDamage, "type" : 'Physical'})
     
             }else if (abilityType == "Magic"){
@@ -65,8 +66,14 @@ exports.getDamage = (source, data) => {
                 const resistanceSubtracted = getResistanceSubtracted(playerapPercentPen, playerapFlatPen, enemySpellBlock)
                 const damagereducer = getDamageReducer(enemySpellBlock, resistanceSubtracted)
                 let totalDamage = getReducedDamage(damage, damagereducer);
+                //console.log(totalDamage)
+
                 damages[`${ability[0]}`].push({"damage" : totalDamage, "type" : 'Magic'})
+<<<<<<< HEAD
             }else if (abilityType == "True"){
+=======
+            }else{  
+>>>>>>> upstream/master
                 const totalDamage = getAbilityDamage(cast, playerad, playerap, data.player[`${ability[0]}level`])
                 damages[`${ability[0]}`].push({"damage" : totalDamage, "type" : 'True'})
             }else{
@@ -75,7 +82,18 @@ exports.getDamage = (source, data) => {
     
         });
     })
-
+    //console.log(damages)
     return damages
 
+<<<<<<< HEAD
+=======
+}
+
+module.exports={
+    getAbilityDamage,
+    getDamageReducer,
+    getReducedDamage,
+    getResistanceSubtracted,
+    getDamage
+>>>>>>> upstream/master
 }
