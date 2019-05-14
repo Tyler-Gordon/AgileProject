@@ -1,4 +1,4 @@
-// how much damage an ability does without and resistances
+// how much damage an ability does without any resistances
 function getAbilityDamage(ability, ad, ap, abilityLevel){
     //console.log(ability,ap,ad,abilityLevel)
     let baseDamage = ability.base[abilityLevel-1]
