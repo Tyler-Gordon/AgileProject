@@ -21,9 +21,7 @@ class EnemyChampion extends React.Component {
                 <div className='container'>
                     <div className='columns is-vcentered'>
 
-                        <ChampionStats championData={this.props.championData} level={this.state.level} />
-
-                        <BoughtItems items={this.props.items}  />
+                        <BoughtItems items={this.props.items} championData={this.props.championData} level={this.state.level} enemy={true} />
 
                         <div className='column is-one-fifth'>
                             <div>

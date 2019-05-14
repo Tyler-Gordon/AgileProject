@@ -62,9 +62,22 @@ class BoughtItems extends React.Component {
             this.state.item5.stats,
             this.state.item6.stats
         ];
-        console.log(itemStats);
-        return (
+        if (this.props.enemy) {
+            return (
             <div className='columns'>
+                <ChampionStats championData={this.props.championData} level={this.props.level} items={itemStats} />
+                <div className='level'>
+                    <PlayerItem icon={this.state.item1.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item1.stats} number='item1' />
+                    <PlayerItem icon={this.state.item2.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item2.stats} number='item2' />
+                    <PlayerItem icon={this.state.item3.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item3.stats} number='item3' />
+                    <PlayerItem icon={this.state.item4.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item4.stats} number='item4' />
+                    <PlayerItem icon={this.state.item5.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item5.stats} number='item5' />
+                    <PlayerItem icon={this.state.item6.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item6.stats} number='item6' />
+                </div>
+            </div>
+        )} else {
+            return (
+                <div className='columns'>
                 <div className='level'>
                     <PlayerItem icon={this.state.item1.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item1.stats} number='item1' />
                     <PlayerItem icon={this.state.item2.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} stats={this.state.item2.stats} number='item2' />
@@ -75,6 +88,6 @@ class BoughtItems extends React.Component {
                 </div>
                 <ChampionStats championData={this.props.championData} level={this.props.level} items={itemStats} />
             </div>
-        )
+        )}
     }
 }

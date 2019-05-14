@@ -32,7 +32,7 @@ class PlayerChampion extends React.Component {
                             <input className='input' id='PlayerLevel' type='number' name="quantity" value={this.state.level} min="1" max="18" onChange={this.handleChange} />
                         </div>
                         
-                        <BoughtItems items={this.props.items} championData={this.props.championData} level={this.state.level} />
+                        <BoughtItems items={this.props.items} championData={this.props.championData} level={this.state.level} enemy={false} />
 
                     </div>
                 </div>
