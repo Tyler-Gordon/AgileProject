@@ -21,7 +21,7 @@ class ChampionStats extends React.Component {
                     itemMod.mp += statMod.FlatMPPoolMod;
                     break;
                 case 'FlatArmorMod':
-                    itemMod.armor += statMod.FlatArmorPoolMod;
+                    itemMod.armor += statMod.FlatArmorMod;
                     break;
                 case 'FlatSpellBlockMod':
                     itemMod.spellblock += statMod.FlatSpellBlockMod;
