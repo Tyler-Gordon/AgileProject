@@ -48,13 +48,13 @@ class ChampionStats extends React.Component {
         }
         return (
             <div id='ChampionStats' className='column has-text-white'>
-                <h5>Health: {currentStats.hp}</h5>
-                <h5>Mana: {currentStats.mp}</h5>
-                <h5>Armour: {currentStats.armor}</h5>
-                <h5>Magic Resist: {currentStats.spellblock}</h5>
-                <h5>Attack Damage: {currentStats.attackdamage}</h5>
-                <h5>Attack Speed: {`${this.props.championData.attackspeed} + ${currentStats.attackspeed}%`}</h5>
-                <h5>Ability Power: {currentStats.spelldamage}</h5>
+                <h5>Health: {currentStats.hp.toFixed(2)}</h5>
+                <h5>Mana: {currentStats.mp.toFixed(2)}</h5>
+                <h5>Armour: {currentStats.armor.toFixed(2)}</h5>
+                <h5>Magic Resist: {currentStats.spellblock.toFixed(2)}</h5>
+                <h5>Attack Damage: {currentStats.attackdamage.toFixed(2)}</h5>
+                <h5>Attack Speed: {`${this.props.championData.attackspeed.toFixed(2)} + ${currentStats.attackspeed.toFixed(2)}%`}</h5>
+                <h5>Ability Power: {currentStats.spelldamage.toFixed(2)}</h5>
             </div>
         )
     }
