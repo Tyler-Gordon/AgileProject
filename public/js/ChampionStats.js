@@ -13,28 +13,30 @@ class ChampionStats extends React.Component {
         }
         let itemStrings = this.props.items;
         for (let statMod of itemStrings) {
-            switch(Object.keys(statMod)[0]){
-                case 'FlatHPPoolMod':
-                    itemMod.hp += statMod.FlatHPPoolMod;
-                    break;
-                case 'FlatMPPoolMod':
-                    itemMod.mp += statMod.FlatMPPoolMod;
-                    break;
-                case 'FlatArmorMod':
-                    itemMod.armor += statMod.FlatArmorMod;
-                    break;
-                case 'FlatSpellBlockMod':
-                    itemMod.spellblock += statMod.FlatSpellBlockMod;
-                    break;
-                case 'FlatPhysicalDamageMod':
-                    itemMod.attackdamage += statMod.FlatPhysicalDamageMod;
-                    break;
-                case 'PercentAttackSpeedMod':
-                    itemMod.attackspeed += statMod.PercentAttackSpeedMod;
-                    break;
-                case 'FlatMagicDamageMod':
-                    itemMod.spelldamage += statMod.FlatMagicDamageMod;
-                    break;
+            for (let currentStatMod of Object.keys(statMod)) {
+                switch (currentStatMod) {
+                    case 'FlatHPPoolMod':
+                        itemMod.hp += statMod.FlatHPPoolMod;
+                        break;
+                    case 'FlatMPPoolMod':
+                        itemMod.mp += statMod.FlatMPPoolMod;
+                        break;
+                    case 'FlatArmorMod':
+                        itemMod.armor += statMod.FlatArmorMod;
+                        break;
+                    case 'FlatSpellBlockMod':
+                        itemMod.spellblock += statMod.FlatSpellBlockMod;
+                        break;
+                    case 'FlatPhysicalDamageMod':
+                        itemMod.attackdamage += statMod.FlatPhysicalDamageMod;
+                        break;
+                    case 'PercentAttackSpeedMod':
+                        itemMod.attackspeed += statMod.PercentAttackSpeedMod;
+                        break;
+                    case 'FlatMagicDamageMod':
+                        itemMod.spelldamage += statMod.FlatMagicDamageMod;
+                        break;
+                }
             }
         }
         currentStats = {
