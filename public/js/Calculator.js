@@ -132,6 +132,32 @@ class Calculator extends React.Component {
         });
     }
 
+    handleAbilityUp(ability) {
+        switch (ability) {
+            case 'rlevel':
+                if (this.state[ability] != 3) {
+                    this.setState({
+                        [ability] : this.state[ability] + 1
+                    });
+                }
+                break;
+            default:
+                if (this.state[ability] != 5) {
+                    this.setState({
+                        [ability] : this.state[ability] + 1
+                    });
+                }
+        }
+    }
+
+    handleAbilityDown(ability) {
+        if (this.state[ability] != 1) {
+            this.setState({
+                [ability] : this.state[ability] - 1
+            });
+        }
+    }
+
     renderEnemyInput(){
         return(<input className='input' placeholder='Select an enemy...' type="text" id="userInput" onInput={()=>{search('ChampionList','userInput')}}></input>)
     }
@@ -143,10 +169,10 @@ class Calculator extends React.Component {
                 <section className="section">
                     <div className="container">
                         <div id='ChampionSkills' className='level'>
-                            <ChampionAbility icon={this.state.championData.qicon} damage={this.state.qdamage} type={this.state.qtype} level={this.state.qlevel}/>
-                            <ChampionAbility icon={this.state.championData.wicon} damage={this.state.wdamage} type={this.state.wtype} level={this.state.wlevel}/>
-                            <ChampionAbility icon={this.state.championData.eicon} damage={this.state.edamage} type={this.state.etype} level={this.state.elevel}/>
-                            <ChampionAbility icon={this.state.championData.ricon} damage={this.state.rdamage} type={this.state.rtype} level={this.state.rlevel}/>
+                            <ChampionAbility icon={this.state.championData.qicon} level={this.state.qlevel} ability='qlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.qdamage} type={this.state.qtype} />
+                            <ChampionAbility icon={this.state.championData.wicon} level={this.state.wlevel} ability='wlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.wdamage} type={this.state.wtype} />
+                            <ChampionAbility icon={this.state.championData.eicon} level={this.state.elevel} ability='elevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.edamage} type={this.state.etype} />
+                            <ChampionAbility icon={this.state.championData.ricon} level={this.state.rlevel} ability='rlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.rdamage} type={this.state.rtype} />
                             <ChampionAbility icon={this.state.championData.passiveicon} damage={this.state.aadamage} type={this.state.aatype}/>
                         </div>
                     </div>

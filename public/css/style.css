@@ -102,3 +102,16 @@ body {
 #PlayerChampion, #EnemyChampion {
     background: rgba(0, 0, 0, 0.5)
 }
+
+#AbilityUp, #AbilityDown {
+    display : block;
+    cursor: pointer;
+}
+
+#AbilityUp {
+    margin-bottom: 0;
+}
+
+#AbilityDown {
+    margin-top: 0;
+}
