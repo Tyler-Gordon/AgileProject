@@ -25,7 +25,7 @@ class EnemyChampion extends React.Component {
 
                         <div className='column is-one-fifth'>
                             <div>
-                                <img src={this.props.selectedChampion.icon} width='175px' height='175px' />
+                                <img src={this.props.selectedChampion.icon} width='100px' height='100px' />
                             </div>
                             <input className='input' id='PlayerLevel' type='number' name="quantity" value={this.state.level} min="1" max="18" onChange={this.handleChange} />
                         </div>

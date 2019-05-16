@@ -104,7 +104,6 @@ class Calculator extends React.Component {
             }
         }
 
-        console.log(body)
         fetch(`/calculate`,{
             method: 'POST',
             body: JSON.stringify(body),
@@ -166,7 +165,11 @@ class Calculator extends React.Component {
         return (
             <section className="section">
                 <PlayerChampion champions={this.props.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} items={this.props.itemData} />
-                <section className="section">
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <section className="section" id='AbilitySection'>
                     <div className="container">
                         <div id='ChampionSkills' className='level'>
                             <ChampionAbility icon={this.state.championData.qicon} level={this.state.qlevel} ability='qlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.qdamage} type={this.state.qtype} />
@@ -177,6 +180,7 @@ class Calculator extends React.Component {
                         </div>
                     </div>
                 </section>
+                
                 <section className="section">
                     <div className="container has-text-centered">
                         <div className="columns is-centered">                   
@@ -193,7 +197,7 @@ class Calculator extends React.Component {
 
                 <section className="section">
                     <div className="container has-text-centered">
-                        {this.state.enemyChosen ? <button id='CalculateButton' className={'button is-large is-link'} onClick={()=>{this.calculate()}}>Calculate</button> : null }
+                        {this.state.enemyChosen ? <button id='CalculateButton' className={'button is-large is-danger'} onClick={()=>{this.calculate()}}>Calculate</button> : null }
                     </div>
                 </section>
             </section>
