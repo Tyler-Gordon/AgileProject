@@ -9,7 +9,7 @@ class ChampionAbility extends React.Component {
     }
     render() {
         return (
-            <div className='card'>
+            <div className='card' id='AbilityCard'>
                 <div className='card-image'>
                         <img src={this.props.icon} height='64px' width='64px'></img>
                 </div>
