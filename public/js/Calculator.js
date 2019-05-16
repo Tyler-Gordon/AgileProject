@@ -103,7 +103,7 @@ class Calculator extends React.Component {
                 }
             }
         }
-
+        console.log(body)
         fetch(`/calculate`,{
             method: 'POST',
             body: JSON.stringify(body),
@@ -113,6 +113,7 @@ class Calculator extends React.Component {
         })
         .then(res => res.json())
         .then(res => {
+            console.log(res)
             this.setState({
                 aadamage : res.aa[0].damage.toFixed(1),
                 aatype : res.aa[0].type,
