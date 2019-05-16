@@ -2,7 +2,7 @@ body {
     height: 100vh;
     background-image: url("../images/background.svg");
     background-size: 100vw 100vh;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 }
 
 #ChampionList, #ItemList {
@@ -77,7 +77,8 @@ body {
 }
 
 #PlayerLevel {
-    width: 70%;
+    width: 50%;
+    height: 10%;
 }
 
 #ChampionName {
