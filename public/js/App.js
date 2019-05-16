@@ -36,16 +36,18 @@ class App extends React.Component {
             })
     }
     
+
     render () {
+        
         if (this.state.choosing){
             return(
-                <section className='has-text-centered'> 
+                <section className='section has-text-centered'> 
                     <div className='container'>
                         <div className='columns'>
                             <div className='column is-8'>
                                 <h1 id='Title'>Lolpad</h1>
                                 <h1 id='Subtitle'>Intuitive Damage Calculator</h1>
-                                <input className='input' placeholder='Select a champion...' type="text" id="userInput" onInput={()=>{search('ChampionList','userInput')}}></input>
+                                <input id='ChampionInputMainPage' className='input' placeholder='Select a champion...' type="text" id="userInput" onInput={()=>{search('ChampionList','userInput'),ShowChampionContainer()}} onBlur={()=>{HideChampionContainer()}} autoFocus="true"/>
                                 <div id='ChampionListContainer'>
                                     <ChampionList onClick={this.onClick.bind(this)} champions={this.props.champions}/>
                                 </div>

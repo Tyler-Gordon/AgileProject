@@ -12,13 +12,13 @@ function search(List,InputBox){
 }
 
 function ShowChampionContainer() {
-    var championContainer = document.getElementById('ChampionList')
+    var championContainer = document.getElementById('ChampionListContainer')
     championContainer.style.display = 'inline'
     return ('Shown')
 }
 
 function HideChampionContainer() {
-    var championContainer = document.getElementById('ChampionList')
+    var championContainer = document.getElementById('ChampionListContainer')
     championContainer.style.display = 'none'
     return ('Hidden')
 }
@@ -50,6 +50,7 @@ fetch('/champions')
                     <App champions={data} />,
                     document.getElementById('root')
                 );
+                HideChampionContainer();
             });
         }
     )
