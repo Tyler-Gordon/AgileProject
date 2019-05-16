@@ -106,6 +106,19 @@ html {
 }
 
 #PlayerChampion, #EnemyChampion, #AbilitySection {
-    /* background: rgba(255, 255, 255, 0.5) */
+    background: rgba(255, 255, 255, 0.5);
     border: white 5px solid;
+}
+
+#AbilityUp, #AbilityDown {
+    display : block;
+    cursor: pointer;
+}
+
+#AbilityUp {
+    margin-bottom: 0;
+}
+
+#AbilityDown {
+    margin-top: 0;
 }
