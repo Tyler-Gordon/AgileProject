@@ -10,6 +10,10 @@ body {
     color: #f5f5f5;
 }
 
+#ItemList{
+    border-radius: 0px 0px 0px 30px;
+}
+
 #ChampionList, #ItemList {
     display: block;
     overflow-y: auto;
@@ -35,8 +39,9 @@ body {
     background-color: #ffb700;
 }
 
-#Item, #ItemListItem {
-    border-radius : 10;
+#ItemListItem {
+    border-radius : 15px;
+    height: 125px;
 }
 
 #Title {
@@ -53,6 +58,10 @@ body {
     width: 50%;
     font-size: 2rem;
     height: 50px;
+}
+
+#itemInput {
+    border-radius: 50px 0px 0px 0px;
 }
 
 /* For mobile phones: */
@@ -98,10 +107,6 @@ body {
     font-size: 2rem;
 }
 
-#Item {
-    cursor: pointer;
-}
-
 #ChampionStats {
     margin-left: 35px;
     margin-right: 35px;
@@ -128,4 +133,10 @@ figure img {
 
 .box {
     background-color: #3f4866;
+}
+
+#Item{
+    margin-left: 5px;
+    border-radius: 15px;
+    cursor: pointer;
 }

@@ -1,3 +1,4 @@
 node_modules/
 .vscode
 private/addData.py
+public/images/EmptyItemAlt.png
