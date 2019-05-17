@@ -165,23 +165,18 @@ class Calculator extends React.Component {
         return (
             <section className="section">
                 <PlayerChampion champions={this.props.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} items={this.props.itemData} />
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <section className="section" id='AbilitySection'>
-                    <div className="container">
-                        <div id='ChampionSkills' className='level'>
+                <section className="section">
+                    <div id='AbilitySection' className="container">
+                        <div id='ChampionSkills' className='columns'>
                             <ChampionAbility icon={this.state.championData.qicon} level={this.state.qlevel} ability='qlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.qdamage} type={this.state.qtype} />
                             <ChampionAbility icon={this.state.championData.wicon} level={this.state.wlevel} ability='wlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.wdamage} type={this.state.wtype} />
                             <ChampionAbility icon={this.state.championData.eicon} level={this.state.elevel} ability='elevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.edamage} type={this.state.etype} />
                             <ChampionAbility icon={this.state.championData.ricon} level={this.state.rlevel} ability='rlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.rdamage} type={this.state.rtype} />
-                            <ChampionAbility icon={'../images/AutoAttack.png'} damage={this.state.aadamage} type={this.state.aatype}/>
+                            <ChampionAbility icon={'../images/AutoAttack.png'} damage={this.state.aadamage} type={this.state.aatype} />
                         </div>
                     </div>
                 </section>
                 
-                <section className="section">
                     <div className="container has-text-centered">
                         <div className="columns is-centered">                   
                             <div className="column is-half is-centered">
@@ -192,13 +187,10 @@ class Calculator extends React.Component {
                             </div>
                         </div>
                     </div>
-                </section>
                 {this.state.enemyChosen ? <EnemyChampion champions={this.props.champions} championData={this.state.enemyData} selectedChampion={this.state.enemyChampion} items={this.props.itemData}  /> : null}
 
-                <section className="section">
-                    <div className="container has-text-centered">
-                        {this.state.enemyChosen ? <button id='CalculateButton' className={'button is-large is-danger'} onClick={()=>{this.calculate()}}>Calculate</button> : null }
-                    </div>
+                <section className="section has-text-centered">
+                    {this.state.enemyChosen ? <button id='CalculateButton' className={'button is-large is-danger'} onClick={()=>{this.calculate()}}>Calculate</button> : null }
                 </section>
             </section>
         )

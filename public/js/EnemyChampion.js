@@ -17,25 +17,21 @@ class EnemyChampion extends React.Component {
 
     render () {
         return (
-            <section className='section' id='EnemyChampion'>
-                <div className='container'>
-                    <div className='columns is-vcentered'>
-
-                        <BoughtItems items={this.props.items} championData={this.props.championData} level={this.state.level} enemy={true} />
-
-                        <div className='column is-one-fifth'>
-                            <div>
-                                <img src={this.props.selectedChampion.icon} width='100px' height='100px' />
-                            </div>
-                            <input className='input' id='PlayerLevel' type='number' name="quantity" value={this.state.level} min="1" max="18" onChange={this.handleChange} />
-                        </div>
-
-                        <div className='column is-one-fifth'>
-                            <h1 id='ChampionName'>{this.props.selectedChampion.name}</h1>
-                        </div>
+            <div id='EnemyChampion' className='container'>
+                <div className='box'>
+                <div className='columns is-vcentered'>
+                    <div className='column'></div>
+                    <BoughtItems items={this.props.items} championData={this.props.championData} level={this.state.level} enemy={true} />
+                    <div className='column is-one-fifth has-text-centered'>
+                        <h1 id='ChampionName'>{this.props.selectedChampion.name}</h1>
+                        <figure>
+                            <img src={this.props.selectedChampion.icon} width='60%' />
+                        </figure>
+                        <input className='input' id='PlayerLevel' type='number' name="quantity" value={this.state.level} min="1" max="18" onChange={this.handleChange} />
                     </div>
                 </div>
-            </section>
+                </div>
+            </div>
         )
     }
 }

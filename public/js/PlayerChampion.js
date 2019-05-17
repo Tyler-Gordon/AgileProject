@@ -17,26 +17,24 @@ class PlayerChampion extends React.Component {
 
     render() {
         return (
-            <section id='PlayerChampion' className='section'>
-                <div className='container'>
+                <div id='PlayerChampion' className='container'>
+                    <div className='box'>
                     <div className='columns is-vcentered'>
 
-                        <div className='column is-one-fifth'>
+                        <div className='column is-one-fifth has-text-centered'>
                             <h1 id='ChampionName'>{this.props.selectedChampion.name}</h1>
-                        </div>
-
-                        <div className='column is-one-fifth'>
-                            <div>
-                                <img src={this.props.selectedChampion.icon} width='175px' height='175px' />
-                            </div>
+                            <figure>
+                                <img src={this.props.selectedChampion.icon} width='60%' />
+                            </figure>
                             <input className='input' id='PlayerLevel' type='number' name="quantity" value={this.state.level} min="1" max="18" onChange={this.handleChange} />
+                            
                         </div>
                         
                         <BoughtItems items={this.props.items} championData={this.props.championData} level={this.state.level} enemy={false} />
 
                     </div>
+                    </div>
                 </div>
-            </section>
         )
     }
 }
