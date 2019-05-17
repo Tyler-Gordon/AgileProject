@@ -72,12 +72,17 @@ html {
     }
 }
 
-#AbilityStats{
+#AbilityStats, #AbilityLevelTicker{
     color: white;
     text-align: center;
 }
 
-#AbilityCard {
+#AbilityStatsContainer {
+    color: black;
+    max-width: 64px;
+}
+
+#AbilityCard, #AbilityStatsCard {
     background-color: black;
 }
 
@@ -106,7 +111,7 @@ html {
 }
 
 #PlayerChampion, #EnemyChampion, #AbilitySection {
-    background: rgba(255, 255, 255, 0.5);
+    /* background: rgba(255, 255, 255, 0.0); */
     border: white 5px solid;
 }
 

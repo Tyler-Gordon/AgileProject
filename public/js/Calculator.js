@@ -177,7 +177,7 @@ class Calculator extends React.Component {
                             <ChampionAbility icon={this.state.championData.wicon} level={this.state.wlevel} ability='wlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.wdamage} type={this.state.wtype} />
                             <ChampionAbility icon={this.state.championData.eicon} level={this.state.elevel} ability='elevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.edamage} type={this.state.etype} />
                             <ChampionAbility icon={this.state.championData.ricon} level={this.state.rlevel} ability='rlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.rdamage} type={this.state.rtype} />
-                            <ChampionAbility icon={this.state.championData.passiveicon} damage={this.state.aadamage} type={this.state.aatype}/>
+                            <ChampionAbility icon={'../images/AutoAttack.png'} damage={this.state.aadamage} type={this.state.aatype}/>
                         </div>
                     </div>
                 </section>
