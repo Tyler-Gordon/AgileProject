@@ -3,9 +3,9 @@ const express = require('express');
 const child_process = require('child_process');
 
 // Project modules
-const getData = require('./private/getData');
-const calculate = require('./private/calculate');
-const verifySecret = require('./private/verifySignature').verifySecret;
+const getData = require('/private/getData');
+const calculate = require('/private/calculate');
+const verifySecret = require('/private/verifySignature').verifySecret;
 
 // Project variables
 var app = express();
@@ -20,7 +20,7 @@ app.use(express.static('public'));
 
 // Endpoints
 app.get('/', (request, response) => {
-    response.sendFile(__dirname + './public/index.html');
+    response.sendFile(__dirname + '/public/index.html');
 });
 
 // Called to populate the 
