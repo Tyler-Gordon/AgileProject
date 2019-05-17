@@ -103,7 +103,6 @@ class Calculator extends React.Component {
                 }
             }
         }
-        console.log(body)
         fetch(`/calculate`,{
             method: 'POST',
             body: JSON.stringify(body),
