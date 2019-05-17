@@ -135,6 +135,7 @@ app.get('/choose', (request, response) => {
 app.post('/calculate', express.json(), (request, response) => {
     let champSkills = championSkillData[`${request.body.player.id}`];
     var championDamage = calculate.getDamage(champSkills, request.body);
+    console.log(championDamage,champSkills)
     response.send(championDamage);
 })
 

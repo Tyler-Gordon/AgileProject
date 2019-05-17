@@ -1,8 +1,9 @@
-body {
-    height: 100vh;
-    background-image: url("../images/background.svg");
+
+html {
+    background-color: black;
+    /* background-image: url("../images/background.svg");
     background-size: 100vw 100vh;
-    background-repeat: repeat;
+    background-repeat: no-repeat;  */
 }
 
 #ChampionList, #ItemList {
@@ -31,13 +32,13 @@ body {
 }
 
 #Title {
-    color: whitesmoke;
+    color: white;
     font-size: 10rem;
     font-family: 'Oswald', sans-serif, serif;
-    mix-blend-mode: difference;
 }
 
 #Subtitle {
+    color: white;
     font-size: 2rem;
 }
 
@@ -72,8 +73,12 @@ body {
 }
 
 #AbilityStats{
-    color: black;
+    color: white;
     text-align: center;
+}
+
+#AbilityCard {
+    background-color: black;
 }
 
 #PlayerLevel {
@@ -100,6 +105,20 @@ body {
     margin-right: 55px;
 }
 
-#PlayerChampion, #EnemyChampion {
-    background: rgba(0, 0, 0, 0.5)
+#PlayerChampion, #EnemyChampion, #AbilitySection {
+    background: rgba(255, 255, 255, 0.5);
+    border: white 5px solid;
+}
+
+#AbilityUp, #AbilityDown {
+    display : block;
+    cursor: pointer;
+}
+
+#AbilityUp {
+    margin-bottom: 0;
+}
+
+#AbilityDown {
+    margin-top: 0;
 }
