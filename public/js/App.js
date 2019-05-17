@@ -47,7 +47,7 @@ class App extends React.Component {
                             <div className='column is-8'>
                                 <h1 id='Title'>Lolpad</h1>
                                 <h1 id='Subtitle'>Intuitive Damage Calculator</h1>
-                                <input id='ChampionInputMainPage' className='input' placeholder='Select a champion...' type="text" id="userInput" onInput={()=>{search('ChampionList','userInput'),ShowChampionContainer()}} onBlur={()=>{HideChampionContainer()}} autoFocus="true"/>
+                                <input id='ChampionInputMainPage' className='input' placeholder='Select a champion...' type="text" id="userInput" onFocus={()=>{ShowChampionContainer()}} onInput={()=>{search('ChampionList','userInput')}} onBlur={()=>{HideChampionContainer()}} />
                                 <div id='ChampionListContainer'>
                                     <ChampionList onClick={this.onClick.bind(this)} champions={this.props.champions}/>
                                 </div>

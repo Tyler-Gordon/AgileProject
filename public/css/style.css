@@ -1,9 +1,13 @@
 
 html {
-    background-color: black;
+    background-color: #1b294b;
     /* background-image: url("../images/background.svg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;  */
+}
+
+body {
+    color: #f5f5f5;
 }
 
 #ChampionList, #ItemList {
@@ -14,7 +18,7 @@ html {
     position: relative;
     float: left;
     width: 100%;
-    background-color: white;
+    background-color: #f5f5f5;
 }
 
 #ChampionListItem, #ItemListItem {
@@ -24,21 +28,23 @@ html {
     height: 100px;
     float: left;
     margin-top: 1px;
-    background-color: white;
+    background-color: #f5f5f5;
 }
 
 #ChampionListItem:hover, #ItemListItem:hover {
-    background-color: turquoise;
+    background-color: #ffb700;
+}
+
+#Item, #ItemListItem {
+    border-radius : 10;
 }
 
 #Title {
-    color: white;
     font-size: 10rem;
     font-family: 'Oswald', sans-serif, serif;
 }
 
 #Subtitle {
-    color: white;
     font-size: 2rem;
 }
 
@@ -72,18 +78,14 @@ html {
     }
 }
 
-#AbilityStats, #AbilityLevelTicker{
-    color: white;
-    text-align: center;
-}
 
 #AbilityStatsContainer {
-    color: black;
+    color: #1b294b;
     max-width: 64px;
 }
 
 #AbilityCard, #AbilityStatsCard {
-    background-color: black;
+    background-color: #1b294b;
 }
 
 #PlayerLevel {
@@ -92,10 +94,8 @@ html {
 }
 
 #ChampionName {
-    font-size: 3rem;
-    color: white;
-    width: 100%;
-    text-align: center;
+    color: #f5f5f5;
+    font-size: 2rem;
 }
 
 #Item {
@@ -103,27 +103,29 @@ html {
 }
 
 #ChampionStats {
-    margin-left: 55px;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 
-#EnemyStats {
-    margin-right: 55px;
-}
-
+/* 
 #PlayerChampion, #EnemyChampion, #AbilitySection {
-    /* background: rgba(255, 255, 255, 0.0); */
-    border: white 5px solid;
+    background: rgba(255, 255, 255, 0.0);
+    border: #f5f5f5 5px solid;
 }
+ */
 
 #AbilityUp, #AbilityDown {
-    display : block;
     cursor: pointer;
 }
 
-#AbilityUp {
-    margin-bottom: 0;
+figure img {
+    margin-top : 0;
+    margin-bottom : 0;
+    display : block;
+    margin-left : auto;
+    margin-right : auto;
 }
 
-#AbilityDown {
-    margin-top: 0;
+.box {
+    background-color: #3f4866;
 }

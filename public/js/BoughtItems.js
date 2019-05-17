@@ -64,7 +64,7 @@ class BoughtItems extends React.Component {
         ];
         if (this.props.enemy) {
             return (
-            <div className='columns'>
+            <div className='columns is-marginless'>
                 <ChampionStats championData={this.props.championData} level={this.props.level} items={itemStats} />
                 <div className='level'>
                     <PlayerItem icon={this.state.item1.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item1' />
@@ -77,8 +77,8 @@ class BoughtItems extends React.Component {
             </div>
         )} else {
             return (
-                <div className='columns'>
-                <div className='level'>
+            <div className='columns'>
+                <div className='level is-marginless'>
                     <PlayerItem icon={this.state.item1.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item1' />
                     <PlayerItem icon={this.state.item2.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item2' />
                     <PlayerItem icon={this.state.item3.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item3' />
