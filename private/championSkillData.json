@@ -826,7 +826,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -836,7 +836,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -878,7 +878,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -920,7 +920,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -930,7 +930,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -952,7 +952,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1010,7 +1010,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1020,7 +1020,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1068,7 +1068,7 @@
             },
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1078,7 +1078,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1086,7 +1086,7 @@
             },
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1096,7 +1096,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1118,7 +1118,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1200,7 +1200,7 @@
         "q" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1262,7 +1262,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1272,7 +1272,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -1394,7 +1394,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1452,7 +1452,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1620,7 +1620,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1692,7 +1692,7 @@
         "q" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1738,7 +1738,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -1750,7 +1750,7 @@
         "q" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1760,7 +1760,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1770,7 +1770,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1872,7 +1872,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -1904,7 +1904,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -1914,7 +1914,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -1936,7 +1936,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2044,7 +2044,7 @@
             },
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0, 0]
@@ -2054,7 +2054,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0, 0]
@@ -2062,7 +2062,7 @@
             },
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0, 0]
@@ -2072,7 +2072,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -2126,7 +2126,7 @@
         "q" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2204,7 +2204,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2214,7 +2214,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -2236,7 +2236,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2256,7 +2256,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -2294,7 +2294,7 @@
             },
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2304,7 +2304,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2312,7 +2312,7 @@
             },
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2344,7 +2344,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2428,7 +2428,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2470,7 +2470,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2522,7 +2522,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2616,7 +2616,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -2658,7 +2658,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -2708,7 +2708,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -2730,7 +2730,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2838,7 +2838,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2846,7 +2846,7 @@
             },
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2864,7 +2864,7 @@
             },
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -2990,7 +2990,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -3022,7 +3022,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -3042,7 +3042,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -3064,7 +3064,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -3232,7 +3232,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -3252,7 +3252,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -3274,7 +3274,7 @@
         "w" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -3344,7 +3344,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Physical",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
@@ -3376,7 +3376,7 @@
         "e" : [
             {
                 "base" : [0, 0, 0, 0, 0],
-                "type" : "Non-damage",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0, 0, 0],
                     "ap" : [0, 0, 0, 0, 0]
@@ -4383,7 +4383,7 @@
         "r" : [
             {
                 "base" : [0, 0, 0],
-                "type" : "Magic",
+                "type" : "No Damage",
                 "modifier" : {
                     "ad" : [0, 0, 0],
                     "ap" : [0, 0, 0]
