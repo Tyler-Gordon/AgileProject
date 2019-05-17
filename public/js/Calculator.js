@@ -7,8 +7,10 @@ class Calculator extends React.Component {
         enemyChosen: false,
         selectedChampion : this.props.selectedChampion,
         championData : this.props.championData,
+        championActual : null,
         enemyChampion : null,
         enemyData : null,
+        enemyActual : null,
     
         aadamage: null,
         aatype: null,
@@ -45,7 +47,7 @@ class Calculator extends React.Component {
             });
     }
 
-    calculate(){
+    calculate() {
         var body;
         if (this.state.enemyData.hp != null){
             body = {
@@ -112,7 +114,6 @@ class Calculator extends React.Component {
         })
         .then(res => res.json())
         .then(res => {
-            console.log(res)
             this.setState({
                 aadamage : res.aa[0].damage.toFixed(1),
                 aatype : res.aa[0].type,
@@ -164,7 +165,7 @@ class Calculator extends React.Component {
     render() {
         return (
             <section className="section">
-                <PlayerChampion champions={this.props.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} items={this.props.itemData} />
+                <PlayerChampion champions={this.props.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} items={this.props.itemData}  />
                 <section className="section">
                     <div id='AbilitySection' className="container">
                         <div id='ChampionSkills' className='columns'>

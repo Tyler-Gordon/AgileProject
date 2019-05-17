@@ -49,7 +49,7 @@ class ChampionStats extends React.Component {
             spelldamage : itemMod.spelldamage
         }
         return (
-            <div id='ChampionStats' className='column has-text-white'>
+            <div id='ChampionStats' className='column has-text-white is-paddingless'>
                 <h5>Health: {currentStats.hp.toFixed(2)}</h5> 
                 <h5>Mana: {currentStats.mp.toFixed(2)}</h5>
                 <h5>Armour: {currentStats.armor.toFixed(2)}</h5>
