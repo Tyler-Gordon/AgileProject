@@ -1,3 +1,4 @@
+// May need to take a second look at this class
 class ChampionStats extends React.Component {
     render() {
         let currentStats;

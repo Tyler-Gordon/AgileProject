@@ -8,13 +8,13 @@ class ItemList extends React.Component {
             borderRadius :'50px 0px 0px 0px'
         }
         return(
-            <div className="modal is-active is-clipped" id='ItemListModal'ref='Modal'>
-                <div className="modal-background"></div>
-                <div className="modal-content">
-                <input className='input' style={specialInputStyle} placeholder='Select an item...' type="text" id="userInput" onInput={()=>{search('ItemList','userInput')}}></input>
+            <div className='modal is-active is-clipped' id='ItemListModal' ref='Modal'>
+                <div className='modal-background'></div>
+                <div className='modal-content'>
+                <input className='input' style={specialInputStyle} placeholder='Select an item...' type='text' id='userInput' onInput={()=>{search('ItemList','userInput')}}></input>
                     <ul id='ItemList' className='list'>{ItemList}</ul>
                 </div>
-                <button className="modal-close is-large" aria-label="close"></button>
+                <button className='modal-close is-large' aria-label='close' onClick={this.props.handleItemChosen} />
             </div>
         )
     }
