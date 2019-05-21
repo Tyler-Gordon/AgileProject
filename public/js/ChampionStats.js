@@ -48,6 +48,11 @@ class ChampionStats extends React.Component {
             attackspeed : (this.props.championData.attackspeedperlevel * levelMod) + itemMod.attackspeed,
             spelldamage : itemMod.spelldamage
         }
+        if (this.props.enemy) {
+            window.enemyStats = currentStats;
+        } else {
+            window.stats = currentStats;
+        }
         return (
             <div id='ChampionStats' className='column has-text-white is-paddingless'>
                 <h5>Health: {currentStats.hp.toFixed(2)}</h5> 

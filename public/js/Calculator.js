@@ -4,13 +4,12 @@ class Calculator extends React.Component {
     }
 
     state = {
-        enemyChosen: false,
         selectedChampion : this.props.selectedChampion,
         championData : this.props.championData,
-        championActual : null,
+
+        enemyChosen: false,
         enemyChampion : null,
         enemyData : null,
-        enemyActual : null,
     
         aadamage: null,
         aatype: null,
@@ -48,18 +47,20 @@ class Calculator extends React.Component {
     }
 
     calculate() {
-        var body;
+        const stats = window.stats;
+        const enemyStats = window.enemyStats;
+        let body;
         if (this.state.enemyData.hp != null){
             body = {
                 "player" : {
                     "id" : this.state.selectedChampion.id,
-                    "hp" : this.state.championData.hp,
-                    "mp" : this.state.championData.mp,
+                    "hp" : stats.hp,
+                    "mp" : stats.mp,
                     "movespeed" : this.state.championData.movespeed,
-                    "armor" : this.state.championData.armor,
-                    "spellblock" : this.state.championData.spellblock,
-                    "attackdamage" : this.state.championData.attackdamage,
-                    "spelldamage" : this.state.championData.spelldamage,
+                    "armor" : stats.armor,
+                    "spellblock" : stats.spellblock,
+                    "attackdamage" : stats.attackdamage,
+                    "spelldamage" : stats.spelldamage,
                     "attackspeed" : this.state.championData.attackspeed,
                     "flatarmorpenetration" : this.state.championData.flatarmorpenetration,
                     "percentarmorpenetration" : this.state.championData.percentarmorpenetration,
@@ -71,9 +72,9 @@ class Calculator extends React.Component {
                     "rlevel" : this.state.rlevel
                     },
                 "enemy" : {
-                    "hp" : this.state.enemyData.hp,
-                    "armor" : this.state.enemyData.armor,
-                    "spellblock" : this.state.enemyData.spellblock
+                    "hp" : enemyStats.hp,
+                    "armor" : enemyStats.armor,
+                    "spellblock" : enemyStats.spellblock
                 }
             }
         }
@@ -81,13 +82,13 @@ class Calculator extends React.Component {
             body = {
                 "player" : {
                     "id" : this.state.selectedChampion.id,
-                    "hp" : this.state.championData.hp,
-                    "mp" : this.state.championData.mp,
+                    "hp" : stats.hp,
+                    "mp" : stats.mp,
                     "movespeed" : this.state.championData.movespeed,
-                    "armor" : this.state.championData.armor,
-                    "spellblock" : this.state.championData.spellblock,
-                    "attackdamage" : this.state.championData.attackdamage,
-                    "spelldamage" : this.state.championData.spelldamage,
+                    "armor" : stats.armor,
+                    "spellblock" : stats.spellblock,
+                    "attackdamage" : stats.attackdamage,
+                    "spelldamage" : stats.spelldamage,
                     "attackspeed" : this.state.championData.attackspeed,
                     "flatarmorpenetration" : this.state.championData.flatarmorpenetration,
                     "percentarmorpenetration" : this.state.championData.percentarmorpenetration,

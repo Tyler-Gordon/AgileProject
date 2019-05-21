@@ -43,7 +43,6 @@ class BoughtItems extends React.Component {
     }
 
     chooseItem(item, number){
-        console.log(item.stats)
         this.setState({ 
             [number] : {
                 name : item.name,
@@ -65,7 +64,7 @@ class BoughtItems extends React.Component {
         if (this.props.enemy) {
             return (
             <div className='columns is-marginless'>
-                <ChampionStats championData={this.props.championData} level={this.props.level} items={itemStats} />
+                <ChampionStats championData={this.props.championData} level={this.props.level} items={itemStats} enemy={true} />
                 <div className='level'>
                     <PlayerItem icon={this.state.item1.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item1' />
                     <PlayerItem icon={this.state.item2.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item2' />
@@ -86,7 +85,7 @@ class BoughtItems extends React.Component {
                     <PlayerItem icon={this.state.item5.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item5' />
                     <PlayerItem icon={this.state.item6.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item6' />
                 </div>
-                <ChampionStats championData={this.props.championData} level={this.props.level} items={itemStats} />
+                <ChampionStats championData={this.props.championData} level={this.props.level} items={itemStats} enemy={false} />
             </div>
         )}
     }

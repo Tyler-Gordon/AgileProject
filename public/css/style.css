@@ -135,4 +135,5 @@ figure img {
 
 .ChosenItem {
     padding : 2px;
+    cursor : pointer;
 }
