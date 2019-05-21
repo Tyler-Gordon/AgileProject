@@ -39,14 +39,6 @@ body {
     background-color: #ffb700;
 }
 
-<<<<<<< HEAD
-=======
-#ItemListItem {
-    border-radius : 15px;
-    height: 125px;
-}
-
->>>>>>> upstream/master
 #Title {
     font-size: 10rem;
     font-family: 'Oswald', sans-serif, serif;
@@ -137,17 +129,10 @@ figure img {
     background-color: #3f4866;
 }
 
-<<<<<<< HEAD
 .GameItem, .ChosenItem {
     border-radius : 21%;
 }
 
 .ChosenItem {
     padding : 2px;
-=======
-#Item{
-    margin-left: 5px;
-    border-radius: 15px;
-    cursor: pointer;
->>>>>>> upstream/master
 }
