@@ -11,24 +11,24 @@ class Calculator extends React.Component {
         enemyChampion : null,
         enemyData : null,
     
-        aadamage: null,
-        aatype: null,
+        aadamage : null,
+        aatype : null,
 
-        qdamage: null,
-        qtype: null,
-        qlevel: 1,
+        qdamage : null,
+        qtype : null,
+        qlevel : 1,
         
-        wdamage: null,
-        wtype: null,
-        wlevel: 1,
+        wdamage : null,
+        wtype : null,
+        wlevel : 1,
 
-        edamage: null,
-        etype: null,
-        elevel: 1,
+        edamage : null,
+        etype : null,
+        elevel : 1,
 
-        rdamage: null,
-        rtype: null,
-        rlevel: 1,
+        rdamage : null,
+        rtype : null,
+        rlevel : 1,
     }
 
     onClick(champion) {
@@ -50,59 +50,58 @@ class Calculator extends React.Component {
         const stats = window.stats;
         const enemyStats = window.enemyStats;
         let body;
-        if (this.state.enemyData.hp != null){
+        if (this.state.enemyData.hp != null) {
             body = {
-                "player" : {
-                    "id" : this.state.selectedChampion.id,
-                    "hp" : stats.hp,
-                    "mp" : stats.mp,
-                    "movespeed" : this.state.championData.movespeed,
-                    "armor" : stats.armor,
-                    "spellblock" : stats.spellblock,
-                    "attackdamage" : stats.attackdamage,
-                    "spelldamage" : stats.spelldamage,
-                    "attackspeed" : this.state.championData.attackspeed,
-                    "flatarmorpenetration" : this.state.championData.flatarmorpenetration,
-                    "percentarmorpenetration" : this.state.championData.percentarmorpenetration,
-                    "flatspellpenetration" : this.state.championData.flatspellpenetration,
-                    "percentspellpenetration" : this.state.championData.percentspellpenetration,
-                    "qlevel" : this.state.qlevel,
-                    "wlevel" : this.state.wlevel, 
-                    "elevel" : this.state.elevel,
-                    "rlevel" : this.state.rlevel
+                'player' : {
+                    'id' : this.state.selectedChampion.id,
+                    'hp' : stats.hp,
+                    'mp' : stats.mp,
+                    'movespeed' : this.state.championData.movespeed,
+                    'armor' : stats.armor,
+                    'spellblock' : stats.spellblock,
+                    'attackdamage' : stats.attackdamage,
+                    'spelldamage' : stats.spelldamage,
+                    'attackspeed' : this.state.championData.attackspeed,
+                    'flatarmorpenetration' : this.state.championData.flatarmorpenetration,
+                    'percentarmorpenetration' : this.state.championData.percentarmorpenetration,
+                    'flatspellpenetration' : this.state.championData.flatspellpenetration,
+                    'percentspellpenetration' : this.state.championData.percentspellpenetration,
+                    'qlevel' : this.state.qlevel,
+                    'wlevel' : this.state.wlevel, 
+                    'elevel' : this.state.elevel,
+                    'rlevel' : this.state.rlevel
                     },
-                "enemy" : {
-                    "hp" : enemyStats.hp,
-                    "armor" : enemyStats.armor,
-                    "spellblock" : enemyStats.spellblock
+                'enemy' : {
+                    'hp' : enemyStats.hp,
+                    'armor' : enemyStats.armor,
+                    'spellblock' : enemyStats.spellblock
                 }
             }
-        }
-        else{
+        } else {
             body = {
-                "player" : {
-                    "id" : this.state.selectedChampion.id,
-                    "hp" : stats.hp,
-                    "mp" : stats.mp,
-                    "movespeed" : this.state.championData.movespeed,
-                    "armor" : stats.armor,
-                    "spellblock" : stats.spellblock,
-                    "attackdamage" : stats.attackdamage,
-                    "spelldamage" : stats.spelldamage,
-                    "attackspeed" : this.state.championData.attackspeed,
-                    "flatarmorpenetration" : this.state.championData.flatarmorpenetration,
-                    "percentarmorpenetration" : this.state.championData.percentarmorpenetration,
-                    "flatspellpenetration" : this.state.championData.flatspellpenetration,
-                    "percentspellpenetration" : this.state.championData.percentspellpenetration,
-                    "qlevel" : this.state.qlevel,
-                    "wlevel" : this.state.wlevel, 
-                    "elevel" : this.state.elevel,
-                    "rlevel" : this.state.rlevel
+                'player' : {
+                    'id' : this.state.selectedChampion.id,
+                    'hp' : stats.hp,
+                    'mp' : stats.mp,
+                    'movespeed' : this.state.championData.movespeed,
+                    'armor' : stats.armor,
+                    'spellblock' : stats.spellblock,
+                    'attackdamage' : stats.attackdamage,
+                    'spelldamage' : stats.spelldamage,
+                    'attackspeed' : this.state.championData.attackspeed,
+                    'flatarmorpenetration' : this.state.championData.flatarmorpenetration,
+                    'percentarmorpenetration' : this.state.championData.percentarmorpenetration,
+                    'flatspellpenetration' : this.state.championData.flatspellpenetration,
+                    'percentspellpenetration' : this.state.championData.percentspellpenetration,
+                    'qlevel' : this.state.qlevel,
+                    'wlevel' : this.state.wlevel, 
+                    'elevel' : this.state.elevel,
+                    'rlevel' : this.state.rlevel
                     },
-                "enemy" : {
-                    "hp" : 0,
-                    "armor" : 0,
-                    "spellblock" : 0
+                'enemy' : {
+                    'hp' : 0,
+                    'armor' : 0,
+                    'spellblock' : 0
                 }
             }
         }
@@ -110,7 +109,7 @@ class Calculator extends React.Component {
             method: 'POST',
             body: JSON.stringify(body),
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json'
             }
         })
         .then(res => res.json())
@@ -160,15 +159,15 @@ class Calculator extends React.Component {
     }
 
     renderEnemyInput(){
-        return(<input className='input' placeholder='Select an enemy...' type="text" id="userInput" onInput={()=>{search('ChampionList','userInput')}}></input>)
+        return(<input className='input' placeholder='Select an enemy...' type='text' id='userInput' onInput={()=>{search('ChampionList','userInput')}}></input>)
     }
 
     render() {
         return (
-            <section className="section">
+            <section className='section'>
                 <PlayerChampion champions={this.props.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} items={this.props.itemData}  />
-                <section className="section">
-                    <div id='AbilitySection' className="container">
+                <section className='section'>
+                    <div id='AbilitySection' className='container'>
                         <div id='ChampionSkills' className='columns'>
                             <ChampionAbility icon={this.state.championData.qicon} level={this.state.qlevel} ability='qlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.qdamage} type={this.state.qtype} />
                             <ChampionAbility icon={this.state.championData.wicon} level={this.state.wlevel} ability='wlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.wdamage} type={this.state.wtype} />
@@ -179,20 +178,20 @@ class Calculator extends React.Component {
                     </div>
                 </section>
                 
-                    <div className="container has-text-centered">
-                        <div className="columns is-centered">                   
-                            <div className="column is-half is-centered">
+                    <div className='container has-text-centered'>
+                        <div className='columns is-centered'>                   
+                            <div className='column is-half is-centered'>
                                 { this.state.enemyChosen ? null : this.renderEnemyInput() }
                                 <div id='ChampionListContainer'>    
-                                    <ChampionList onClick={this.onClick.bind(this)} champions={this.props.champions}/>
+                                    <ChampionList onClick={this.onClick.bind(this)} champions={this.props.champions} />
                                 </div>
                             </div>
                         </div>
                     </div>
                 {this.state.enemyChosen ? <EnemyChampion champions={this.props.champions} championData={this.state.enemyData} selectedChampion={this.state.enemyChampion} items={this.props.itemData}  /> : null}
 
-                <section className="section has-text-centered">
-                    {this.state.enemyChosen ? <button id='CalculateButton' className={'button is-large is-danger'} onClick={()=>{this.calculate()}}>Calculate</button> : null }
+                <section className='section has-text-centered'>
+                    {this.state.enemyChosen ? <button id='CalculateButton' className={'button is-large is-danger'} onClick={()=>{this.calculate()}}>Calculate</button> : null}
                 </section>
             </section>
         )

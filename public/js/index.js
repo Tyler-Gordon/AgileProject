@@ -23,19 +23,6 @@ function HideChampionContainer() {
     return ('Hidden')
 }
 
-function ShowItemContainer() {
-    var itemContainer = document.getElementById('ItemList')
-    itemContainer.style.display = 'inline'
-    return ('Shown')
-}
-
-function HideItemContainer() {
-    var itemContainer = document.getElementById('ItemList')
-    itemContainer.style.display = 'none'
-    return ('Hidden')
-}
-
-
 fetch('/champions')
     .then(
         function (response) {

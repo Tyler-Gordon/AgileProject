@@ -4,8 +4,7 @@ class PlayerItem extends React.Component {
     }
 
     state = {
-        stats: this.props.stats,
-        isChoosing: false,
+        isChoosing: false
     }
 
     handleItemClick(){

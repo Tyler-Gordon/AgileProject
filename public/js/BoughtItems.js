@@ -4,41 +4,41 @@ class BoughtItems extends React.Component {
     }
 
     state = {	
-        item1: {
-            id:"1",
-            name:"Empty",
-            icon:'../images/EmptyItem.png',
-            stats: 'Empty'
+        item1 : {
+            id : '1',
+            name : 'Empty',
+            icon : '../images/EmptyItem.png',
+            stats : 'Empty'
         },
-        item2: {
-            id:"2",
-            name:"Empty",
-            icon:'../images/EmptyItem.png',
-            stats: 'Empty'
+        item2 : {
+            id : '2',
+            name : 'Empty',
+            icon : '../images/EmptyItem.png',
+            stats : 'Empty'
         },
-        item3: {
-            id:"3",
-            name:"Empty",
-            icon:'../images/EmptyItem.png',
-            stats: 'Empty'
+        item3 : {
+            id : '3',
+            name : 'Empty',
+            icon : '../images/EmptyItem.png',
+            stats : 'Empty'
         },
-        item4: {
-            id:"4",
-            name:"Empty",
-            icon:'../images/EmptyItem.png',
-            stats: 'Empty'
+        item4 : {
+            id : '4',
+            name : 'Empty',
+            icon : '../images/EmptyItem.png',
+            stats : 'Empty'
         },
-        item5: {
-            id:"5",
-            name:"Empty",
-            icon:'../images/EmptyItem.png',
-            stats: 'Empty'
+        item5 : {
+            id : '5',
+            name : 'Empty',
+            icon : '../images/EmptyItem.png',
+            stats : 'Empty'
         },
-        item6: {
-            id:"6",
-            name:"Empty",
-            icon:'../images/EmptyItem.png',
-            stats: 'Empty'
+        item6 : {
+            id : '6',
+            name : 'Empty',
+            icon : '../images/EmptyItem.png',
+            stats : 'Empty'
         }
     }
 
