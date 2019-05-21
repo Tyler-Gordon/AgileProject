@@ -18,7 +18,7 @@ body {
     display: block;
     overflow-y: auto;
     overflow-x: hidden;
-    max-height:40vh;
+    max-height: 40vh;
     position: relative;
     float: left;
     width: 100%;
@@ -37,11 +37,6 @@ body {
 
 #ChampionListItem:hover, #ItemListItem:hover {
     background-color: #ffb700;
-}
-
-#ItemListItem {
-    border-radius : 15px;
-    height: 125px;
 }
 
 #Title {
@@ -98,8 +93,7 @@ body {
 }
 
 #PlayerLevel {
-    width: 50%;
-    height: 10%;
+    width : 60px;
 }
 
 #ChampionName {
@@ -108,8 +102,8 @@ body {
 }
 
 #ChampionStats {
-    margin-left: 35px;
-    margin-right: 35px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 /* 
@@ -135,8 +129,11 @@ figure img {
     background-color: #3f4866;
 }
 
-#Item{
-    margin-left: 5px;
-    border-radius: 15px;
-    cursor: pointer;
+.GameItem, .ChosenItem {
+    border-radius : 21%;
+}
+
+.ChosenItem {
+    padding : 2px;
+    cursor : pointer;
 }

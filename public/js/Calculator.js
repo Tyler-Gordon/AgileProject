@@ -4,9 +4,10 @@ class Calculator extends React.Component {
     }
 
     state = {
-        enemyChosen: false,
         selectedChampion : this.props.selectedChampion,
         championData : this.props.championData,
+
+        enemyChosen: false,
         enemyChampion : null,
         enemyData : null,
     
@@ -45,19 +46,21 @@ class Calculator extends React.Component {
             });
     }
 
-    calculate(){
-        var body;
+    calculate() {
+        const stats = window.stats;
+        const enemyStats = window.enemyStats;
+        let body;
         if (this.state.enemyData.hp != null){
             body = {
                 "player" : {
                     "id" : this.state.selectedChampion.id,
-                    "hp" : this.state.championData.hp,
-                    "mp" : this.state.championData.mp,
+                    "hp" : stats.hp,
+                    "mp" : stats.mp,
                     "movespeed" : this.state.championData.movespeed,
-                    "armor" : this.state.championData.armor,
-                    "spellblock" : this.state.championData.spellblock,
-                    "attackdamage" : this.state.championData.attackdamage,
-                    "spelldamage" : this.state.championData.spelldamage,
+                    "armor" : stats.armor,
+                    "spellblock" : stats.spellblock,
+                    "attackdamage" : stats.attackdamage,
+                    "spelldamage" : stats.spelldamage,
                     "attackspeed" : this.state.championData.attackspeed,
                     "flatarmorpenetration" : this.state.championData.flatarmorpenetration,
                     "percentarmorpenetration" : this.state.championData.percentarmorpenetration,
@@ -69,9 +72,9 @@ class Calculator extends React.Component {
                     "rlevel" : this.state.rlevel
                     },
                 "enemy" : {
-                    "hp" : this.state.enemyData.hp,
-                    "armor" : this.state.enemyData.armor,
-                    "spellblock" : this.state.enemyData.spellblock
+                    "hp" : enemyStats.hp,
+                    "armor" : enemyStats.armor,
+                    "spellblock" : enemyStats.spellblock
                 }
             }
         }
@@ -79,13 +82,13 @@ class Calculator extends React.Component {
             body = {
                 "player" : {
                     "id" : this.state.selectedChampion.id,
-                    "hp" : this.state.championData.hp,
-                    "mp" : this.state.championData.mp,
+                    "hp" : stats.hp,
+                    "mp" : stats.mp,
                     "movespeed" : this.state.championData.movespeed,
-                    "armor" : this.state.championData.armor,
-                    "spellblock" : this.state.championData.spellblock,
-                    "attackdamage" : this.state.championData.attackdamage,
-                    "spelldamage" : this.state.championData.spelldamage,
+                    "armor" : stats.armor,
+                    "spellblock" : stats.spellblock,
+                    "attackdamage" : stats.attackdamage,
+                    "spelldamage" : stats.spelldamage,
                     "attackspeed" : this.state.championData.attackspeed,
                     "flatarmorpenetration" : this.state.championData.flatarmorpenetration,
                     "percentarmorpenetration" : this.state.championData.percentarmorpenetration,
@@ -112,7 +115,6 @@ class Calculator extends React.Component {
         })
         .then(res => res.json())
         .then(res => {
-            console.log(res)
             this.setState({
                 aadamage : res.aa[0].damage.toFixed(1),
                 aatype : res.aa[0].type,
@@ -164,7 +166,7 @@ class Calculator extends React.Component {
     render() {
         return (
             <section className="section">
-                <PlayerChampion champions={this.props.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} items={this.props.itemData} />
+                <PlayerChampion champions={this.props.champions} championData={this.state.championData} selectedChampion={this.state.selectedChampion} items={this.props.itemData}  />
                 <section className="section">
                     <div id='AbilitySection' className="container">
                         <div id='ChampionSkills' className='columns'>
