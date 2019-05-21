@@ -1,6 +1,8 @@
 class BoughtItems extends React.Component {
     constructor(props) {
         super(props)
+
+        this.chooseItem = this.chooseItem.bind(this);
     }
 
     state = {	
@@ -66,24 +68,24 @@ class BoughtItems extends React.Component {
             <div className='columns is-marginless'>
                 <ChampionStats championData={this.props.championData} level={this.props.level} items={itemStats} enemy={true} />
                 <div className='level'>
-                    <PlayerItem icon={this.state.item1.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item1' />
-                    <PlayerItem icon={this.state.item2.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item2' />
-                    <PlayerItem icon={this.state.item3.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item3' />
-                    <PlayerItem icon={this.state.item4.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item4' />
-                    <PlayerItem icon={this.state.item5.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item5' />
-                    <PlayerItem icon={this.state.item6.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item6' />
+                    <PlayerItem icon={this.state.item1.icon} chooseItem={this.chooseItem} items={this.props.items} number='item1' />
+                    <PlayerItem icon={this.state.item2.icon} chooseItem={this.chooseItem} items={this.props.items} number='item2' />
+                    <PlayerItem icon={this.state.item3.icon} chooseItem={this.chooseItem} items={this.props.items} number='item3' />
+                    <PlayerItem icon={this.state.item4.icon} chooseItem={this.chooseItem} items={this.props.items} number='item4' />
+                    <PlayerItem icon={this.state.item5.icon} chooseItem={this.chooseItem} items={this.props.items} number='item5' />
+                    <PlayerItem icon={this.state.item6.icon} chooseItem={this.chooseItem} items={this.props.items} number='item6' />
                 </div>
             </div>
         )} else {
             return (
             <div className='columns'>
                 <div className='level is-marginless'>
-                    <PlayerItem icon={this.state.item1.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item1' />
-                    <PlayerItem icon={this.state.item2.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item2' />
-                    <PlayerItem icon={this.state.item3.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item3' />
-                    <PlayerItem icon={this.state.item4.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item4' />
-                    <PlayerItem icon={this.state.item5.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item5' />
-                    <PlayerItem icon={this.state.item6.icon} chooseItem={this.chooseItem.bind(this)} items={this.props.items} number='item6' />
+                    <PlayerItem icon={this.state.item1.icon} chooseItem={this.chooseItem} items={this.props.items} number='item1' />
+                    <PlayerItem icon={this.state.item2.icon} chooseItem={this.chooseItem} items={this.props.items} number='item2' />
+                    <PlayerItem icon={this.state.item3.icon} chooseItem={this.chooseItem} items={this.props.items} number='item3' />
+                    <PlayerItem icon={this.state.item4.icon} chooseItem={this.chooseItem} items={this.props.items} number='item4' />
+                    <PlayerItem icon={this.state.item5.icon} chooseItem={this.chooseItem} items={this.props.items} number='item5' />
+                    <PlayerItem icon={this.state.item6.icon} chooseItem={this.chooseItem} items={this.props.items} number='item6' />
                 </div>
                 <ChampionStats championData={this.props.championData} level={this.props.level} items={itemStats} enemy={false} />
             </div>

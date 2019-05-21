@@ -1,6 +1,10 @@
 class Calculator extends React.Component {
     constructor(props) {
         super(props)
+
+        this.onClick = this.onClick.bind(this);
+        this.handleAbilityUp = this.handleAbilityUp.bind(this);
+        this.handleAbilityDown = this.handleAbilityDown.bind(this);
     }
 
     state = {
@@ -169,10 +173,10 @@ class Calculator extends React.Component {
                 <section className='section'>
                     <div id='AbilitySection' className='container'>
                         <div id='ChampionSkills' className='columns'>
-                            <ChampionAbility icon={this.state.championData.qicon} level={this.state.qlevel} ability='qlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.qdamage} type={this.state.qtype} />
-                            <ChampionAbility icon={this.state.championData.wicon} level={this.state.wlevel} ability='wlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.wdamage} type={this.state.wtype} />
-                            <ChampionAbility icon={this.state.championData.eicon} level={this.state.elevel} ability='elevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.edamage} type={this.state.etype} />
-                            <ChampionAbility icon={this.state.championData.ricon} level={this.state.rlevel} ability='rlevel' levelUp={this.handleAbilityUp.bind(this)} levelDown={this.handleAbilityDown.bind(this)} damage={this.state.rdamage} type={this.state.rtype} />
+                            <ChampionAbility icon={this.state.championData.qicon} level={this.state.qlevel} ability='qlevel' levelUp={this.handleAbilityUp} levelDown={this.handleAbilityDown} damage={this.state.qdamage} type={this.state.qtype} />
+                            <ChampionAbility icon={this.state.championData.wicon} level={this.state.wlevel} ability='wlevel' levelUp={this.handleAbilityUp} levelDown={this.handleAbilityDown} damage={this.state.wdamage} type={this.state.wtype} />
+                            <ChampionAbility icon={this.state.championData.eicon} level={this.state.elevel} ability='elevel' levelUp={this.handleAbilityUp} levelDown={this.handleAbilityDown} damage={this.state.edamage} type={this.state.etype} />
+                            <ChampionAbility icon={this.state.championData.ricon} level={this.state.rlevel} ability='rlevel' levelUp={this.handleAbilityUp} levelDown={this.handleAbilityDown} damage={this.state.rdamage} type={this.state.rtype} />
                             <ChampionAbility icon={'../images/AutoAttack.png'} damage={this.state.aadamage} type={this.state.aatype} />
                         </div>
                     </div>
@@ -183,7 +187,7 @@ class Calculator extends React.Component {
                             <div className='column is-half is-centered'>
                                 { this.state.enemyChosen ? null : this.renderEnemyInput() }
                                 <div id='ChampionListContainer'>    
-                                    <ChampionList onClick={this.onClick.bind(this)} champions={this.props.champions} />
+                                    <ChampionList onClick={this.onClick} champions={this.props.champions} />
                                 </div>
                             </div>
                         </div>

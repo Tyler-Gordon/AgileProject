@@ -17,6 +17,10 @@ figure img {
     margin-right : auto;
 }
 
+.card-header-icon {
+    cursor: default;
+}
+
 #ItemList{
     border-radius: 0px 0px 0px 30px;
 }

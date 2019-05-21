@@ -1,6 +1,8 @@
 class PlayerItem extends React.Component {
     constructor(props) {
         super(props)
+
+        this.handleItemChosen = this.handleItemChosen.bind(this);
     }
 
     state = {
@@ -25,7 +27,7 @@ class PlayerItem extends React.Component {
                     <div id='Item' className='level-item' onClick={()=>{this.handleItemClick()}}>
                         <img className='ChosenItem' src={this.props.icon} height='70px' width='70px'></img>
                     </div>
-                    <ItemList number={this.props.number} handleItemChosen={this.handleItemChosen.bind(this)} chooseItem={this.props.chooseItem.bind(this)} items={this.props.items} />   
+                    <ItemList number={this.props.number} handleItemChosen={this.handleItemChosen} chooseItem={this.props.chooseItem.bind(this)} items={this.props.items} />   
                 </div>
             )
         } else {

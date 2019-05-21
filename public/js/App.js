@@ -1,6 +1,8 @@
 class App extends React.Component {
     constructor(props) {
         super(props)
+
+        this.onClick = this.onClick.bind(this);
     }
 
     state = {
@@ -47,7 +49,7 @@ class App extends React.Component {
                                 <h1 id='Subtitle'>Intuitive Damage Calculator</h1>
                                 <input id='ChampionInputMainPage' className='input' placeholder='Select a champion...' type='text' id='userInput' onFocus={()=>{ShowChampionContainer()}} onInput={()=>{search('ChampionList','userInput')}} onBlur={()=>{HideChampionContainer()}} />
                                 <div id='ChampionListContainer'>
-                                    <ChampionList onClick={this.onClick.bind(this)} champions={this.props.champions} />
+                                    <ChampionList onClick={this.onClick} champions={this.props.champions} />
                                 </div>
                             </div>
 
